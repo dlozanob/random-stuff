@@ -1,0 +1,18 @@
+• Ecuaciones (toda expresión matemática debe ir dentro de los corchetes):
+
+\[
+.
+.
+.
+.
+\]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+• Vectores: \Vec{F}
+• Vec. Unitarios: \hat{k}
+• Subíndices: m_{1} 
+• Exponentes: m^2
+• Raíces:	\sqrt{x}
+• Fracciones: \frac{a}{b+c}
+• Salto de línea: \cr
