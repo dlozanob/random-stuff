@@ -1,0 +1,2 @@
+uname a- (Shows the current kernel and OS information)
+
