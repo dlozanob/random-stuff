@@ -16,3 +16,9 @@
 • Raíces:	\sqrt{x}
 • Fracciones: \frac{a}{b+c}
 • Salto de línea: \cr
+• Triángulo: \triangle
+• Pi: \pi
+• Integral: \int_{'límite inferior'}^{'límite superior'} f(x) \cdot dx
+• Punto mult: \cdot
+• Theta: \theta
+• Salto de línea: \\
