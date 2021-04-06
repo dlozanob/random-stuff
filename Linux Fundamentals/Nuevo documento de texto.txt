@@ -73,3 +73,28 @@ git (Git is a fast, scalable, distributed revision control system with an unusua
 mkdir (Makes a directory)
 
 wget <link> (Download repositories and data)
+
+systemctl start ssh (Start the ssd service)
+
+systemctl status ssh (Check server status)
+
+systemctl enable ssh (To add OpenSSH to the SysV script to tell the system to run this service after startup)
+
+systemctl list-units --type=service (Lists all servers)
+
+journalctl -u ssh.service --no-pager (Look for problems at starting a server)
+
+kill -l (View the list of signals that can interact with a process)
+
+[Ctrl + Z] (Suspend a process)
+
+jobs (Display all background processes)
+
+bg (Keep running the process in background)
+
+ping -c 10 www.hackthebox.eu & (Another option to backgrounding a process)
+
+fg <ID> (Return a process to the foregorund)
+
+<command 1>; <command 2>; <command 3> (The ';' will execute the 3 commands nevertheless errors have been throwed)
+
