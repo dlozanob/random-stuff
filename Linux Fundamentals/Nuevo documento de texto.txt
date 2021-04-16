@@ -48,11 +48,11 @@ lsof (Lists opened files)
 
 lspci (Lists PCI devices)
 
-sudo (Execute command as a different user)
+sudo (Execute command as a different user (super user))
 
 su (The su utility requests appropriate user credentials via PAM and switches to that user ID (the default user is the superuser). A shell is then executed)
 
-useradd (	Creates a new user or update default new user information)
+useradd (Creates a new user or update default new user information)
 
 userdel (Deletes a user account and related files)
 
@@ -84,7 +84,7 @@ mkdir (Makes a directory)
 
 wget <link> (Download repositories and data)
 
-systemctl start ssh (Start the ssd service)
+systemctl start ssh (Start the ssh service)
 
 systemctl status ssh (Check server status)
 
@@ -119,3 +119,5 @@ python3 -m http.server (Use Python 3 to access a web service)
 http-server -p 8080 (Starting a simple HTTP service using "npm") (Before, you have to do "sudo npm install http-server -g") (Port: 8080)
 
 php -S 127.0.0.1:8080 (Start a simple HTTP service using "php". Localhost: 127.0.0.1. Port: 8080)
+
+ssh username@hostname -p portnumber (Acessing a server using ssh)
