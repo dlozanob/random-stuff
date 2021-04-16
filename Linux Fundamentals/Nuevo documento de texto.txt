@@ -1,3 +1,13 @@
+
+Ctrl + Shift + c (Copy)
+
+Ctrl + Shift + v (Paste)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 uname a- (Shows the current kernel and OS information)
 
 man <tool> (Getting help for an specified tool, info)
@@ -98,3 +108,14 @@ fg <ID> (Return a process to the foregorund)
 
 <command 1>; <command 2>; <command 3> (The ';' will execute the 3 commands nevertheless errors have been throwed)
 
+<command 1> && <command 2> && <command 3> (If there is an error in one of the commands, the following ones will not be executed anymore, and the whole process will be stopped)
+
+apt install apache2 -y (Install the Apache web service)
+
+curl http://localhost (Give us information about the structure of the page)
+
+python3 -m http.server (Use Python 3 to access a web service)
+
+http-server -p 8080 (Starting a simple HTTP service using "npm") (Before, you have to do "sudo npm install http-server -g") (Port: 8080)
+
+php -S 127.0.0.1:8080 (Start a simple HTTP service using "php". Localhost: 127.0.0.1. Port: 8080)
