@@ -121,3 +121,35 @@ http-server -p 8080 (Starting a simple HTTP service using "npm") (Before, you ha
 php -S 127.0.0.1:8080 (Start a simple HTTP service using "php". Localhost: 127.0.0.1. Port: 8080)
 
 ssh username@hostname -p portnumber (Acessing a server using ssh)
+
+touch <name> (Create an empty file)
+  touch ./Storage/local/user/userinfo.txt (Specify the path ogf the file)
+
+mkdir <name> (Create a directory)
+  mkdir -p Storage/local/user/documents (Create subfolders after the primary (Storage) directory file)
+  
+mv <file/directory> <renamed file/directory> (Rename a file/directory)
+
+mv <file/directory> <path> (Move a file/directory to another folder)
+
+cp  <file/directory> <path> (Copy a file/directory to an specified path)
+
+rmdir -r <directory> (Delete the directory and all it's sub directory/files) (If empty, it's enough ti use rmdir)
+
+rm <file> (Remove a file)
+
+nano <file> (Create a file and edit it)
+
+apt search <package> (Search for packages)
+
+vimtutor (Entering the vim tutor)
+
+which (This tool returns the path to the file or link that should be executed)
+
+find <location> <options> (Find files and foldedrs)
+
+sudo updatedb (Update database (local database that contains all information about existing files and folders))
+
+locate (A quicker way to search through the system)
+
+
