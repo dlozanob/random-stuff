@@ -90,9 +90,21 @@ systemctl enable ssh (To add OpenSSH to the SysV script to tell the system to ru
 
 systemctl start ssh (Start the ssh service)
 
+systemctl stop ssh (Stop the ssh service)
+
 systemctl status ssh (Check server status)
 
 systemctl list-units --type=service (Lists all servers)
+
+service ssh start (Start the ssh service)
+
+service ssh stop (Stop the ssh service)
+
+service ssh status (Check server status)
+
+service --status-all (Check all services)
+
+ssh-keygen -t rsa (Generating rsa key)
 
 journalctl -u ssh.service --no-pager (Look for problems at starting a server)
 
@@ -116,7 +128,7 @@ fg <ID> (Return a process to the foregorund)
 
 apt install apache2 -y (Install the Apache web service)
 
-curl http://localhost (Give us information about the structure of the page)
+curl <url> (Give us information about the structure of the page)
 
 python3 -m http.server (Use Python 3 to access a web service)
 
@@ -196,3 +208,20 @@ Example: awk '{print $1, $NF}' (Display the first ($1) and last ($NF) result of 
 
 sed 's/wordToReplace/newWord/g' (For replacing words)
 
+sudo nano /etc/ssh/sshd_config (Editing the SSH daemon file)
+
+sudo service ssh restart (Use this everytime the SSH daemon file is edited)
+
+exit (Return to your Pwnbox)
+
+r, w, x (Types of permissions a file or directory can be assigned) (r - read, w - write, x - execute)
+
+Example: chmod a+r shell (Adding the reading permission (r) to all users (a) over the shell file)
+
+chmod 754 shell (Using octal value assignment for giving all users the permission of reading over the shell file)
+
+chown <user>:<group> <file/directory> (Change the owner of a file or directory)
+
+apt update && apt dist-upgrade (Keeping the OS and installed packages up to date)
+
+fail2ban (This tool counts the number of failed login attempts into an ssh service)
