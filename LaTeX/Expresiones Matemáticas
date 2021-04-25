@@ -26,3 +26,22 @@
 • Gradiente: \nabla
 • Subtítulo: \subsection
 • Texto en negrilla: \textbf
+• Espacio entre párrafos: \bigskip
+• Referenciar una cita: \cite{Simulador}
+• Hacer una bibliografía:
+  Ejemplo:
+    \begin{thebibliography}{0}
+    \bibitem{Giancoli}{Giancoli D, 2009, “Física para ciencias e ingeniería con física moderna”, volumen 2, cuarta edición, p. 560.}
+    \bibitem{Simulador}{Herramienta utilizada para la simulación del laboratorio: \url{http://www.flashphysics.org/electricField.html}}
+    \end{thebibliography}
+    
+ • Enumerar secciones:
+   \begin{enumerate}
+    \item \textbf{Subtítulo 1}\\
+      'texto'
+    \item \textbf{Subtítulo 2}\\
+      'texto'
+    \item \textbf{Subtítulo 3}\\
+      'texto'
+   \end{enumerate}
+    
