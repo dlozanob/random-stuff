@@ -45,3 +45,10 @@
       'texto'
    \end{enumerate}
     
+• Para poner unidades junto a su valor: \SI
+  Ejemplo:
+    \begin{align*}
+      m &= \SI{39.759}{mA/V} \\
+      &= \SI{3.9759e-2}{A/V} \\
+      &= \frac{1}{R}
+    \end{align*}
