@@ -27,7 +27,7 @@
 • Subtítulo: \subsection
 • Texto en negrilla: \textbf
 • Espacio entre párrafos: \bigskip
-• Referenciar una cita: \cite{Simulador}
+• Referenciar una cita: \cite{Nombre de la cita}
 • Hacer una bibliografía:
   Ejemplo:
     \begin{thebibliography}{0}
