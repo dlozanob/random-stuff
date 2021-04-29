@@ -225,3 +225,6 @@ chown <user>:<group> <file/directory> (Change the owner of a file or directory)
 apt update && apt dist-upgrade (Keeping the OS and installed packages up to date)
 
 fail2ban (This tool counts the number of failed login attempts into an ssh service)
+
+sudo lsof -i:22 (See if an specific port is Listening)
+
