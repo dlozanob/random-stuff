@@ -52,3 +52,17 @@
       &= \SI{3.9759e-2}{A/V} \\
       &= \frac{1}{R}
     \end{align*}
+
+• Caracteres especiales:
+  # ---> \#
+  $ ---> \$
+  % ---> \%
+  & ---> \&
+  / ---> \textbackslash{}
+  ^ ---> \textasciicircum{}
+  _ ---> \_
+  { ---> \{
+  } ---> \}
+  ~ ---> \textasciitilde{}
+    
+  
