@@ -65,4 +65,22 @@
   } ---> \}
   ~ ---> \textasciitilde{}
     
+• Tablas:
+  Ejemplo:
+    \begin{table}[H]
+      \centering
+        \begin{tabular}{|c|c|}
+          \hline
+            Resistencia ($\Omega$) & Caída de potencial (V) \\
+          \hline
+            100 & 0,74 \\
+            270 & 2,02 \\
+            330 & 2,44 \\
+          \hline
+        \end{tabular}
+        \caption{Caída de voltaje en cada resistencia en serie}
+        \label{tab:my_label}
+    \end{table}
+    
+• Sub-secciones de sub-secciones: \subsubsection{descripción}
   
