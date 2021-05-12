@@ -228,3 +228,7 @@ fail2ban (This tool counts the number of failed login attempts into an ssh servi
 
 sudo lsof -i:22 (See if an specific port is Listening)
 
+nmap (Port tracking)
+
+
+
