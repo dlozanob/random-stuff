@@ -230,5 +230,7 @@ sudo lsof -i:22 (See if an specific port is Listening)
 
 nmap (Port tracking)
 
+ping <ip> (Verify if you are connected to the machine)
+
 
 
