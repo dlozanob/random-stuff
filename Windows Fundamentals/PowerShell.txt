@@ -9,7 +9,7 @@ Example: Get-WmiObject -Class win32_OperatingSystem | select Version,BuildNumber
                               Win32_Service (Class for getting a list of services)
                               Win32_Bios  (BIOS information)
              
-xfreerdp /v:<targetIp> /u:<user> /p:Password (Connect via Remote Desktop (RDP))
+xfreerdp /v:<targetIp> /u:<user> /p:Password (Connect via Remote Desktop (RDP)) (Uses port 3389)
 
 | (Used for collecting dat from left side as in Shell)
 
@@ -35,8 +35,12 @@ icacls (Stands for Integrity Control Access Control List) (Used for managing per
     icacls <directory> (View the permissions of each user on a directory)
     icacls c:\users /grant joe:f (Grant joe full permissions to a directory)
     icacls c:\users /remove joe (Remove joe's permissions on a directory)
+    
+Get-Service (To query and manage services)
 
+\\live.sysinternals.com\tools/<tool> (Load a tool from internet without downloading it to the disk)
 
+taskmgr (Open the task manager)
 
 
     
