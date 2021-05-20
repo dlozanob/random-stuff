@@ -21,7 +21,7 @@ ls (For listing folders and files)
 
 clear (Clear console log)
 
-Get-Help (Displays basic help about cmdlets and functions)
+Get-Help (Displays basic help about cmdlets and functions) (-Online for online help about a command) (Get-AppPackage will return just the partial help unless the Help files are installed)
 
 dir (To explore the file system)
 
@@ -42,5 +42,25 @@ Get-Service (To query and manage services)
 
 taskmgr (Open the task manager)
 
+Get-ChildItem (List our current directory) (Aliases: ls, gci)
 
-    
+Set-Location (Change directories) (Aliases: cd, sl)
+
+Get-Alias (View all avaliable aliases for the cmdlet functions)
+
+Example:  New-Alias -Name "Show-Files" Get-ChildItem (Show-Files becomes an alias for Get-ChildItem)
+
+.\<file> (Running a file)
+
+Import-Module .\<script> (Import the script so that all functions are then available within our current PowerShell console session)
+
+Get-Module (List all loaded modules and their associated commands)
+
+Get-ExecutionPolicy -List (Get current execution policy for all scopes)
+
+Set-ExecutionPolicy <Execution Policy> -Scope <Scope> (Changing the execution policy for the current process)
+
+
+
+
+
