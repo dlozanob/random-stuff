@@ -1,0 +1,13 @@
+help (See a listing of available commands)
+   help <command name> (Additional information about an specific command)
+
+<command> / (Some commands have their own help menus, therefore, this is the way to accessing these menus)
+
+cls (Clear screen)
+
+dir (Show directories and files)
+
+ipconfig (View IP address information)
+
+
+
