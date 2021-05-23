@@ -9,5 +9,33 @@ dir (Show directories and files)
 
 ipconfig (View IP address information)
 
+WMIC (Run Windows Management Instrumentation Command-Line Interface)
+
+wmic computersystem get name (Get the hostname)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WMI is a subsystem of PowerShell that provides system administrators with powerful tools for system monitoring. The goal of WMI is to consolidate device and application management across corporate networks. WMI is a core part of the Windows operating system and has come pre-installed since Windows 2000.
+
+Commands: (switches are optional)
+
+<switch> + <alias> + <verb>
+
+In cmd: wmic + <switch> + <alias> + <verb>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+WMIC /? (To view a listing of WMIC commands and aliases (aliases and switches))
+
+wmic os list brief (See information about the operating system)
+
+regedit (Open the Registry Editor) (C:\Windows\System32\Config\ Contains the entire system registry files) (The user-specific registry hive (HKCU) is stored in the user folder (i.e., C:\Windows\Users\<USERNAME>\Ntuser.dat))
+
+req <parameter> (Navegate trough the Registry Editor)
+   Example: reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run (Showing applications running under the current user while logged in to a system)
+
+
+
 
 
