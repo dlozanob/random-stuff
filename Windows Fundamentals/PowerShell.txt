@@ -1,14 +1,10 @@
-
-Note: Use Powershell instead of CMD
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Get-WmiObject <cmdlet object> (Find information about the operating system) (-ComputerName, parameter to get information about remote computers)
+Get-WmiObject <cmdlet object> (Find information about the operating system) (-ComputerName, parameter to get information about remote computers) (Uses WMI)
 Example: Get-WmiObject -Class win32_OperatingSystem | select Version,BuildNumber (Find the version and build number of our system)
                               Win32_Process (Class for getting a list of processes)
                               Win32_Service (Class for getting a list of services)
                               Win32_Bios  (BIOS information)
              
+Example: Get-WmiObject -Class Win32_OperatingSystem | select SystemDirectory,BuildNumber,SerialNumber,Version | ft (Use WMIC to get information about the operating system)                                                 
 xfreerdp /v:<targetIp> /u:<user> /p:Password (Connect via Remote Desktop (RDP)) (Uses port 3389)
 
 | (Used for collecting dat from left side as in Shell)
@@ -60,6 +56,17 @@ Get-ExecutionPolicy -List (Get current execution policy for all scopes)
 
 Set-ExecutionPolicy <Execution Policy> -Scope <Scope> (Changing the execution policy for the current process)
 
+Invoke-WmiMethod <cmdlet object> (Used to call the methods of WMI objects)
+
+  Example: Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\users\public\spns.csv'" -Name Rename -ArgumentList "C:\Users\Public\kerberoasted_users.csv" (Renaming a file)
+
+whoami /user (Information about the current user)
+
+Get-MpComputerStatus (Check which protection settings are enabled)
+
+cmd (Execute CMD)
+
+Example: Get-WmiObject win32_useraccount | Select domain,name,sid (Getting user SID for an specific user account)
 
 
 
