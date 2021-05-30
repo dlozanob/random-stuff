@@ -68,6 +68,6 @@ cmd (Execute CMD)
 
 Example: Get-WmiObject win32_useraccount | Select domain,name,sid (Getting user SID for an specific user account)
 
-
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux (Install Windows Subsystem for Linux)
 
 
