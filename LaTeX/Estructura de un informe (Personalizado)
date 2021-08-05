@@ -71,16 +71,42 @@
 
 
 \section{Resumen}
+Debe dar una visión completa del trabajo realizado, en forma breve debe describir cuál es el objetivo del
+trabajo, qué se hizo y cuál fue el resultado. No más de 150 palabras.
 
 \section{Introducción}
-\subsection{Ley de Ohm}
+En ella se exponen las motivaciones del trabajo. Mencione los objetivos perseguidos en cada práctica, o sea,
+¿qué cantidades físicas deben ser determinadas?, ¿qué leyes físicas deben ser verificadas?, ¿qué fenómenos
+deben ser estudiados? Se debe incluir la mínima explicación teórica que permite la comprensión del trabajo.
+Aplicación de esta información al experimento específico (Marco teórico).
+
+Al final de la introducción indicar el objetivo de la práctica. Esto permite vincular la introducción con la
+siguiente sección.
 
 \section{Desarrollo experimental}
+Se da un detalle de la configuración experimental utilizada, una descripción de los aspectos relevantes de los
+dispositivos y equipos de medición, especificando sus características (apreciación de instrumentos, rangos de
+medición). Se explica el método de medición. Se recomienda presentar esquemas del dispositivo empleado para
+realizar la práctica. No se deben incluir resultados.
 
 \section{Resultados y análisis de resultados}
+Se debe incluir las mediciones realizadas presentadas de la manera más apropiada, preferentemente en forma de
+gráficos (sin embargo, también pueden emplearse tablas de datos dependiendo del tipo de experimento que se
+realice). Si se presentan tablas de los datos recordar escribir sus correspondientes incertezas. En los gráficos,
+identificar claramente los nombres de cada eje y las unidades de cada uno.
+Una descripción de la forma en que fueron evaluadas las incertezas, los gráficos y los resultados con una
+descripción de cómo se obtuvieron. Se muestran los ajustes de curvas y se discuten los resultados (validez,
+
+precisión, interpretación, etc.). Proposición de un modelo para describir los resultados o comparación con un
+modelo ya planteado. Las ecuaciones que se utilizan deben estar explicitadas directamente o si ya fueron
+introducidas anteriormente (en la Introducción) a través de una cita al número de ecuación correspondiente.
 
 \section{Conclusiones}
-
+Contiene la discusión de cómo, a partir de los resultados, se demuestra aquello que se planteó como objetivo del
+trabajo. Describa sus resultados y conclusiones obtenidas, y haga un análisis de estos resultados, sin olvidar
+considerar las posibles fuentes de errores y las aproximaciones con respecto al caso ideal. Recuerde que todas
+sus conclusiones deben estar basadas en los datos experimentales, en caso contrario no deben ser
+consideradas como producto de su actividad experimental.
 
 \begin{thebibliography}{0} % Begin bibliography
 \end{thebibliography}
