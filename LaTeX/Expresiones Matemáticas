@@ -84,3 +84,16 @@
     
 • Sub-secciones de sub-secciones: \subsubsection{descripción}
   
+• Añadir imágenes:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{<image path>}
+    \caption{<description>}
+    \label{fig:my_label}
+\end{figure}
+
+
+
+
+
