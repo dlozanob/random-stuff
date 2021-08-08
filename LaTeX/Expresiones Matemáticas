@@ -13,16 +13,18 @@
 • Vectores: \Vec{F}
 • Vec. Unitarios: \hat{k}
 • Subíndices: m_{1} 
+• Superíndices: m^{2}
 • Exponentes: m^2
 • Raíces:	\sqrt{x}
 • Fracciones: \frac{a}{b+c}
 • Salto de línea: \cr
 • Triángulo: \triangle
 • Pi: \pi
-• Integral: \int_{'límite inferior'}^{'límite superior'} f(x) \cdot dx
 • Punto mult: \cdot
 • Theta: \theta
 • Salto de línea: \\
+• Sumatorio: \sum_{k = <lím inf>}^{k = <lím sup>} f(x_{i})
+• Integral definida: \int_{<lím inf>}^{lím sup} f(x) dx
 • Derivada parcial: \partial
 • Gradiente: \nabla
 • Subtítulo: \subsection
@@ -67,6 +69,7 @@
   ~ ---> \textasciitilde{}
     
 • Tablas:
+  
   Ejemplo:
     \begin{table}[H]
       \centering
@@ -94,7 +97,10 @@
     \label{fig:my_label}
 \end{figure}
 
+• Añadir una ecuación (esta será enumerada)(Solo debe ser una)
 
-
-
-
+\begin{equation}
+    .
+    .
+    .
+\end{equation}
