@@ -108,3 +108,10 @@ Ejemplo:
 
 • Comenzar nueva página: \newpage
 
+• Crear una lista:
+
+\begin{itemize}
+  \item
+\end{itemize}
+
+
