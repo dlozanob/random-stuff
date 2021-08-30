@@ -94,7 +94,7 @@ Ejemplo:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=<sizeScale>\textwidth]{<image path>}
+    \includegraphics[width = <sizeScale> \textwidth]{<image path>}
     \caption{<description>}
     \label{fig:my_label}
 \end{figure}
