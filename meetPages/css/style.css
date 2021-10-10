@@ -1,0 +1,95 @@
+body {
+	background-color: #0a0a29;
+}
+
+
+#title {
+
+	margin: 20px;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 4em;
+	font-family: 'Bebas Neue', serif;
+	text-transform: uppercase;
+	text-shadow: 5px 5px 5px #222;
+	color: #0066ff;
+
+}
+
+#header-nav {
+	background-color: #800000;
+	height: 125px;
+}
+
+
+#main-content {
+	margin: 50px;
+}
+
+#assignature-tile1, #assignature-tile2, #assignature-tile3, #assignature-tile4, #assignature-tile5 {
+	height: 150px;
+	width: 100%;
+  	position: relative;
+	border: 2px solid #cc0000;
+	overflow: hidden;
+}
+
+#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover {
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#assignature-tile1 {
+	background: url('../images/resMat.jpg') no-repeat;
+	background-position: center;
+}
+
+#assignature-tile2 {
+	background: url('../images/estructDat.jpg') no-repeat;
+	background-position: center;
+}
+
+#assignature-tile3 {
+	background: url('../images/optFis.jpg') no-repeat;
+	background-position: center;
+}
+
+#assignature-tile4 {
+	background: url('../images/cMat.jpg') no-repeat;
+	background-position: center;
+}
+
+#assignature-tile5 {
+	background: url('../images/uqbar.jpg') no-repeat;
+	background-position: center;
+}
+
+
+#assignature-tile1 span, #assignature-tile2 span, #assignature-tile3 span, #assignature-tile4 span, #assignature-tile5 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: 0.6;
+}
+
+.button-container {
+	margin-bottom:  15px;
+	width: 100%;
+	background-color: #fff;
+	border: 2px solid #cc0000;
+	border-top: 0px;
+}
+
+.expandable-button {
+	width: 100%;
+	position: relative;
+	font-family: monospace;
+	font-style: oblique;
+	font-size: 1.4em;
+}
