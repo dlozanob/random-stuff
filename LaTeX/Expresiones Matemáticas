@@ -109,6 +109,17 @@ Ejemplo:
     .
 \end{equation}
 
+
+• Añadir ecuación por partes:
+
+f(x)= \left\{ \begin{array}{lcc}
+             5 &   si  & x \leq 2 \\
+             \\ x^2-6x+10 &  si & 2 < x < 5 \\
+             \\ 4x-15 &  si  & x \geq 5
+             \end{array}
+   \right.
+
+
 • Comenzar nueva página: \newpage
 
 • Crear una lista:
