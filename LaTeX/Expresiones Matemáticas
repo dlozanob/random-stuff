@@ -1,4 +1,4 @@
-• Ecuaciones (toda expresión matemática debe ir dentro de los corchetes):
+• Añadir ecuaciones de forma simple:
 
 \[
 .
@@ -6,8 +6,6 @@
 .
 .
 \]
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 • Símbolo matemático en medio de un texto: Usar al inicio '$<expresión>$'
 • Vectores: \Vec{F}
@@ -24,6 +22,7 @@
 • Aproximación: \approx
 • Theta: \theta
 • Salto de línea: \\
+• Infinito: \infty
 • Sumatorio: \sum_{k = <lím inf>}^{k = <lím sup>} f(x_{i})
 • Integral definida: \int_{<lím inf>}^{lím sup} f(x) dx
 • Derivada parcial: \partial
@@ -50,7 +49,15 @@
     \item \textbf{Subtítulo 3}\\
       'texto'
    \end{enumerate}
-    
+
+• Añadir varias ecuaciones:
+
+\begin{gather*}
+    .
+    .
+    .
+\end{gather*}
+
 • Para poner unidades junto a su valor: \SI
   Ejemplo:
     \begin{align*}
@@ -113,11 +120,11 @@ Ejemplo:
 • Añadir ecuación por partes:
 
 f(x)= \left\{ \begin{array}{lcc}
-             5 &   si  & x \leq 2 \\
-             \\ x^2-6x+10 &  si & 2 < x < 5 \\
-             \\ 4x-15 &  si  & x \geq 5
-             \end{array}
-   \right.
+     5 &   si  & x \leq 2 \\
+     \\ x^2-6x+10 &  si & 2 < x < 5 \\
+     \\ 4x-15 &  si  & x \geq 5
+     \end{array}
+\right.
 
 
 • Comenzar nueva página: \newpage
@@ -128,4 +135,18 @@ f(x)= \left\{ \begin{array}{lcc}
   \item
 \end{itemize}
 
+
+• Crear una matriz: (matrix --> sin envolver, pmatrix --> paréntesis, bmatrix --> corchetes, Bmatrix --> llaves, vmatrix --> determinante)
+
+\begin{equation}
+  \begin{pmatrix}
+    2 & 5 & 0\\
+    7 & 3 & 8\\
+    3 & 0 & 1
+  \end{pmatrix}
+\end{equation}
+
+• Introducir espaciado horizontal: \hspace{100}
+
+• +-: \pm
 
