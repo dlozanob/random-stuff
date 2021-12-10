@@ -154,6 +154,14 @@ f(x)= \left\{ \begin{array}{lcc}
 
 \todo[⟨options⟩]{⟨todotext⟩}
 
+• To-do item relleno con color (Crear checked boxes):
+
+\todo[color=green!40]{todotext}
+
+• Añadir to-do list:
+
+\listoftodos
+
 • Cancelación de valores:
 
 \bcancel{variable}
@@ -191,3 +199,14 @@ f(x)= \left\{ \begin{array}{lcc}
     \vspace{5cm}
     {\Large Fecha \par}
 \end{titlepage}
+
+• Hacer referencia a una sección del documento:
+
+\section{My Section}
+\label{section:my}
+
+This is a reference to Section~\ref{section:my}.
+
+• Hacer referencia a una página del documento:
+
+\pageref{}
