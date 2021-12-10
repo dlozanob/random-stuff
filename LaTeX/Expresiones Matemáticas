@@ -173,3 +173,21 @@ f(x)= \left\{ \begin{array}{lcc}
 • Fecha actual:
 
 \today
+
+• Generar portadas:
+
+\begin{titlepage}
+    \centering
+    {\bfseries\LARGE Universidad Nacional de Colombia \par}
+    \vspace{1cm}
+    {\scshape\Large Facultad de Ingeniería \par}
+    \vspace{1cm}
+    {\scshape\Large Departamento de Ingeniería Mecánica y Mecatrónica \par}
+    \vspace{3cm}
+    {\scshape\Huge Título del proyecto \par}
+    \vspace{3cm}
+    {\Large Autor: \par}
+    {\Large Nombre Apellidos \par}
+    \vspace{5cm}
+    {\Large Fecha \par}
+\end{titlepage}
