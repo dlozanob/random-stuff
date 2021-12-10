@@ -150,3 +150,26 @@ f(x)= \left\{ \begin{array}{lcc}
 
 • +-: \pm
 
+• Añadir To-do item:
+
+\todo[⟨options⟩]{⟨todotext⟩}
+
+• Cancelación de valores:
+
+\bcancel{variable}
+
+• Poner unidades:
+
+\unit{km*h^2}
+
+• Notación científica:
+
+\num{-e10}
+
+• Tabla de contenidos:
+
+\tableofcontents
+
+• Fecha actual:
+
+\today
