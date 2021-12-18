@@ -61,7 +61,7 @@
 \pagestyle{fancyplain} % Tipo de encabezado
 \fancyhf{}
 
-% Creando el encabezado
+% Creando el encabezado y el pie de página
 \newsavebox{\UNl}
 \newsavebox{\UNd}
 \savebox{\UNl}{\includegraphics[scale = 0.25]{Escudo_UNAL.png}}
