@@ -3,6 +3,9 @@ Ctrl + Shift + c (Copy)
 
 Ctrl + Shift + v (Paste)
 
+CTRL + ALT + T (Open terminal)
+
+RightCtrl + F (MInimize/Maximize window)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -232,5 +235,7 @@ nmap (Port tracking)
 
 ping <ip> (Verify if you are connected to the machine)
 
+sudo reboot (Reboot system)
 
+https://programacionfacil.org/blog/cambiar-el-idioma-y-distribucion-de-teclado-en-kali-linux/
 
