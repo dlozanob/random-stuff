@@ -1,0 +1,2 @@
+CTRL + ALT + T (Open terminal)
+RightCtrl + F (MInimize/Maximize window)
