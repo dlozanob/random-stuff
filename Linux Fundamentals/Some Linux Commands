@@ -237,5 +237,4 @@ ping <ip> (Verify if you are connected to the machine)
 
 sudo reboot (Reboot system)
 
-https://programacionfacil.org/blog/cambiar-el-idioma-y-distribucion-de-teclado-en-kali-linux/
-
+sudo dpkg-reconfigure locales (Set system language)
