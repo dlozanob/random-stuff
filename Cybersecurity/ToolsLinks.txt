@@ -1,2 +1,5 @@
 https://lookup.icann.org/lookup
 https://spyse.com/
+https://www.google.com/robots.txt
+https://www.shodan.io/
+https://osintframework.com/
