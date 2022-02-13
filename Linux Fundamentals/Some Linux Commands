@@ -237,4 +237,13 @@ ping <ip> (Verify if you are connected to the machine)
 
 sudo reboot (Reboot system)
 
+sudo shutdown (Shutdown system)
+
 sudo dpkg-reconfigure locales (Set system language)
+
+sudo gufw (OPen firewall config)
+
+mousepad <text file> (Opening a text file as a window)
+
+
+
