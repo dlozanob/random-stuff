@@ -3,3 +3,6 @@ https://spyse.com/
 https://www.google.com/robots.txt
 https://www.shodan.io/
 https://osintframework.com/
+https://attack.mitre.org/
+https://ctftime.org/
+https://www.hackerone.com/
