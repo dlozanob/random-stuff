@@ -241,7 +241,7 @@ sudo shutdown (Shutdown system)
 
 sudo dpkg-reconfigure locales (Set system language)
 
-sudo gufw (OPen firewall config)
+sudo gufw (Open firewall config)
 
 mousepad <text file> (Opening a text file as a window)
 
@@ -251,3 +251,6 @@ lolcat (rainbow coloring effect for text console display)
 
 mousepad .bashrc (Add at the end of the script 'neofetch | lolcat' for setting a rainbow colored ASCII image when open the terminal)
 
+figlet (Create cool fonts)
+
+sudo thunar (Abrir explorador de archivos con todos los permisos)
