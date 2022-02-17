@@ -254,3 +254,7 @@ mousepad .bashrc (Add at the end of the script 'neofetch | lolcat' for setting a
 figlet (Create cool fonts)
 
 sudo thunar (Abrir explorador de archivos con todos los permisos)
+
+telnet <IP> (Acceder a una máquina que usa el protocolo telnet)
+
+
