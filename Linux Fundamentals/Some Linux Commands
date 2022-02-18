@@ -257,4 +257,4 @@ sudo thunar (Abrir explorador de archivos con todos los permisos)
 
 telnet <IP> (Acceder a una máquina que usa el protocolo telnet)
 
-
+ftp <IP> (Acceder a una máquina que usa el protocolo ftp) (Al acceder a una màquina mediante este protocolo se abrirá una interfaz de comandos propia de ftp)
