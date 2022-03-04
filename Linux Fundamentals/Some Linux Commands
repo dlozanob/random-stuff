@@ -249,7 +249,7 @@ mousepad <text file> (Opening a text file as a window)
 
 neofetch (Dislays system information with an ASCII image)
 
-lolcat (rainbow coloring effect for text console display)
+lolcat (Rainbow coloring effect for text console display)
 
 mousepad .bashrc (Add at the end of the script 'neofetch | lolcat' for setting a rainbow colored ASCII image when open the terminal)
 
@@ -260,3 +260,5 @@ sudo thunar (Abrir explorador de archivos con todos los permisos)
 telnet <IP> (Acceder a una máquina que usa el protocolo telnet)
 
 ftp <IP> (Acceder a una máquina que usa el protocolo ftp) (Al acceder a una màquina mediante este protocolo se abrirá una interfaz de comandos propia de ftp)
+
+./ (Runs an executable)
