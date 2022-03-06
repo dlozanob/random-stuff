@@ -131,7 +131,7 @@ fg <ID> (Return a process to the foregorund)
 
 apt install apache2 -y (Install the Apache web service)
 
-// The programms available on the apache2 web server are located in '/var/www/html'
+// The programms available on the apache2 web server are located in '/var/www/html' 
 
 curl <url> (Give us information about the structure of the page)
 
