@@ -6,3 +6,5 @@ https://osintframework.com/
 https://attack.mitre.org/
 https://ctftime.org/
 https://www.hackerone.com/
+https://github.com/WebGoat/WebGoat
+https://dvwa.co.uk
