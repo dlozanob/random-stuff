@@ -57,33 +57,33 @@ color: #0066ff;
 }
 
 #assignature-tile1 {
-	background: url('../images/resMat.jpg') no-repeat;
+	background: url('../images/varComp.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile2 {
-	background: url('../images/estructDat.jpg') no-repeat;
+	background: url('../images/procMan.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile3 {
-	background: url('../images/optFis.jpg') no-repeat;
+	background: url('../images/ingEco.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile4 {
-	background: url('../images/cMat.jpg') no-repeat;
+	background: url('../images/electD.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile5 {
-	background: url('../images/uqbar.jpg') no-repeat;
+	background: url('../images/electA.jpg') no-repeat;
 	background-position: center;
 }
 
 
 #assignature-tile6 {
-	background: url('../images/electA.jpg') no-repeat;
+	background: url('../images/uqbar.jpg') no-repeat;
 	background-position: center;
 }
 
