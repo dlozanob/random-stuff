@@ -1,0 +1,59 @@
+// Fields are the titles of the columns, rows are called records
+// A table is an arrangement of related data
+// A database contains one or more tables
+// Each SQL command-line contains a ';' at the end
+
+// Main statements:
+
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+
+SELECT <field> FROM <table>; // The select command shows an specified column from a table, Use '*' for all.
+SELECT <field1>, <field2> FROM <table>; // Selecting multiple fields at once.
+
+// Fields and statements are not case-sensitive.
+
+SELECT DISTINCT <field> FROM <table>; // The 'DISTINCT' statement removes duplicated values.
+SELECT COUNT(DISTINCT <field>) FROM <table>; // Returns the number of records that are different each other.
+
+// The 'WHERE' clause is used for requirements specifying a condition.
+
+SELECT * FROM Customers WHERE Country='Mexico'; // Selects all the records whose country is Mexico.
+// The example is in the form: SELECT * FROM <table> WHERE <field>='<value>'
+// Numeric values are not enclosed in quotes.
+
+// Operators used in the WHERE clause:
+=	            Equal	
+>	            Greater than	
+<	            Less than	
+>=	          Greater than or equal	
+<=	          Less than or equal	
+<>	          Not equal. Note: In some versions of SQL this operator may be written as !=	
+BETWEEN	      Between a certain range	
+LIKE	        Search for a pattern	
+IN	          To specify multiple possible values for a column
+
+// We can use the 'NOT', 'AND', 'OR' operators to set a conditional
+
+SELECT * FROM Customers WHERE Country='Germany' AND (City='Berlin' OR City='München'); // Will display customers whose country is Germany and whose city is Berlin or München.
+
+
+
+
+
+https://www.w3schools.com/sql/sql_and_or.asp
+
+
+
+
+
