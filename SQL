@@ -83,6 +83,35 @@ SELECT <field> FROM <table> FETCH FIRST <n records to show> ROWS ONLY;
 SELECT TOP <percentage of records to show> PERCENT <field> FROM <table>; // SQL Server/MS Access option.
 SELECT <field> FROM <table> FETCH FIRST <percentage of records to show> PERCENT ROWS ONLY; // Oracle option.
 
+SELECT * FROM Customers WHERE Country='Germany' LIMIT 3; // Example using a condition.
+
+// The 'MAX()' and 'MIN()' functions returns the maximum and minimum values respectively for a given field.
+SELECT MIN(<field>) FROM <table> WHERE <condition>;
+SELECT MIN(Price) AS SmallestPrice FROM Products; // Returns the minimum value of the Price column, and the title of the output is 'SmallestPrice'.
+
+// The 'COUNT()' function returns the number of records for a specified field.
+SELECT COUNT(<field>) FROM <table> WHERE <condition>;
+
+// For getting the average of the values in a column, we use the 'AVG()' function.
+SELECT AVG(<field>) FROM <table> WHERE <condition>;
+
+// The 'SUM()' function returns the total sum of a numeric column. 
+SELECT SUM(<field>) FROM <table> WHERE <condition>;
+// If we take an alphabetic column for these functions, the output will be 0.
+
+// The 'LIKE' clause is used for specifying patterns.
+SELECT * FROM <table> WHERE <field> LIKE <pattern>;
+// Some wildcards are used in patterns. '%' for 0, 1 or more characters, '_' for only 1 character.
+SELECT * FROM Customers WHERE ContactName LIKE 'a_%o'; // The words must starts with a, there is at least 2 characters, then we can find any length after those 2.
+SELECT * FROM Customers WHERE City NOT LIKE 'a%'; // All the city records that don't start with the letter 'a'. 
+
+
+
+
+https://www.w3schools.com/sql/sql_wildcards.asp
+
+
+
 
 
 
