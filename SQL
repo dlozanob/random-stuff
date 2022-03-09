@@ -47,11 +47,53 @@ IN	          To specify multiple possible values for a column
 
 SELECT * FROM Customers WHERE Country='Germany' AND (City='Berlin' OR City='München'); // Will display customers whose country is Germany and whose city is Berlin or München.
 
+// The ORDER keyword is used to sort the information. It could be ASC (ascendent) or DESC (descendant). Ascendant order by default.
+
+SELECT <field> FROM <table> ORDER BY <field> ASC|DESC;
+SELECT * FROM Customers ORDER BY Country DESC; // We are sorting descendant alphabetically by country in this example.
+SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC; // For duplicated cases it'll take descendant alphabetically order based on CustomerName field.
+
+// The 'INSERT INTO' statement adds data to a table
+INSERT INTO <table> (<field1>, <field2>, ...) VALUES (<value1>, <value2>, ...)
+// If no values are specified for any field, then that value will be null by default.
+INSERT INTO <table> VALUES (<value1>, <value2>, ...); // It is possible as well to just specify the values so they will fill the columns in order.
+
+// The 'IS NULL' operator tell us if a value is null.
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL; // Example using the NULL operator.
+// It is possible to use it with the 'NOT' operator.
+
+// The 'UPDATE' statement modifies data from a record.
+UPDATE <table> SET <field1> = <value1>, <field2> = <value2>, ... WHERE <condition>;
+UPDATE Customers SET ContactName = 'Alfred Schmidt', City= 'Frankfurt' WHERE CustomerID = 1;
+
+// We can delete existing records from a table by using the 'DELETE' statement.
+DELETE FROM <table> WHERE <condition>;
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+// If no condition specified we'll delete all the records from a table.
+
+// The 'SELECT TOP' clause is used to specify the number of records to return.
+// MySQL supports the 'LIMIT' clause to select a limited number of records, while Oracle uses 'FETCH FIRST n ROWS ONLY' and 'ROWNUM'.
+SELECT TOP <n records to show> <field> FROM <table>;
+// The 'LIMIT' clause is used for the same purposes.
+SELECT <field> FROM <table> LIMIT <n records to show>;
+// In Oracle the equivalent is:
+SELECT <field> FROM <table> FETCH FIRST <n records to show> ROWS ONLY;
+
+// Displaying a percent of records:
+SELECT TOP <percentage of records to show> PERCENT <field> FROM <table>; // SQL Server/MS Access option.
+SELECT <field> FROM <table> FETCH FIRST <percentage of records to show> PERCENT ROWS ONLY; // Oracle option.
 
 
 
 
-https://www.w3schools.com/sql/sql_and_or.asp
+
+
+
+
+
+
+
+
 
 
 
