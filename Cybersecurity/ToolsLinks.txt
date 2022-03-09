@@ -8,3 +8,4 @@ https://ctftime.org/
 https://www.hackerone.com/
 https://github.com/WebGoat/WebGoat
 https://dvwa.co.uk
+https://www.w3schools.com/
