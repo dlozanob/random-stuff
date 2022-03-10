@@ -44,7 +44,7 @@ color: #0066ff;
 	margin: 50px;
 }
 
-#assignature-tile1, #assignature-tile2, #assignature-tile3, #assignature-tile4, #assignature-tile5, #assignature-tile6 {
+#assignature-tile1, #assignature-tile2, #assignature-tile3, #assignature-tile4, #assignature-tile5, #assignature-tile6, #assignature-tile7 {
 	height: 150px;
 	width: 100%;
   position: relative;
@@ -52,7 +52,7 @@ color: #0066ff;
 	overflow: hidden;
 }
 
-#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover {
+#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover, #assignature-tile7:hover {
 	box-shadow: 0 1px 5px 1px #cccccc;
 }
 
@@ -81,14 +81,18 @@ color: #0066ff;
 	background-position: center;
 }
 
-
 #assignature-tile6 {
+	background: url('../images/aplFinitos.jpg') no-repeat;
+	background-position: center;
+}
+
+#assignature-tile7 {
 	background: url('../images/uqbar.jpg') no-repeat;
 	background-position: center;
 }
 
 
-#assignature-tile1 span, #assignature-tile2 span, #assignature-tile3 span, #assignature-tile4 span, #assignature-tile5 span, #assignature-tile6 span {
+#assignature-tile1 span, #assignature-tile2 span, #assignature-tile3 span, #assignature-tile4 span, #assignature-tile5 span, #assignature-tile6 span, #assignature-tile7 span {
 	position: absolute;
 	top: 0;
 	left: 0;
