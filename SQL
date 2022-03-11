@@ -105,10 +105,49 @@ SELECT * FROM <table> WHERE <field> LIKE <pattern>;
 SELECT * FROM Customers WHERE ContactName LIKE 'a_%o'; // The words must starts with a, there is at least 2 characters, then we can find any length after those 2.
 SELECT * FROM Customers WHERE City NOT LIKE 'a%'; // All the city records that don't start with the letter 'a'. 
 
+// Another wildcars are:
+// MS Access wildcards:
+*	      Represents zero or more characters
+?	      Represents a single character
+[]	    Represents any single character within the brackets
+!	      Represents any character not in the brackets
+-	      Represents any single character within the specified range
+#	      Represents any single numeric character
+
+// SQL Server wildcards:
+%	      Represents zero or more characters
+_	      Represents a single character
+[]	    Represents any single character within the brackets
+^	      Represents any character not in the brackets
+-	      Represents any single character within the specified range
+
+// The 'IN' statement allows to put different parameters to the 'WHERE' clause.
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK'); // Country must be one of those countries for selecting.
+SELECT * FROM Customers WHERE Country IN (SELECT Country FROM Suppliers); // Selecting countries that belongs to Customers and Suppliers tables.
+
+// The 'BETWEEN' statement select an inclusive range of numbers, text or dates.
+SELECT * FROM Products WHERE Price NOT BETWEEN 10 AND 20; // Not between that numeric range.
+SELECT * FROM Products WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni' ORDER BY ProductName; // Text range alphabetically.
+SELECT * FROM Orders WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#; // Range for dates.
+SELECT * FROM Orders WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31'; // Also we can enclose dates with ''.
+
+
+// We can set aliases to columns or tables in order to make it easy to write statements and read data.
+// An alias only exists for the duration of that query.
+// The 'AS' keyword sets aliases.
+SELECT <field> AS <field_alias> FROM <table>; // Setting an alias to a field.
+SELECT <field> FROM <table> AS <table_alias>; // Setting an alias to a table.
+SELECT CustomerID AS ID, CustomerName AS Customer FROM Customers; // The programm will displays the name of those fields as their alias.
+SELECT CustomerName AS Customer, ContactName AS [Contact Person] FROM Customers; // If an alias contains spaces we use square brackets.
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address FROM Customers; // We are putting together the Adress, PostalCode, City and Country columns in one. That combined column is aliased 'Adress'.
+SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address FROM Customers; // Doing the same as above for MySQL.
+SELECT o.OrderID, o.OrderDate, c.CustomerName FROM Customers AS c, Orders AS o WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID; // Here are 2 tables, we define aliases for them, and reference those tables through their aliases.
+SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName FROM Customers, Orders WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.CustomerID; // Extended alternative without aliases.
+
+// The 'JOIN' clause is used to combine rows from two or more tables.
 
 
 
-https://www.w3schools.com/sql/sql_wildcards.asp
 
 
 
