@@ -1,0 +1,35 @@
+// Definimos un entity (puertos de salida y de entrada), y architecture (la lógica adentro de la caja).
+
+// Existen 5 clases primarias: bit, bit_vector, std_logic, std_logic_vector, integer.
+
+// Ctrl + q --> Comentar ; Ctrl + shift + q --> Descomentar.
+
+// Tools/netlist viewers/RTL viewer. (Para ver el diagrama que se genera)
+
+entity <nombre del archivo> is
+
+  port
+  (
+    -- Input ports
+   
+   // Es posible definir los puertos de manera individual, o definir varios a la vez con un vector.
+  
+  <nombre del puerto> : <tipo de puerto>;
+  <nombre del vector de puertos> : in <tipo de vector de puertos>(<índice superior> downto <índice inferior>);
+
+  
+  -- Output ports
+  <nombre del puerto> : out <tipo del puerto>
+  
+  );
+  
+ end <nombre del archivo>;
+ 
+ architecture <nombre de la arquitectura> of <nombre del archivo> is
+    signal <puertos de salida separados con ','> : <tipo de los puertos>;
+    
+    
+    
+    
+    
+    
