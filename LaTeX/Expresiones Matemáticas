@@ -216,3 +216,12 @@ This is a reference to Section~\ref{section:my}.
 
 \overline{abcd}
 
+• Centrar un segmento de texto:
+
+\begin{center}
+   .
+   .
+   .
+\end{center}
+
+
