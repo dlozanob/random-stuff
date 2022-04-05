@@ -1,0 +1,10 @@
+// Pasar a una cheatsheet
+// Flujos de salida negativos
+// Usar tasas de interés con '%'
+
+VF() // (F/P, i, n)
+PAGO() // (A/P. i. n)
+INT.EFECTIVO() // Interés efectivo anual
+NPER() // Hallar n con VF, VA, i
+TASA() // Hallar i con VF, VA, i
+TASA.NOMINAL() // Hallamos tasa nominal a partir de una tasa efectiva
