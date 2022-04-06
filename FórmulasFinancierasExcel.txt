@@ -2,9 +2,10 @@
 // Flujos de salida negativos
 // Usar tasas de interés con '%'
 
-VF() // (F/P, i, n)
-PAGO() // (A/P. i. n)
+VA() // Valor presente
+VF() // Valor futuro
+PAGO() // Anualidad
 INT.EFECTIVO() // Interés efectivo anual
-NPER() // Hallar n con VF, VA, i
-TASA() // Hallar i con VF, VA, i
+NPER() // Número de periodos
+TASA() // Tasa de interés
 TASA.NOMINAL() // Hallamos tasa nominal a partir de una tasa efectiva
