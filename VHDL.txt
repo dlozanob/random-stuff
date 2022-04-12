@@ -14,7 +14,7 @@ entity <nombre del archivo> is
    
    // Es posible definir los puertos de manera individual, o definir varios a la vez con un vector.
   
-  <nombre del puerto> : <tipo de puerto>;
+  <nombre del puerto> : in <tipo de puerto>;
   <nombre del vector de puertos> : in <tipo de vector de puertos>(<índice superior> downto <índice inferior>);
 
   
