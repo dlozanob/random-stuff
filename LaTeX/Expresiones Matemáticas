@@ -22,6 +22,7 @@
 • Punto mult: \cdot
 • Aproximación: \approx
 • Theta: \theta
+• Diámetro: \varnothing
 • Salto de línea: \\
 • Infinito: \infty
 • Sumatorio: \sum_{k = <lím inf>}^{k = <lím sup>} f(x_{i})
