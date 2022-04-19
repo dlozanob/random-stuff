@@ -224,4 +224,21 @@ This is a reference to Section~\ref{section:my}.
    .
 \end{center}
 
+* Ejemplo:
+\begin{center}
+    \begin{align*}
+        % Este espacio es necesario
+        E = 21 \unit{V} \\
+        I = 185 \unit{A} \\
+        A_{W} = 75 \unit{mm^2} \\
+        f_{1} = 0.9 \\
+        f_{2} = 0.6 \\
+        k = 3.33x\num{e-6} \\
+        T_{m} = 1670 \unit{°K} \\
+        v = ?
+    \end{align*}
+\end{center}
+
+
+
 
