@@ -227,7 +227,7 @@ This is a reference to Section~\ref{section:my}.
 * Ejemplo:
 \begin{center}
     \begin{align*}
-        % Este espacio es necesario
+        % Este espacio es necesario (Borrar este comentario)
         E = 21 \unit{V} \\
         I = 185 \unit{A} \\
         A_{W} = 75 \unit{mm^2} \\
