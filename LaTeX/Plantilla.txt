@@ -28,6 +28,7 @@
 \usepackage{vmargin} % Márgenes y dimensionamiento
 \usepackage{siunitx} % Manejo de unidades
 \usepackage[usestackEOL]{stackengine} % Permite apilar objetos 
+\usepackage[document]{ragged2e} % Alineación de texto
 % ////////////////////////////////////////////////////////////%
 
 % /////////////////////CONFIGURACIONES////////////////////////%
