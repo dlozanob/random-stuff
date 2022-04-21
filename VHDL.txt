@@ -6,30 +6,102 @@
 
 // Tools/netlist viewers/RTL viewer. (Para ver el diagrama que se genera)
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Librerías comúnmente usadaas
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
 entity <nombre del archivo> is
 
-  port
-  (
+  port(
     -- Input ports
-   
-   // Es posible definir los puertos de manera individual, o definir varios a la vez con un vector.
-  
-  <nombre del puerto> : in <tipo de puerto>;
-  <nombre del vector de puertos> : in <tipo de vector de puertos>(<índice superior> downto <índice inferior>);
+    // Es posible definir los puertos de manera individual, o definir varios a la vez con un vector.
+    <nombre del puerto> : in <tipo de puerto>;
+    <nombre del vector de puertos> : in <tipo de vector de puertos>(<índice superior> downto <índice inferior>);
 
+    -- Output ports
+    <nombre del puerto> : out <tipo del puerto>);
   
-  -- Output ports
-  <nombre del puerto> : out <tipo del puerto>
-  
-  );
-  
- end <nombre del archivo>;
+end <nombre del archivo>;
  
- architecture <nombre de la arquitectura> of <nombre del archivo> is
-    signal <puertos de salida separados con ','> : <tipo de los puertos>;
+architecture <nombre de la arquitectura> of <nombre del archivo> is
     
+    // Declaramos puertos de entrada, salida e intermedios si es necesario
+    signal <nombre del puerto> : <tipo de puerto>;
     
+    // Podemos traer componentes antes hechos e integrarlos en un archivo de ensamble
+    component comp_bits
+      port(
+        A, B : in std_logic;
+        D, C, E: out std_logic);
+    end component;    
     
+    begin
     
+    // Podemos instanciar un componente antes definido (Se pueden instanciar varios objetos del mismo componente)
+    comp3 : comp_bits
+      port map(
+        A => A(3),
+        B => B(3),
+        D => D(3),
+        C => C(3),
+        E => E(3)
+      );
+
+    // Instanciación simplificada (Lo imporante aquí es colocar las señales en el mismo orden en el que estén en su declaración).
+    comp2 : comp_bits port map(A(2), B(2), D(2), C(2), E(2));    
     
+
+    // Tenemos distintas maneras de describir la arquitectura de hardware
     
+    -- Descripcion estructural
+      Y0 <= D(0) and (not S(0)) and (not S(1));
+      Y1 <= D(1) and S(0) and (not S(1));
+      Y2 <= D(2) and (not S(0)) and S(1);
+      Y3 <= D(3) and S(0) and S(1);
+      Y <= Y0 or Y1 or Y2 or Y3;
+ 
+    -- Descripción secuencial
+     process(S, D) is
+     begin	
+      case S is
+        when "00" =>
+          Y <= D(0);
+        when "01" =>
+          Y <= D(1);
+        when "10" =>
+          Y <= D(2);
+        when others =>
+          Y <= D(3);
+      end case;	
+     end process;
+     
+    -- Descripcion algoritmica concurrente
+      with S select
+      Y <= D(0) when "00",
+          D(1) when "01",
+          D(2) when "10",
+          D(3) when others;
+    
+    // Con base a una señal de pulso (como por ejemplo el pulso de clock) podemos usar condicionales cuando hayan flancos de subida o de bajada
+
+    process(clk)
+    begin
+      if rising_edge(clk) then
+        .
+        .
+        .
+       end if;
+    end process;   
+    
+       
+
+
+
+
+
+end <nombre de la arquitectura>;
