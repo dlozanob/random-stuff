@@ -9,3 +9,5 @@ INT.EFECTIVO() // Interés efectivo anual
 NPER() // Número de periodos
 TASA() // Tasa de interés
 TASA.NOMINAL() // Hallamos tasa nominal a partir de una tasa efectiva
+VNA() // Método del VPN. Se deben omitir los datos en el año 0 y sumarlos al final (la función toma el primer valor en año 1)
+TIR() // Calcula la tasa interna de retorno
