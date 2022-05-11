@@ -242,9 +242,9 @@ This is a reference to Section~\ref{section:my}.
 
 • Ecuaciones con múltiples líneas:
 
-\begin{multiline*}
+\begin{multline*}
 
-\end{multiline*}
+\end{multline*}
 
 
 
