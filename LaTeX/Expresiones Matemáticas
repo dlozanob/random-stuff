@@ -240,6 +240,12 @@ This is a reference to Section~\ref{section:my}.
     \end{align*}
 \end{center}
 
+• Ecuaciones con múltiples líneas:
+
+\begin{multiline*}
+
+\end{multiline*}
+
 
 
 
