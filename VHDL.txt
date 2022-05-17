@@ -43,6 +43,7 @@ architecture <nombre de la arquitectura> of <nombre del archivo> is
     begin
     
     // Podemos instanciar un componente antes definido (Se pueden instanciar varios objetos del mismo componente)
+    // No están permitidos los operadores lógicos dentro de un port map
     comp3 : comp_bits
       port map(
         A => A(3),
