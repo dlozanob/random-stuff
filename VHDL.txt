@@ -100,20 +100,22 @@ architecture <nombre de la arquitectura> of <nombre del archivo> is
     end process;   
     
     
-    // Para generar condicionales
-    
+    // Condicional
     if <condition> then
     
     else
     
     end if;
 
-    // Para ciclo for
-
+    // Ciclo for
     for <iterador> in <limInf> to <limSup> loop
     
     end loop;
     
+    // Ciclo while
+    while <condition> loop
+    
+    end loop;
     
     
 end <nombre de la arquitectura>;
