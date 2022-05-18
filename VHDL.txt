@@ -102,7 +102,7 @@ architecture <nombre de la arquitectura> of <nombre del archivo> is
     
     // Condicional
     if <condition> then
-    
+    elsif <condition> then
     else
     
     end if;
