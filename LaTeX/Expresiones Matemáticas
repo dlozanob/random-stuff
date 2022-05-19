@@ -99,6 +99,20 @@ Ejemplo:
   \label{tab:my_label}
 \end{table}
     
+    
+• Tabla (Plantilla):
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+
+    \hline
+    \multicolumn{6}{|c|}{<title>} \\ \hline
+    x & x & x & x & x & x \\ \hline  
+  
+  \end{tabular}
+\end{center}
+    
+    
 • Sub-secciones de sub-secciones: \subsubsection{descripción}
   
 • Añadir imágenes:
