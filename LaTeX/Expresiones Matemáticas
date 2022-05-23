@@ -7,6 +7,10 @@
 .
 \]
 
+
+• Para formato IEEE con doble columna:
+\documentclass[Journal]{IEEEtran}
+
 • Símbolo matemático en medio de un texto: Usar al inicio '$<expresión>$'
 • Vectores: \Vec{F}
 • Vec. Unitarios: \hat{k}
@@ -260,6 +264,9 @@ This is a reference to Section~\ref{section:my}.
 
 \end{multline*}
 
+• Para resumenes (abstracts):
 
+\begin{abstract}
+\end{abstract}
 
 
