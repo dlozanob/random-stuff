@@ -36,6 +36,7 @@
 • Subtítulo: \subsection
 • Texto en negrilla: \textbf
 • Espacio entre párrafos: \bigskip
+• Símbolo de barra sobre una letra: \bar{}
 
 
 • Referenciar una cita: \cite{Nombre de la cita}
