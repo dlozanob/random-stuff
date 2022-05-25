@@ -36,7 +36,7 @@
 • Subtítulo: \subsection
 • Texto en negrilla: \textbf
 • Espacio entre párrafos: \bigskip
-• Símbolo de barra sobre una letra: \bar{}
+• Símbolo de barra sobre una letra: \overline{}
 
 
 • Referenciar una cita: \cite{Nombre de la cita}
@@ -271,4 +271,4 @@ This is a reference to Section~\ref{section:my}.
 \end{abstract}
 
 • Letra cursiva:
-\textit{}
+\textit{} ; \emph{}
