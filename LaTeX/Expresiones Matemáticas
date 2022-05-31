@@ -37,7 +37,7 @@
 • Texto en negrilla: \textbf
 • Espacio entre párrafos: \bigskip
 • Símbolo de barra sobre una letra: \overline{}
-
+• Suma exclusiva: \oplus{}
 
 • Referenciar una cita: \cite{Nombre de la cita}
 • Hacer una bibliografía:
