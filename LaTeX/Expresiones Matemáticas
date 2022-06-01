@@ -122,7 +122,7 @@ Ejemplo:
   
 • Añadir imágenes:
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width = <sizeScale> \textwidth]{<image path>}
     \caption{<description>}
