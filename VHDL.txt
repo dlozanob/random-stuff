@@ -117,5 +117,11 @@ architecture <nombre de la arquitectura> of <nombre del archivo> is
     
     end loop;
     
+    // Múltiples casos (a se asigna a b)
+    with a select b <=
+      "1000" when "00",
+      "0100" when "01",
+      "0010" when "10",
+      "0001" when "11";
     
 end <nombre de la arquitectura>;
