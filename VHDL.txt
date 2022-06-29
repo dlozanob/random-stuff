@@ -117,8 +117,8 @@ architecture <nombre de la arquitectura> of <nombre del archivo> is
     
     end loop;
     
-    // Múltiples casos (a se asigna a b)
-    with a select b <=
+    // Múltiples casos (Se asignan valores a B, de acuerdo al estado de A)
+    with A select B <=
       "1000" when "00",
       "0100" when "01",
       "0010" when "10",
