@@ -122,6 +122,7 @@ architecture <nombre de la arquitectura> of <nombre del archivo> is
       "1000" when "00",
       "0100" when "01",
       "0010" when "10",
-      "0001" when "11";
+      "0001" when "11",
+      "1111" when others;
     
 end <nombre de la arquitectura>;
