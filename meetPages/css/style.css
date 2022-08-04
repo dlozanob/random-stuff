@@ -1,5 +1,5 @@
 body {
-	background-color: #0a0a29;
+	background-color: #421c2d;
 }
 
 
@@ -19,13 +19,13 @@ font-family: 'Bebas Neue', serif;
 
 text-transform: uppercase;
 
-text-shadow: 5px 5px 5px #222;
+text-shadow: 7px 7px 4px #222;
 
 color: #0066ff;
 }
 
 #header-nav {
-	background-color: #800000;
+	background-color: #000000;
 	height: 125px;
 	border-radius: 0px;
 }
@@ -36,8 +36,7 @@ color: #0066ff;
     top: -80px;
     left: 80vw;
     font-size: 50px;
-    color: black;
-
+    color: white;
 }
 
 #main-content {
@@ -62,32 +61,32 @@ color: #0066ff;
 }
 
 #assignature-tile2 {
-	background: url('../images/procMan.jpg') no-repeat;
+	background: url('../images/redes.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile3 {
-	background: url('../images/ingEco.jpg') no-repeat;
+	background: url('../images/metNum.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile4 {
-	background: url('../images/electD.jpg') no-repeat;
+	background: url('../images/senSist.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile5 {
-	background: url('../images/electA.jpg') no-repeat;
+	background: url('../images/disMec.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile6 {
-	background: url('../images/aplFinitos.jpg') no-repeat;
+	background: url('../images/micro.jpg') no-repeat;
 	background-position: center;
 }
 
 #assignature-tile7 {
-	background: url('../images/uqbar.jpg') no-repeat;
+	background: url('../images/.jpg') no-repeat;
 	background-position: center;
 }
 
@@ -163,10 +162,9 @@ color: #0066ff;
 
 #header-nav2 {
 	text-align: center;
-	background-color: #00c6fc;
-  border-radius: 40px;
-  border: 3px solid #fff;
-
+	background-color: #080708;
+	border-radius: 40px;
+	border: 3px solid #fff;
 }
 
 #title2 {
@@ -182,5 +180,5 @@ color: #0066ff;
 }
 
 .jumbotron {
-	background-color: #86a2d5;
+	background-color: #301129;
 }
