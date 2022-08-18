@@ -1,0 +1,57 @@
+Usa abreviaturas en inglés para dar instrucciones
+
+Un programa se organiza en 4 secciones:
+- Inclusión de librerías y definición de símbolos
+- Directivas de configuración: Ajustan parámetros generales del funcionamiento del microcontrolador
+- Definición de variables: No hay tipos de variables. Cada una tiene el tamaño de bits del micro.
+- Instrucciones del ensamblador
+
+El set de instrucciones RISC dota al microcontrolador de 75 instrucciones estándar y 8 especiales.
+
+Tipos de instrucciones:
+- Según su operación:
+  - Operaciones orientadas a byte: Operaciones aritméticas, lógicas, o de movimiento a un registro o variable.
+  - Operaciones orientadas a bit: Operan un solo bit de registro o variable.
+  - Operación de control: Consultan o manipulan los registros de la CPU (a excepción del registro W).
+  - Operación de constantes: Utilizan una constante para su ejecución.
+  - Operaciones de manejo de tablas: Permiten la lectura o escritura de memorias FLASH.
+  - Operación de set extendido: Añadidas para realizar funciones especiales.
+  
+- Según el modo de direccionamiento:
+  - Inherente: No requieren operandos para su ejecución.
+  - Inmediato: Operan con constantes en operaciones aritmético-lógicas.
+  - Directo: Operan con un registro o variable que es especificado como operando.
+  - Relativo: Saltan a un bloque del programa dependiendo del estado de una variable. (Saltan a posiciones de memoria cercanas)
+  - Extendido: Saltan a cualquier posición de memoria. Funciona como el relativo.
+  - Indirecto: Usan apuntadores para manipular registros y variables.
+  
+- Según el espacio que ocupan en memoria:
+  MOVFF, CALL, GOTO, MOVSF, MOVSS ocupan 4 bytes. El resto de instrucciones ocupan 2 bytes.
+
+- Según el tiempo que tardan en ejecutarse:
+  - 1 Ciclo de bus
+  - 2 Ciclos de bus
+  - 3 Ciclos de bus
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Para incluir librerías se usa
+include <nombre de la librería>.inc
+
+// Incluimos la librería del microcontrolador
+include P18F4550.inc
+
+// Definición de variables. La posición de memoria está en el rango 000h - FFFh (h denota hexadecimal)
+<nombre de la variable> equ <posición de memoria>
+
+// Ejemplo de definición de variable
+aux1 equ 1h
+
+// Comentarios
+;<Comentario>
+
+// Constantes: .<número>; ASCII: '<código ASCII>'; Hexadecimal: 0x<número>; Binario: b'<número de 8 bits>'; Octal: o'<número>'
+
+
+
+
