@@ -89,3 +89,116 @@ Menu
 ;<Comentario>
 
 // Constantes: .<número>; ASCII: '<código ASCII>'; Hexadecimal: 0x<número>; Binario: b'<número de 8 bits>'; Octal: o'<número>'
+
+
+// Sentencias
+
+//IF
+// Condicional sobre un bit. En caso de RC0=1, se salta la línea goto. Si la condición no se cumple, no se salta la línea.
+// btfss --> Pregunta si el bit es 1; btfsc --> Pregunta si el bit es 0
+MENU
+  ***********************************
+  btfss PORTC,0 ;RC0==1?
+  goto SIGUIENTE
+  nop
+  ***********************************
+SIGUIENTE 
+
+// Condicional sobre una variable
+MENU
+  ***********************************
+  tstfsz var1 ;var1==0?
+  goto SIGUIENTE
+  nop
+  ***********************************
+SIGUIENTE 
+
+// Condicional sobre la comparación de variables
+MENU
+  ***********************************
+  movf var1,w ;Cargamos la variable al registro W
+  cpfseq var2 ;var1==var2?
+  goto Siguiente
+  nop
+  ***********************************
+SIGUIENTE
+
+MENU
+  ***********************************
+  movf var1,w ;Cargamos la variable al registro W
+  cpfsgt var2 ;var1>var2?
+  goto Siguiente
+  nop
+  ***********************************
+SIGUIENTE 
+
+MENU
+  ***********************************
+  movf var1,w ;Cargamos la variable al registro W
+  cpfslt var2 ;var1<var2?
+  goto Siguiente
+  nop
+  ***********************************
+SIGUIENTE 
+
+// Condicional sobre los acarreos
+// bc hace un salto relativo
+MENU
+  ***********************************
+  movf var1,w ;Cargamos la variable al registro W
+  addwf var2,w ;Se suma var2 con la variable presente en W (var1). El resultado se guarda en W.
+  bc HayAcarreo ;C==1?
+  ***********************************
+HayAcarreo
+
+// Condicional con sentencia ELSE
+
+Menu
+  ***********************************
+  btfss PORTC,0 ;RC0==1?
+  goto Apagar
+  goto Encender
+Encender
+  ***********************************
+    goto Siguiente
+Apagar    
+  ***********************************  
+Siguiente 
+
+// SWITCH
+// opc será nuestra variable de control con la cual comparamos todos los casos
+Sentencia_SWITCH
+  movlw A
+  cpfseq opc ;opc==A?
+  goto PreguntarB
+  goto CasoA
+PreguntarB
+  movlw B
+  cpfseq opc ;opc==B?
+  goto PreguntarC
+  goto CasoB
+PreguntarC
+
+// WHILE o REPEAT
+CicloWhile
+  btfss PORTB,0 ;RB0==1?
+  goto FinCiclo
+  ***********************
+  goto CicloWhile
+FinCiclo
+  ***********************
+
+// FOR
+// contador es nuestra variable de control
+InicioCicloFor
+  clrf contador
+CicloFor
+  movlw .5 ;Cargamos al registro W un tope igual a 5
+  cpfslt contador ;contador<5?
+  goto FinCiclo
+  ***********************
+  incf contador,f ;Incrementamos el contador en 1 y lo sobreescribimos
+  goto CicloFor
+FinCiclo
+  ***********************
+  
