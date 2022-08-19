@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+;Primera sección - Inclusión de librerías
+include P18F4550.inc
+    
+;Segunda sección - Directivas de configuración
+    
+;Tercera sección - Definición de variables
+Var1 equ 0h
+Var2 equ 1h 
+;Cuarta sección - Instrucciones
+
+Inicio
+ movlw .7 ;Cargamos w con 7
+ movwf Var1 ;Var1<-7
+
+Menu 
+ 
+ movf Var1,w ;W<-Var1
+ addlw .3 ;Var1 + 3
+ movwf Var2 ;Var2<-Var1 + 3
+
+Fin
+ goto Fin
+end
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+;Primera sección - Inclusión de librerías
+include P18F4550.inc
+    
+;Segunda sección - Directivas de configuración
+    
+;Tercera sección - Definición de variables
+Var1 equ 0h
+Var2 equ 1h
+Var3 equ 2h
+;Cuarta sección - Instrucciones
+
+Inicio
+ movlw .8 ;W<-7
+ movwf Var1 ;Var1<-8
+
+ movlw .10 ;Cargamos w con 7
+ movwf Var2 ;Var2<-10
+
+Menu
+ movf Var1,w ;W<-Var1
+ addwf Var2,0 ;Var1 + Var2
+ movwf Var3 ;Var3<-W
+ 
+Fin
+ goto Fin
+end
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
