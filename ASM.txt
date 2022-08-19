@@ -36,6 +36,9 @@ Tipos de instrucciones:
 
 
 El perro guardián es un tipo de protección ante códigos no deseados por el momento.
+
+En la librería del micro C:\Program Files (x86)\Microchip\MPLABX\v3.30\mpasmx\p18f4550.inc se encuentran las direcciones de los registros
+Pra solucionar error de ensamblador relocalizador: Propiedades del proyecto -> mpasm (Global options) -> Build in absolute mode
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Para incluir librerías se usa
@@ -69,6 +72,8 @@ Var1 equ 9h
 Var2 equ 1h
 Var3 equ 0x7FF ;0x cuando usamos letras del sistema hexadecimal
 
+// Asignar varias variables a una misma posición de memoria, hace que actúen de manera dinámica al funcionar como apuntadores
+// Las variables son case-sensitive
 
 // Instrucciones. Presenta la estructura:
 <Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
@@ -202,3 +207,25 @@ CicloFor
 FinCiclo
   ***********************
   
+  
+// Etiquetas
+
+clrf <registro o variable> ;Limpia un registro o variable. Asigna 0.
+setf <registro o variable> ;Limpia un registro o variable. Asigna 1.
+
+// Inicializar una variable
+movlw <valor> ;Se crea la constante y se mueve al registro de trabajo w.
+movwf <variable> ;Carga la constante presente en w a la variable.
+
+// Es importante resaltar que 'mov' mueve un valor de un registro a otro. Entonces movwf mueve el valor desde w hasta f (representa la variable en el operando)
+
+
+
+
+
+
+
+
+
+// Terminar el código
+end
