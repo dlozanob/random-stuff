@@ -6,7 +6,7 @@ Un programa se organiza en 4 secciones:
 - Definición de variables: No hay tipos de variables. Cada una tiene el tamaño de bits del micro.
 - Instrucciones del ensamblador
 
-El set de instrucciones RISC dota al microcontrolador de 75 instrucciones estándar y 8 especiales.
+El set de instrucciones RISC dota al microcontrolador de 75 instrucciones estándar y 8 del set extendido.
 
 Tipos de instrucciones:
 - Según su operación:
@@ -22,6 +22,7 @@ Tipos de instrucciones:
   - Inmediato: Operan con constantes en operaciones aritmético-lógicas.
   - Directo: Operan con un registro o variable que es especificado como operando.
   - Relativo: Saltan a un bloque del programa dependiendo del estado de una variable. (Saltan a posiciones de memoria cercanas)
+    (Máximo salto: 128 posiciones hacia arriba, 127 posiciones hacia abajo)
   - Extendido: Saltan a cualquier posición de memoria. Funciona como el relativo.
   - Indirecto: Usan apuntadores para manipular registros y variables.
   
@@ -33,6 +34,8 @@ Tipos de instrucciones:
   - 2 Ciclos de bus
   - 3 Ciclos de bus
 
+
+El perro guardián es un tipo de protección ante códigos no deseados por el momento.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Para incluir librerías se usa
@@ -41,17 +44,48 @@ include <nombre de la librería>.inc
 // Incluimos la librería del microcontrolador
 include P18F4550.inc
 
-// Definición de variables. La posición de memoria está en el rango 000h - FFFh (h denota hexadecimal)
+
+// Las directivas de configuración adquieren la forma
+config <parámetro a configurar>=<Estado>
+
+// Configurar la frecuencia del oscilador
+config FOSC=INTOSC_EC
+
+// Configurar perro guardián
+config WDT=OFF
+
+// Configurar Master Clear (Reset externo)
+config MCLRE=OFF
+
+
+// Definición de variables. La posición de memoria (dentro de la memoria RAM) está en el rango 000h - FFFh (h denota hexadecimal)
+// El Access Bank es un banco de acceso rápido, el cual se compone de las primeras 96 posiciones
+// Para PIC18, todas las variables tienen 8 bits
 <nombre de la variable> equ <posición de memoria>
 
-// Ejemplo de definición de variable
+// Ejemplos de definición de variables
 aux1 equ 1h
+Var1 equ 9h
+Var2 equ 1h
+Var3 equ 0x7FF ;0x cuando usamos letras del sistema hexadecimal
+
+
+// Instrucciones. Presenta la estructura:
+<Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
+
+// Las etiquetas identifican posiciones de memoria de las instrucciones
+// Los mnemónicos son las abreviaturas que indican cada una de las instrucciones
+
+// Ejemplo de la estructura de las instrucciones:
+Inicio
+  clrf TRISD ;Configuración de un registro
+Menu
+  setf aux1 ;Inicialización de una variable
+  nop ;Retardo de un ciclo de bus
+  bsf LATD,0 ;Manipulación de un único bit
+
 
 // Comentarios
 ;<Comentario>
 
 // Constantes: .<número>; ASCII: '<código ASCII>'; Hexadecimal: 0x<número>; Binario: b'<número de 8 bits>'; Octal: o'<número>'
-
-
-
-
