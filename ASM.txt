@@ -1,4 +1,4 @@
-Usa abreviaturas en inglés para dar instrucciones
+Instrucciones en la pg. 312 del data sheet.
 
 Un programa se organiza en 4 secciones:
 - Inclusión de librerías y definición de símbolos
@@ -218,8 +218,9 @@ FinCiclo
   ***********************
   
   
-// Etiquetas
+// Operandos
 
+// Asignación binaria de una variable
 clrf <registro o variable> ;Limpia un registro o variable. Asigna 0.
 setf <registro o variable> ;Limpia un registro o variable. Asigna 1.
 
@@ -239,8 +240,8 @@ goto <etiqueta o dirección de memoria>
 bsf <registro>,<posición de bit del registro> ;Bit set file
 bcf <registro>,<posición de bit del registro> ;Bit clear file
 
-
-
+// Complemento a 1
+comf <variable>
 
 // Terminar el código
 end
