@@ -53,3 +53,31 @@ end
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
+;Primera sección - Inclusión de librerías
+include P18F4550.inc
+    
+;Segunda sección - Directivas de configuración
+    
+;Tercera sección - Definición de variables
+Var1 equ 0h
+Var2 equ 1h
+Var3 equ 2h
+
+;Cuarta sección - Instrucciones
+
+Inicio
+ movlw .5 ;W<-5
+ movwf Var1 ;Var1<-W
+ goto Menu
+
+Menu
+ comf Var1,1 ;Complemento a 1
+ 
+ incf Var1 ;Var1 += 1
+ movlw .9 ;W<-9
+ addwf Var1, 1 ;Var1 += W
+ 
+Fin
+ goto Fin
+end
+
