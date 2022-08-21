@@ -342,6 +342,45 @@ end
 
 ----------------------------------------------------------------------------14--------------------------------------------------------------------------
 
+;Primera sección - Inclusión de librerías
+include P18F4550.inc
+    
+;Segunda sección - Directivas de configuración
+    
+;Tercera sección - Definición de variables
+Aux1 equ 0h
+Aux2 equ 1h
+Aux3 equ 2h
+Aux4 equ 3h
 
+;Cuarta sección - Instrucciones
+
+Inicio
+ movlw .18 ;W<-18
+ movwf Aux1 ;Aux1<-W
+ 
+ movlw .16 ;W<-16
+ movwf Aux3 ;Aux3<-W
+
+ movlw .60 ;W<-60
+ movwf Aux2 ;Aux2<-W
+ 
+ addwf Aux1,1 ;Aux1 += Aux2
+ 
+ movlw b'11010' ;W<-11010
+ subwf Aux3,1 ;Aux3 -= 11010
+ comf Aux3
+ incf Aux3 ;Complemento a 2
+ 
+ movf Aux3,0 ;W<-Aux3
+ subwf Aux1,0 ;W = Aux1 - Aux3
+ 
+ movwf Aux4 ;Aux4 <- W
+ 
+Menu
+ 
+Fin
+ goto Fin
+end
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
