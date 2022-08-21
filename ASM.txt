@@ -249,5 +249,19 @@ comf <variable>
 // Sumar
 addwf <variable> ;W + variable
 
+// Restar (Flags: Z = 1 si 0. C = 0 si negativo)
+sublw <Constante> ;l - w
+subwf <Variable> ;f - w
+
+// Bitwise operators
+andwf <Variable> ;Variable & W
+iorwf <Variable> ;Variable | W
+xorwf <Variable> ;Variable xor W
+
+
+
+
+
+
 // Terminar el código
 end
