@@ -123,7 +123,7 @@ SIGUIENTE
 MENU
   ***********************************
   tstfsz var1 ;var1==0?
-  goto SIGUIENTE
+  GOTO SIGUIENTE
   nop
   ***********************************
 SIGUIENTE 
