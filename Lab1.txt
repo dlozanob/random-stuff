@@ -369,11 +369,12 @@ Inicio
  
  movlw b'11010' ;W<-11010
  subwf Aux3,1 ;Aux3 -= 11010
+ 
  comf Aux3
  incf Aux3 ;Complemento a 2
  
  movf Aux3,0 ;W<-Aux3
- subwf Aux1,0 ;W = Aux1 - Aux3
+ addwf Aux1,0 ;W = Aux1 - Aux3
  
  movwf Aux4 ;Aux4 <- W
  
