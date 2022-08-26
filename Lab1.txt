@@ -31,8 +31,8 @@ Inicio
  movlw .6 ;W<-6
  movwf Aux1 ;Aux1<-W
  subwf Aux2,1 ;Aux2 -= W
- comf Aux2 ;Complemento a 1
- incf Aux2 ;Complemento a 2
+; comf Aux2 ;Complemento a 1
+; incf Aux2 ;Complemento a 2
 
 ;Punto 5
  movlw .12 ;W<-12
@@ -41,14 +41,12 @@ Inicio
 
 ;Punto 6
  movwf Aux1 ;Aux1<-W
- comf Aux1,1 ;Complemento a 1
- incf Aux1,1 ;Aux1 += 1 (Complemento a 2)
+ negf Aux1
  
 ;Punto 7
  movlw .35 ;W<-35
  movwf Aux1 ;Aux1<-W
- movlw .7 ;W<-7
- iorwf Aux1,0 ;W <-Aux1 OR 7
+ iorlw .7 ;W <-Aux1 OR 7
  
 ;Punto 8
  movlw .20 ;W<-20
@@ -60,8 +58,7 @@ Inicio
 ;Punto 9
  movlw .62 ;W<-62
  movwf Aux1 ;Aux1<-W
- movlw .15 ;W<-15
- andwf Aux1,0 ;W <-Aux1 AND 15
+ andlw .15 ;W <-Aux1 AND 15
  
 ;Punto 10
  movlw .100 ;W<-100
@@ -73,8 +70,7 @@ Inicio
 ;Punto 11
  movlw .120 ;W<-120
  movwf Aux1 ;Aux1<-W
- movlw .1 ;W<-1
- xorwf Aux1,0 ;W <-Aux1 XOR 1
+ xorlw .1
  
 ;Punto 12
  movlw .17 ;W<-17
@@ -92,10 +88,12 @@ Inicio
  movwf Aux2 ;Aux2<-W
  iorwf Aux1,1 ;Aux1 <- Aux1 OR Aux2
  movlw 0xD0 ;W<-D0
- xorwf Aux3,1 ;Aux3 <- Aux3 XOR D0
- movf Aux1,0 ;W<-Aux1
- andwf Aux3,0 ;W <- Aux1 AND Aux3
- movwf Aux4 ;Aux4 <- W
+ xorwf Aux3,0 ;Aux3 <- Aux3 XOR D0
+  andwf Aux1,0
+ movwf Aux4
+ ;movf Aux1,0 ;W<-Aux1
+ ;andwf Aux3,0 ;W <- Aux1 AND Aux3
+ ;movwf Aux4 ;Aux4 <- W
  
 ;Punto 14
  
