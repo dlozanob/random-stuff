@@ -43,6 +43,9 @@ En la librería del micro C:\Program Files (x86)\Microchip\MPLABX\v3.30\mpasmx\p
 Para solucionar error de ensamblador relocalizador: Propiedades del proyecto -> mpasm (Global options) -> Build in absolute mode
 
 Se puede llevar un seguimiento del registro W en el debugger con las variables al nombrar una  en la ventana como WREG
+Se puede hacer lo mismo para los puertos
+
+Visualizar pines: Window -> Simulator -> IO Pins
 
 Los status flags en la parte superior del pantallazo de MPLabX, se muestra el estado de los registros de la memoria caché
 
@@ -54,6 +57,12 @@ Fuentes de reloj del micro:
 - Oscilador interno
 - Oscilador externo
 - Cristal
+
+Los puertos del microcontrolador son: (X: A, B, C, D, E)
+- TRISX
+- LATX: Permite manipular salidas 
+- PORTX
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -84,6 +93,9 @@ CONFIG WDT=OFF
 
 // Configurar Master Clear (Reset externo)
 CONFIG MCLRE=OFF
+
+// Configuración en bajo voltaje
+CONFIG LVP=OFF
 
 
 ****************************************************************TERCERA SECCIÓN - DEFINICIÓN DE VARIABLES*************************************************
@@ -236,6 +248,11 @@ CicloFor
   goto CicloFor
 FinCiclo
   ***********************
+ 
+// Asignar pines a un puerto
+  movlw b'11001100'
+  movwf TRISE ; Se asignan los 8 pines al puerto TRISE
+ 
  
  
  // Terminar el código
