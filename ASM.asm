@@ -49,7 +49,16 @@ Tras la sentencia end, se vuelve a repetir el código desde la primera instrucci
 
 Al debuggear podemos ir a la siguiente instrucción con F7
 
+Fuentes de reloj del micro:
+- Oscilador interno
+- Oscilador externo
+- Cristal
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+**********************************************************PRIMERA SECCIÓN - INCLUSIÓN DE LIBRERÍAS********************************************************
 
 // Para incluir librerías se usa
 include <nombre de la librería>.inc
@@ -58,18 +67,25 @@ include <nombre de la librería>.inc
 include P18F4550.inc
 
 
+**********************************************************SEGUNDA SECCIÓN - DIRECTIVAS DE CONFIGURACIÓN***************************************************
+
 // Las directivas de configuración adquieren la forma
-config <parámetro a configurar>=<Estado>
+CONFIG <parámetro a configurar>=<Estado>
 
 // Configurar la frecuencia del oscilador
-config FOSC=INTOSC_EC
+CONFIG FOSC=INTOSC_EC ;Internal Oscillator (External Clock) (1 MHz)
+CONFIG FOSC=EC_EC ;External Oscillator
+CONFIG FOSC=XT_XT ;Cristales con frecuencia menor a 4 MHz
+CONFIG FOSC=HS ;Cristales con frecuencia 4 MHz - 40 MHz
 
 // Configurar perro guardián
-config WDT=OFF
+CONFIG WDT=OFF
 
 // Configurar Master Clear (Reset externo)
-config MCLRE=OFF
+CONFIG MCLRE=OFF
 
+
+****************************************************************TERCERA SECCIÓN - DEFINICIÓN DE VARIABLES*************************************************
 
 // Definición de variables. La posición de memoria (dentro de la memoria RAM) está en el rango 000h - FFFh (h denota hexadecimal)
 // El Access Bank es un banco de acceso rápido, el cual se compone de las primeras 96 posiciones
@@ -84,6 +100,9 @@ Var3 equ 0x7FF ;0x cuando usamos letras del sistema hexadecimal
 
 // Asignar varias variables a una misma posición de memoria, hace que actúen de manera dinámica al funcionar como apuntadores
 // Las variables son case-sensitive
+
+
+********************************************************************CUARTA SECCIÓN - INSTRUCCIONES********************************************************
 
 // Instrucciones. Presenta la estructura:
 <Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
@@ -216,9 +235,18 @@ CicloFor
   goto CicloFor
 FinCiclo
   ***********************
+ 
+ 
+ // Terminar el código
+end
   
-  
-// Operandos
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ 
+ 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////////////// MNEMÓNICOS ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // Asignación binaria de una variable
 clrf <registro o variable> ;Limpia un registro o variable. Asigna 0.
@@ -258,10 +286,3 @@ andwf <Variable> ;Variable & W
 iorwf <Variable> ;Variable | W
 xorwf <Variable> ;Variable xor W
 
-
-
-
-
-
-// Terminar el código
-end
