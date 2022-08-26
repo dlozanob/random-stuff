@@ -47,6 +47,8 @@ Se puede hacer lo mismo para los puertos
 
 Visualizar pines: Window -> Simulator -> IO Pins
 
+Generar un estímulo en la simulación de una señal digital: Window -> Simulator -> Stimulus
+
 Los status flags en la parte superior del pantallazo de MPLabX, se muestra el estado de los registros de la memoria caché
 
 Tras la sentencia end, se vuelve a repetir el código desde la primera instrucción. Se reinicia el micro de manera abrupta
@@ -60,8 +62,18 @@ Fuentes de reloj del micro:
 
 Los puertos del microcontrolador son: (X: A, B, C, D, E)
 - TRISX
-- LATX: Permite manipular salidas 
+- LATX: Permite manipular salidas
 - PORTX
+
+Puerto B - Señales análogas
+Puerto C - Comunicaciones y control
+Puerto E - Funciones adicionales
+
+Ajustar puertos como:
+Entradas -> bsf <PUERTO>
+Salidas -> clrf <PUERTO>
+
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -97,6 +109,8 @@ CONFIG MCLRE=OFF
 // Configuración en bajo voltaje
 CONFIG LVP=OFF
 
+// RB0 - RB4 comienzan siendo análogos. Para ajustarlos de modo digital se usa
+CONFIG PBADEN=OFF
 
 ****************************************************************TERCERA SECCIÓN - DEFINICIÓN DE VARIABLES*************************************************
 
@@ -303,4 +317,8 @@ subwf <Variable> ;f - w
 andwf <Variable> ;Variable & W
 iorwf <Variable> ;Variable | W
 xorwf <Variable> ;Variable xor W
+
+// Condición de salto (Bit Test File)
+btfss <Puerto o variable>,<Bit del puerto> ;RXX = 1? Salta la siguiente línea de código cuando se cumple la condición
+
 
