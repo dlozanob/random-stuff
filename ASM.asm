@@ -35,7 +35,8 @@ Tipos de instrucciones:
   - 3 Ciclos de bus
 
 
-El perro guardián es un tipo de protección ante códigos no deseados por el momento.
+El perro guardián es un tipo de protección ante códigos no deseados por el momento. Cuando el microcontrolador se encuentra en condiciones críticas, se reinicia.
+Es un temporizador que corre desde cero, cuando llega hasta cierto límite (desborde), se reinicia el micro.
 
 En la librería del micro C:\Program Files (x86)\Microchip\MPLABX\v3.30\mpasmx\p18f4550.inc se encuentran las direcciones de los registros
 
@@ -78,7 +79,7 @@ CONFIG FOSC=EC_EC ;External Oscillator
 CONFIG FOSC=XT_XT ;Cristales con frecuencia menor a 4 MHz
 CONFIG FOSC=HS ;Cristales con frecuencia 4 MHz - 40 MHz
 
-// Configurar perro guardián
+// Configurar perro guardián. Por defecto está encendido
 CONFIG WDT=OFF
 
 // Configurar Master Clear (Reset externo)
