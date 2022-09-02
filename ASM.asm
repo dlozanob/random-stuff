@@ -307,7 +307,8 @@ comf <variable>
 <operando> <variable>,<d> ;Si d = 0, el resultado se guarda en W. Si d = 1, el resultado se guarda en la misma variable.
 
 // Sumar
-addwf <variable> ;W + variable
+addwf <variable> ;W <- W + variable
+addlw <Constante> ;W <- W + constante
 
 // Restar (Flags: Z = 1 si 0. C = 0 si negativo)
 sublw <Constante> ;l - w
@@ -317,8 +318,23 @@ subwf <Variable> ;f - w
 andwf <Variable> ;Variable & W
 iorwf <Variable> ;Variable | W
 xorwf <Variable> ;Variable xor W
+andlw <Constante> ;Constante and W
+iorlw <Constante> ;Constante or W
+xorlw <Constante> ;Constante xor W
 
 // Condición de salto (Bit Test File)
 btfss <Puerto o variable>,<Bit del puerto> ;RXX = 1? Salta la siguiente línea de código cuando se cumple la condición
+btfsc <Puerto o variable>,<Bit del puerto> ;RXX = 0? Salta la siguiente línea de código cuando se cumple la condición
 
+// No hacer nada por un ciclo de bus
+nop
+
+// Incrementos y Decrementos
+decf <Variable> ;Decrementa la variable
+decfsz <Variable> ;Decrementa la variable. Salta 1 línea si la variable de entrada es 0.
+decfsnz <Variable> ;Decrementa la variable. Salta 1 línea si la variable de entrada no es 0.
+
+incf <Variable> ;Incrementa la variable
+incfsz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada es 0.
+incfsnz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada no es 0.
 
