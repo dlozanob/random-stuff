@@ -30,8 +30,8 @@ Tipos de instrucciones:
   MOVFF, CALL, GOTO, MOVSF, MOVSS ocupan 4 bytes. El resto de instrucciones ocupan 2 bytes.
 
 - Según el tiempo que tardan en ejecutarse:
-  - 1 Ciclo de bus
-  - 2 Ciclos de bus
+  - 1 Ciclo de bus: Operaciones aritméticas, lógicas, de movimiento
+  - 2 Ciclos de bus: Mover registro a registro, instrucciones de salto (goto, call)
   - 3 Ciclos de bus
 
 
@@ -48,6 +48,8 @@ Se puede hacer lo mismo para los puertos
 Visualizar pines: Window -> Simulator -> IO Pins
 
 Generar un estímulo en la simulación de una señal digital: Window -> Simulator -> Stimulus
+
+Medir tiempos en las instrucciones: Window -> Debugging -> Stop watch
 
 Los status flags en la parte superior del pantallazo de MPLabX, se muestra el estado de los registros de la memoria caché
 
@@ -293,8 +295,17 @@ movwf <variable> ;Carga la constante presente en w a la variable.
 // Incrementar en 1 unidad una variable
 incf <variable>
 
-// Ir a una dirección del código
+// Ir a una dirección del código. Modifica el contador del programa
 goto <etiqueta o dirección de memoria>
+
+// Llamar a subrutinas (equivalente al llamado de funciones). Tabién modifica el contador del programa, pero guarda su posición actual. Tal posición
+se guarda en la pila del micro. Call introduce valores en la pila, return los saca. Se pueden guardar valores en la pila hasta 31 veces, luego el
+micro se reinicia. El micro puede reiniciarse también si al sacar un valor de la pila no hay nada.
+call <Etiqueta> ;Llama a la etiqueta
+.
+.
+<Etiqueta>
+return ;Retorna a la línea inmediatamente después de call
 
 // Establecer el bit de un registro
 bsf <registro>,<posición de bit del registro> ;Bit set file
@@ -337,4 +348,5 @@ decfsnz <Variable> ;Decrementa la variable. Salta 1 línea si la variable de ent
 incf <Variable> ;Incrementa la variable
 incfsz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada es 0.
 incfsnz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada no es 0.
+
 
