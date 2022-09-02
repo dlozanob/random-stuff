@@ -31,8 +31,8 @@ Tipos de instrucciones:
 
 - Según el tiempo que tardan en ejecutarse:
   - 1 Ciclo de bus: Operaciones aritméticas, lógicas, de movimiento
-  - 2 Ciclos de bus: Mover registro a registro, instrucciones de salto (goto, call)
-  - 3 Ciclos de bus
+  - 2 Ciclos de bus: Mover registro a registro, salto incondicionales, saltos condicionales (cuando se produce un salto en una instrucción de 2 bytes)
+  - 3 Ciclos de bus: Saltos condicionales (cuando se produce un salto en una instrucción de 4 bytes)
 
 
 El perro guardián es un tipo de protección ante códigos no deseados por el momento. Cuando el microcontrolador se encuentra en condiciones críticas, se reinicia.
@@ -51,11 +51,19 @@ Generar un estímulo en la simulación de una señal digital: Window -> Simulato
 
 Medir tiempos en las instrucciones: Window -> Debugging -> Stop watch
 
-Los status flags en la parte superior del pantallazo de MPLabX, se muestra el estado de los registros de la memoria caché
-
 Tras la sentencia end, se vuelve a repetir el código desde la primera instrucción. Se reinicia el micro de manera abrupta
 
 Al debuggear podemos ir a la siguiente instrucción con F7
+
+Los status flags en la parte superior del pantallazo de MPLabX, se muestra el estado de los registros de la memoria caché
+
+
+Registros de estado (pg. 73): Muestran el estado aritmético de la ALU. Dependen de la instrucción ejecutada
+- N (Negative bit): 1 -> El resultado es negativo
+- OV (Overflow bit): 1 -> Hay una sobrecarga en el resultado que sobrepasa los 7 bits
+- Z (Zero bit): 1 -> El resultado es cero
+- DC (Digit carry/borrow bit): 1 -> 
+- C (Carry/borrow bit): 1 ->
 
 Fuentes de reloj del micro:
 - Oscilador interno
@@ -295,6 +303,7 @@ movwf <variable> ;Carga la constante presente en w a la variable.
 // Incrementar en 1 unidad una variable
 incf <variable>
 
+// Saltos incondicionales: goto, call
 // Ir a una dirección del código. Modifica el contador del programa
 goto <etiqueta o dirección de memoria>
 
@@ -306,6 +315,18 @@ call <Etiqueta> ;Llama a la etiqueta
 .
 <Etiqueta>
 return ;Retorna a la línea inmediatamente después de call
+
+// Saltos condicionales: Tienen la letra 's' (skip)
+// Condición de salto binaria (Bit Test File)
+btfss <Puerto o variable>,<Bit del puerto> ;RXX = 1? Salta la siguiente línea de código cuando se cumple la condición
+btfsc <Puerto o variable>,<Bit del puerto> ;RXX = 0? Salta la siguiente línea de código cuando se cumple la condición
+
+// Preguntar sobre una variable de estado
+<Nmemónico condicional> STATUS, <Variable de estado>
+
+cpfseq <Variable> ;Variable = W ?
+cpfsgt <Variable> ;Variable > W ?
+cpfslt <Variable> ;Variable < W ?
 
 // Establecer el bit de un registro
 bsf <registro>,<posición de bit del registro> ;Bit set file
@@ -332,10 +353,6 @@ xorwf <Variable> ;Variable xor W
 andlw <Constante> ;Constante and W
 iorlw <Constante> ;Constante or W
 xorlw <Constante> ;Constante xor W
-
-// Condición de salto (Bit Test File)
-btfss <Puerto o variable>,<Bit del puerto> ;RXX = 1? Salta la siguiente línea de código cuando se cumple la condición
-btfsc <Puerto o variable>,<Bit del puerto> ;RXX = 0? Salta la siguiente línea de código cuando se cumple la condición
 
 // No hacer nada por un ciclo de bus
 nop
