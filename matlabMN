@@ -1,0 +1,34 @@
+function root = newtonRaphson(f, x0, Ex, Ey)
+    syms x;
+    df = diff(f);
+    xi = x0;
+    
+    cx = 1E10;
+    cy = cx;
+    while (cy > Ey || cx > Ex)
+      display(vpa(subs(f,x,xi)));
+      display(vpa(subs(df,x,xi)));
+      xi = xi - vpa(subs(f,x,xi))/vpa(subs(df,x,xi));
+    end
+    root = xi;
+end
+
+
+
+function ysecant = secant(x0, x1, Ex, Ey)
+    clc
+    format long
+    
+    cx = Ex + 1;
+    cy = Ey + 1;
+    while (cy > Ey || cx > Ex)
+        x2 = x1 - f(x1)/tange(x0, x1);
+        x0 = x1;
+        x1 = x2;
+        
+        cx = abs(x1-x0);
+        cy = abs(f(x2));
+    end
+
+    ysecant = x2;
+end
