@@ -70,10 +70,10 @@ Fuentes de reloj del micro:
 - Oscilador externo
 - Cristal
 
-Los puertos del microcontrolador son: (X: A, B, C, D, E)
-- TRISX
-- LATX: Permite manipular salidas
-- PORTX
+Los registros del microcontrolador son: (X: A, B, C, D, E)
+- TRISX: Configura el estado I/O de los pines (1 -> Entrada)
+- LATX: Permite manipular las salidas
+- PORTX: Permite consultar el estado de las entradas
 
 Puerto B - Señales análogas
 Puerto C - Comunicaciones y control
