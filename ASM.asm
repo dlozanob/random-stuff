@@ -83,7 +83,13 @@ Ajustar puertos como:
 Entradas -> bsf <PUERTO>
 Salidas -> clrf <PUERTO>
 
+EQU: Memotria de datos
+ORG: Memoria de instrucciones
 
+
+CONEXIONES:
+4 - 40
+5 - 39
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,6 +146,17 @@ Var3 equ 0x7FF ;0x cuando usamos letras del sistema hexadecimal
 
 
 ********************************************************************CUARTA SECCIÓN - INSTRUCCIONES********************************************************
+
+// Interrupciones
+// Estructura de la declaración de una interrupción
+
+ORG <Posición de memoria de>
+
+ORG 0h ; Se ejecuta cuando se resetea el micro
+ goto Inicio ;Vector de reset
+ 
+ORG 8h ;Se ejecuta cuando sucede una interrupción
+ goto ISR ;Vector de interrupción
 
 // Instrucciones. Presenta la estructura:
 <Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
