@@ -32,3 +32,32 @@ function ysecant = secant(x0, x1, Ex, Ey)
 
     ysecant = x2;
 end
+
+
+
+
+
+function root = nr(x0, Ex, Ey)
+    clc
+    format long
+
+    dx = Ex + 1;
+    dy = Ey + 1;
+    while(dx > Ex || dy > Ey)
+        x1 = x0 - f(x0)/df(x0);
+        dx = abs(x1 - x0);
+        dy = abs(f(x1));
+        x0 = x1;
+    end
+
+    root = x0;
+end
+
+
+
+fun = str2func(strcat('@(x)',y));
+
+
+
+
+
