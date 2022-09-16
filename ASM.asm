@@ -86,6 +86,12 @@ Salidas -> clrf <PUERTO>
 EQU: Memotria de datos
 ORG: Memoria de instrucciones
 
+
+Pasos para activar una interrupción:
+1.) Borrar la bandera
+2.) Habilitar globalmente las interrupciones
+3.) Habilitarla individualmente
+
 Fuentes de reset:
 - Power-on Reset (POR): Reset por corte de la fuente de alimentación
 - Reset instruction: Instrucción de rest dentro del programa
@@ -400,6 +406,9 @@ incf <Variable> ;Incrementa la variable
 incfsz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada es 0.
 incfsnz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada no es 0.
 
+// Salir de una ISR
+retfie
+
 // Reiniciar el micro de manera segura
 reset
 
@@ -414,7 +423,6 @@ clrwdt ;Se reinicia su temporizador
 // Modos de bajo consumo
 bsf OSCCON, IDLEN ;Registro OSCCON (0 por defecto): 1 --> Modo de bajo consumo parcial; 0 --> Modo de bajo consumo total.
 sleep ;Entra en modo de bajo consumo
-
 
 
 
