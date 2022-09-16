@@ -36,7 +36,7 @@ Tipos de instrucciones:
 
 
 El perro guardián es un tipo de protección ante códigos no deseados por el momento. Cuando el microcontrolador se encuentra en condiciones críticas, se reinicia.
-Es un temporizador que corre desde cero, cuando llega hasta cierto límite (desborde), se reinicia el micro.
+Es un temporizador que corre desde cero, cuando llega hasta cierto límite (desborde), se reinicia el micro (2 minutos por defecto). Funciona con un oscilador RC propio.
 
 En la librería del micro C:\Program Files (x86)\Microchip\MPLABX\v3.30\mpasmx\p18f4550.inc se encuentran las direcciones de los registros
 
@@ -85,6 +85,18 @@ Salidas -> clrf <PUERTO>
 
 EQU: Memotria de datos
 ORG: Memoria de instrucciones
+
+Fuentes de reset:
+- Power-on Reset (POR): Reset por corte de la fuente de alimentación
+- Reset instruction: Instrucción de rest dentro del programa
+- WatchDog Timer
+- Master Clear (Normal operation)
+- Programmable Brown-out Reset (BOR): Reinicia el micro cuando el nivel de la batería baja hasta cierto valor (desabilitado por defecto).
+- Stack Full Reset: Reset cuando se llena la pila (tiene 31 niveles de capacidad). Sucede en recursión.
+- Stack Underflow: Cuando la pila se intenta vaciar cuando no hay nada
+
+RCON indica cuál fuente de reset ocurrió. Contiene 4 bits. No hay bit de indicación para MCLR, se deduce por descarte.
+STKPTR (Stack Pointer), indica el nivel de anidamiento --> Capacidad de la pila.
 
 
 CONEXIONES:
@@ -382,5 +394,17 @@ decfsnz <Variable> ;Decrementa la variable. Salta 1 línea si la variable de ent
 incf <Variable> ;Incrementa la variable
 incfsz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada es 0.
 incfsnz <Variable> ;Incrementa la variable. Salta 1 línea si la variable de entrada no es 0.
+
+// Reiniciar el micro de manera segura
+reset
+
+// Para configurar correctamente el perro guardián
+CONFIG WDT=ON
+bsf WDTCON,SWDTEN ;Enable WD
+CONFIG WDPTS=<N> ;N: 1 - 32. Set WD time.
+
+// Borrar cuenta del perro guardián
+clrwdt ;Se reinicia su temporizador
+
 
 
