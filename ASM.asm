@@ -99,6 +99,11 @@ RCON indica cuál fuente de reset ocurrió. Contiene 4 bits. No hay bit de indic
 STKPTR (Stack Pointer), indica el nivel de anidamiento --> Capacidad de la pila.
 
 
+Modos de bajo consumo (Pg. 37):
+- Modo de suspensión: Corta señal de clk (CPU y periféricos)
+- Modo de suspensión parcial (modo espera): Corta señal de clk (CPU) 
+
+
 CONEXIONES:
 4 - 40
 5 - 39
@@ -405,6 +410,12 @@ CONFIG WDPTS=<N> ;N: 1 - 32. Set WD time.
 
 // Borrar cuenta del perro guardián
 clrwdt ;Se reinicia su temporizador
+
+// Modos de bajo consumo
+bsf OSCCON, IDLEN ;Registro OSCCON (0 por defecto): 1 --> Modo de bajo consumo parcial; 0 --> Modo de bajo consumo total.
+sleep ;Entra en modo de bajo consumo
+
+
 
 
 
