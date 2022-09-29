@@ -380,6 +380,9 @@ bcf <registro>,<posición de bit del registro> ;Bit clear file
 // Complemento a 1
 comf <variable>
 
+// Complemento a 2
+negf <variable>
+
 // Algunos operandos producen un resultado que se puede guardar en un lugar específico, siguen la forma:
 <operando> <variable>,<d> ;Si d = 0, el resultado se guarda en W. Si d = 1, el resultado se guarda en la misma variable.
 
