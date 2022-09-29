@@ -37,5 +37,5 @@ req <parameter> (Navegate trough the Registry Editor)
 
 mmc (Open the Microsoft Management Console) (The MMC can be used to group snap-ins, or administrative tools, to manage hardware, software, and network components within a Windows host)
 
-
+netstat (Show ip protocol stats and TCP/IP connections)
 
