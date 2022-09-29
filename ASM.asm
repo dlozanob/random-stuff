@@ -173,13 +173,18 @@ Var3 equ 0x7FF ;0x cuando usamos letras del sistema hexadecimal
 // Interrupciones
 // Estructura de la declaración de una interrupción
 
-ORG <Posición de memoria de>
+ORG <Posición de memoria de la interrupción>
 
 ORG 0h ; Se ejecuta cuando se resetea el micro
  goto Inicio ;Vector de reset
  
 ORG 8h ;Se ejecuta cuando sucede una interrupción
  goto ISR ;Vector de interrupción
+
+// Para configurar correctamente el perro guardián
+CONFIG WDT=ON
+bsf WDTCON,SWDTEN ;Enable WD
+CONFIG WDPTS=<N> ;N: 1 - 32. Set WD time.
 
 // Instrucciones. Presenta la estructura:
 <Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
@@ -411,11 +416,6 @@ retfie
 
 // Reiniciar el micro de manera segura
 reset
-
-// Para configurar correctamente el perro guardián
-CONFIG WDT=ON
-bsf WDTCON,SWDTEN ;Enable WD
-CONFIG WDPTS=<N> ;N: 1 - 32. Set WD time.
 
 // Borrar cuenta del perro guardián
 clrwdt ;Se reinicia su temporizador
