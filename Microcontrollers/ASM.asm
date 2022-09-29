@@ -42,7 +42,7 @@ En la librería del micro C:\Program Files (x86)\Microchip\MPLABX\v3.30\mpasmx\p
 
 Para solucionar error de ensamblador relocalizador: Propiedades del proyecto -> mpasm (Global options) -> Build in absolute mode
 
-Se puede llevar un seguimiento del registro W en el debugger con las variables al nombrar una  en la ventana como WREG
+Se puede llevar un seguimiento del registro W en el debugger con las variables al nombrar una en la ventana como WREG
 Se puede hacer lo mismo para los puertos
 
 Visualizar pines: Window -> Simulator -> IO Pins
@@ -55,10 +55,9 @@ Tras la sentencia end, se vuelve a repetir el código desde la primera instrucci
 
 Al debuggear podemos ir a la siguiente instrucción con F7
 
-Los status flags en la parte superior del pantallazo de MPLabX, se muestra el estado de los registros de la memoria caché
+Los status flags se encuentran en la parte superior del pantallazo de MPLabX
 
-
-Registros de estado (pg. 73): Muestran el estado aritmético de la ALU. Dependen de la instrucción ejecutada
+Registros de estado (status flags. pg. 73): Muestran el estado aritmético de la ALU. Dependen de la instrucción ejecutada
 - N (Negative bit): 1 -> El resultado es negativo
 - OV (Overflow bit): 1 -> Hay una sobrecarga en el resultado que sobrepasa los 7 bits
 - Z (Zero bit): 1 -> El resultado es cero
