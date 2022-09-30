@@ -82,20 +82,20 @@ Ajustar puertos como:
 Entradas -> bsf <PUERTO>
 Salidas -> clrf <PUERTO>
 
-EQU: Memotria de datos
+EQU: Memoria de datos
 ORG: Memoria de instrucciones
 
 
 Pasos para activar una interrupción:
-1.) Borrar la bandera
+1.) Borrar la bandera (IF - Interrupt Flag. Indicador de ocurrencia)
 2.) Habilitar globalmente las interrupciones
-3.) Habilitarla individualmente
+3.) Habilitarla individualmente (IE - Interrupt Enable. Máscara)
 
 Fuentes de reset:
 - Power-on Reset (POR): Reset por corte de la fuente de alimentación
-- Reset instruction: Instrucción de rest dentro del programa
+- Reset instruction: Instrucción de reset dentro del programa
 - WatchDog Timer
-- Master Clear (Normal operation)
+- Master Clear
 - Programmable Brown-out Reset (BOR): Reinicia el micro cuando el nivel de la batería baja hasta cierto valor (desabilitado por defecto).
 - Stack Full Reset: Reset cuando se llena la pila (tiene 31 niveles de capacidad). Sucede en recursión.
 - Stack Underflow: Cuando la pila se intenta vaciar cuando no hay nada
@@ -105,13 +105,8 @@ STKPTR (Stack Pointer), indica el nivel de anidamiento --> Capacidad de la pila.
 
 
 Modos de bajo consumo (Pg. 37):
-- Modo de suspensión: Corta señal de clk (CPU y periféricos)
+- Modo de suspensión: Corta la señal de clk (CPU y periféricos)
 - Modo de suspensión parcial (modo espera): Corta señal de clk (CPU) 
-
-
-CONEXIONES:
-4 - 40
-5 - 39
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
