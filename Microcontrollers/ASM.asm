@@ -89,8 +89,9 @@ Se utilizan 10 registros para controlar la operación de interrupciones:
 - RCON (Reset Control Register)
     Bits: IPEN (Interrupt Priority), SBOREN, RI, TO, PD, POR, BOR
 - INTCON (Interrupt Control Register)
-    Bits: GIE/GIEH (Global Interrupt), PEIE/GIEL, TMR0IE: IE de Timer0 cuando este llega a cierto límite de tiempo (overflow), INT0IE,
-    RBIE: IE de la interrupción de teclado, TMR0IF: IF de la interrupción (overflow) de Timer0, INT0IF, RBIF: IF de la interrupción de teclado
+    Bits: GIE/GIEH (Global Interrupt), PEIE/GIEL, TMR0IE: IE de Timer0 cuando este llega a cierto límite de tiempo (overflow),
+    INT0IE: IE de la interrupción externa 0, RBIE: IE de la interrupción de teclado, TMR0IF: IF de la interrupción (overflow) de Timer0,
+    INT0IF: IF de la interrupción externa 0, RBIF: IF de la interrupción de teclado
 - INTCON2: Contiene los bits de prioridad para Timer0 y la interrupción de teclado. Su bit RBPU permite habilitar resistencias de pull-up para
   todos los pines del puerto B (se recomienda poner un retardo después de habilitarla).
 - INTCON3
@@ -108,14 +109,18 @@ Pasos para activar una interrupción:
 2.) Habilitarla individualmente (IE)
 3.) Habilitar globalmente las interrupciones
 
+La interrupción externa se administra con el registro INTCON. Siempre es de alta prioridad
+
 Módulo Timer0 (Pg. 127): Funciona como un contador (ej.: contar botellas en una banda) o un temporizador (reloj)
-Su registro de control es T0CON (Timer0 Control Register). Bits: TMR0ON (habilita Timer0), T08BIT (ajusta Timer0 como un contador de 1 byte o 2),
-T0CS: Lo ajusta en modo temporizador o contador, T0SE, PSA, T0PS2, T0PS1, T0PS0 (TOPSx: Ajustan la escala de tiempo)
+Su registro de control es T0CON (Timer0 Control Register):
+  Bits: TMR0ON (habilita Timer0), T08BIT (ajusta Timer0 como un contador de 1 byte o 2),
+  T0CS: Lo ajusta en modo temporizador o contador, T0SE: Indicar cambio en flancos de bajada o de subida, PSA, T0PS2, T0PS1,
+  T0PS0 (TOPSx: Ajustan la escala de tiempo)
 
 El módulo de interrupción de teclado usa el puerto B con sus pines 7-4. Ambos flancos disparan la interrupción.
 
-Los registros TMR0L (Timer0 Low) y TMR0H (Timer0 High) son registros que llevan la cuenta del conteo de Timer0. Timer0 parte baja (TMR0L) se usa como modo de 
-conteo de 1 byte. Cuando tenemos el modo de conteo de 2 bytes, se usan ambos registros (ambos de 8 bits que suman 16 bits), se añade Timer0 parte alta para 
+Los registros TMR0L (Timer0 Low) y TMR0H (Timer0 High) son registros que llevan la cuenta del conteo de Timer0 (son valores de precarga).
+Timer0 parte baja (TMR0L) se usa como modo de conteo de 1 byte. Cuando tenemos el modo de conteo de 2 bytes, se usan ambos registros (ambos de 8 bits que suman 16 bits), se añade Timer0 parte alta para 
 completar los 16 bits.
 
 
