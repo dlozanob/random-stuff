@@ -334,8 +334,9 @@ clrf <registro o variable> ;Limpia un registro o variable. Asigna 0.
 setf <registro o variable> ;Limpia un registro o variable. Asigna 1.
 
 // Inicializar una variable
-movlw <valor> ;Se crea la constante y se mueve al registro de trabajo w.
-movwf <variable> ;Carga la constante presente en w a la variable.
+movlw <valor> ;Se crea la constante y se mueve al registro de trabajo W.
+movwf <variable> ;Carga la constante presente en W a la variable.
+movf <variable>, w ;Mover variable al registro W.
 
 // Es importante resaltar que 'mov' mueve un valor de un registro a otro. Entonces movwf mueve el valor desde w hasta f (representa la variable en el operando)
 
