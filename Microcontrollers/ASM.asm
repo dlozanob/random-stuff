@@ -361,15 +361,15 @@ return ;Retorna a la línea inmediatamente después de call
 btfss <Puerto o variable>,<Bit del puerto> ;RXX = 1? Salta la siguiente línea de código cuando se cumple la condición
 btfsc <Puerto o variable>,<Bit del puerto> ;RXX = 0? Salta la siguiente línea de código cuando se cumple la condición
 
+cpfseq <Variable> ;Variable = W ?
+cpfsgt <Variable> ;Variable > W ?
+cpfslt <Variable> ;Variable < W ?
+
 // Preguntar sobre una variable de estado
 <Nmemónico condicional> STATUS, <Variable de estado>
 
 // Modificar una variable de estado. Se recomienda solo usar BCF, BSF, SWAPF, MOVFF y MOVWF
 <Nnemónico> STATUS, <Variable de estado>
-
-cpfseq <Variable> ;Variable = W ?
-cpfsgt <Variable> ;Variable > W ?
-cpfslt <Variable> ;Variable < W ?
 
 // Establecer el bit de un registro
 bsf <registro>,<posición de bit del registro> ;Bit set file
