@@ -108,8 +108,11 @@ Pasos para activar una interrupción:
 3.) Habilitarla individualmente (IE)
 
 Módulo Timer0 (Pg. 127): Funciona como un contador o un temporizador
-Su registro de control es T0CON (Timer0 Control Register). Bits: TMR0ON (habilita Timer0), T08BIT, T0CS, T0SE, PSA, T0PS2, T0PS1,
-T0PS0 (TOPSx: Ajustan la escala de tiempo)
+Su registro de control es T0CON (Timer0 Control Register). Bits: TMR0ON (habilita Timer0), T08BIT (ajusta Timer0 como un contador de 1 byte o 2),
+T0CS, T0SE, PSA, T0PS2, T0PS1, T0PS0 (TOPSx: Ajustan la escala de tiempo)
+
+Los registros TMR0L (Timer0 Low) y TMR0H (Timer0 High) son registros que llevan la cuenta del conteo de Timer0, corresponden para su modo de contador como
+1 o 2 bytes respectivamente.
 
 
 Fuentes de reset:
