@@ -347,7 +347,7 @@ incf <variable>
 // Ir a una dirección del código. Modifica el contador del programa
 goto <etiqueta o dirección de memoria>
 
-// Llamar a subrutinas (equivalente al llamado de funciones). Tabién modifica el contador del programa, pero guarda su posición actual. Tal posición
+// Llamar a subrutinas (equivalente al llamado de funciones). También modifica el contador del programa, pero guarda su posición actual. Tal posición
 se guarda en la pila del micro. Call introduce valores en la pila, return los saca. Se pueden guardar valores en la pila hasta 31 veces, luego el
 micro se reinicia. El micro puede reiniciarse también si al sacar un valor de la pila no hay nada.
 call <Etiqueta> ;Llama a la etiqueta
