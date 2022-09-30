@@ -85,11 +85,32 @@ Salidas -> clrf <PUERTO>
 EQU: Memoria de datos
 ORG: Memoria de instrucciones
 
+Se utilizan 10 registros para controlar la operación de interrupciones:
+- RCON (Reset Control Register)
+    Bits: IPEN (Interrupt Priority), SBOREN, RI, TO, PD, POR, BOR
+- INTCON (Interrupt Control Register)
+    Bits: GIE/GIEH (Global Interrupt), PEIE/GIEL, TMR0IE, INT0IE: IE de Timer0 cuando este llega a cierto límite de tiempo (overflow),
+    RBIE, TMR0IF, INT0IF: IF de la interrupción (overflow) de Timer0, RBIF
+- INTCON2
+- INTCON3
+- PIR1, PIR2
+- PIE1, PIE2
+- IPR1, IPR2
+
+Cada interrupción tiene 3 bits para controlar su operación:
+- IF (Interrupt Flag): Indicador de ocurrencia
+- IE (Interrupt Enable): Máscara
+- Priority bit: Seleccionar la prioridad de la interrupción
 
 Pasos para activar una interrupción:
-1.) Borrar la bandera (IF - Interrupt Flag. Indicador de ocurrencia)
+1.) Borrar la bandera (IF)
 2.) Habilitar globalmente las interrupciones
-3.) Habilitarla individualmente (IE - Interrupt Enable. Máscara)
+3.) Habilitarla individualmente (IE)
+
+Módulo Timer0 (Pg. 127): Funciona como un contador o un temporizador
+Su registro de control es T0CON (Timer0 Control Register). Bits: TMR0ON (habilita Timer0), T08BIT, T0CS, T0SE, PSA, T0PS2, T0PS1,
+T0PS0 (TOPSx: Ajustan la escala de tiempo)
+
 
 Fuentes de reset:
 - Power-on Reset (POR): Reset por corte de la fuente de alimentación
@@ -100,8 +121,9 @@ Fuentes de reset:
 - Stack Full Reset: Reset cuando se llena la pila (tiene 31 niveles de capacidad). Sucede en recursión.
 - Stack Underflow: Cuando la pila se intenta vaciar cuando no hay nada
 
-RCON indica cuál fuente de reset ocurrió. Contiene 4 bits. No hay bit de indicación para MCLR, se deduce por descarte.
-STKPTR (Stack Pointer), indica el nivel de anidamiento --> Capacidad de la pila.
+RCON indica cuál fuente de reset ocurrió. Contiene 4 bits para este propósito (RI, TO, POR BOR).
+No hay bit de indicación para MCLR, se deduce por descarte. (Pg. 46)
+STKPTR (Stack Pointer), indica el nivel de anidamiento --> Capacidad de la pila. (Pg. 52)
 
 
 Modos de bajo consumo (Pg. 37):
@@ -173,8 +195,16 @@ ORG <Posición de memoria de la interrupción>
 ORG 0h ; Se ejecuta cuando se resetea el micro
  goto Inicio ;Vector de reset
  
+// Vector de alta prioridad en 8h, baja prioridad en 18h.
 ORG 8h ;Se ejecuta cuando sucede una interrupción
  goto ISR ;Vector de interrupción
+
+// La estructura de la ISR debe seguir
+<Etiqueta de la ISR>
+  .
+  .
+  retfie ;Retorna. Dura 2 ciclos de bus
+
 
 // Para configurar correctamente el perro guardián
 CONFIG WDT=ON
@@ -375,6 +405,7 @@ cpfslt <Variable> ;Variable < W ?
 // Establecer el bit de un registro
 bsf <registro>,<posición de bit del registro> ;Bit set file
 bcf <registro>,<posición de bit del registro> ;Bit clear file
+btg <registro>,<posición de bit de registrp> ;Bit toggle
 
 // Complemento a 1
 comf <variable>
