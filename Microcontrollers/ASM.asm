@@ -166,8 +166,9 @@ Var3 equ 0x7FF ;0x cuando usamos letras del sistema hexadecimal
 
 // Interrupciones
 // Estructura de la declaración de una interrupción
-
 ORG <Posición de memoria de la interrupción>
+  .
+  .
 
 ORG 0h ; Se ejecuta cuando se resetea el micro
  goto Inicio ;Vector de reset
