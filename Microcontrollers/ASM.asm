@@ -94,7 +94,7 @@ Se utilizan 10 registros para controlar la operación de interrupciones:
     INT0IF: IF de la interrupción externa 0, RBIF: IF de la interrupción de teclado
 - INTCON2: Contiene los bits de prioridad para Timer0 y la interrupción de teclado. Su bit RBPU permite habilitar resistencias de pull-up para
   todos los pines del puerto B (se recomienda poner un retardo después de habilitarla).
-- INTCON3
+- INTCON3: Controla las interrupciones externas número 1y 2
 - PIR1, PIR2
 - PIE1, PIE2
 - IPR1, IPR2
