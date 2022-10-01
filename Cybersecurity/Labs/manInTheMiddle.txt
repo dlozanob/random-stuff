@@ -1,0 +1,4 @@
+Configuraciones iniciales:
+
+Habilitar Hyper V: Plataforma del hipervisor de Windows (Buscar Hyper V, entrar a características de Windows)
+Dentro de GNS3: File/editar/preferencias/Virtualization/engine:Hyper-V (Enable the GNS3 VM)
