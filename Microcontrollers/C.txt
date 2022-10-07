@@ -1,0 +1,3 @@
+Microchip presenta su propio compilador xc8. El compilador transforma desde lenguaje C a ensamblador.
+MPASMWIN transforma desde ensamblador a binario.
+Las variables enteras son de 16 bits.
