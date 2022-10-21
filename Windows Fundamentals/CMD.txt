@@ -39,3 +39,4 @@ mmc (Open the Microsoft Management Console) (The MMC can be used to group snap-i
 
 netstat (Show ip protocol stats and TCP/IP connections)
 
+netstat -bona (Identifica las conexiones y los procesos establecidos)
