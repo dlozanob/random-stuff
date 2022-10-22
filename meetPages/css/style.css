@@ -32,11 +32,19 @@ color: #0066ff;
 
 
 #schedule-icon {
-    position: relative;
-    top: -80px;
-    left: 80vw;
-    font-size: 50px;
-    color: white;
+  position: relative;
+  top: -80px;
+  left: 80vw;
+  font-size: 50px;
+  color: white;
+}
+
+#deutsch-icon {
+	position:  relative;
+	top: -140px;
+	left: 5vw;
+	font-size: 50px;
+	color: red;
 }
 
 #main-content {
