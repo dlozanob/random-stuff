@@ -22,6 +22,9 @@ Se pueden escribir instrucciones en Assembly en C, siempre y cuando no afecten l
 #include <stdlib.h>
 #include <math.h>
 
+// Al utilizar '<>' en el nombre de la librería, MPLabX busca en las carpetas de las librerías por defecto. Poner '" "' especifica que la librería se
+// encuentra en la misma carpeta del proyecto (librerías personales).
+
 // Decirle al compilador la frecuencia de reloj
 #define _XTAL_FREQ <Frecuencia en Hz>
 
