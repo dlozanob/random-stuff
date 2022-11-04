@@ -111,6 +111,9 @@ TRISD0 = 0;
 while(<condición>) {
 }
 
+// Es válido
+while(TRMT == 0);
+
 
 // Retardos
 __delay_ms(<Tiempo en milisegundos>);
