@@ -143,6 +143,52 @@ Modos de bajo consumo (Pg. 37):
 - Modo de suspensión parcial (modo espera): Corta señal de clk (CPU) 
 
 
+Módulo RS232: Utiliza 3 registros de control
+
+TXSTA:
+- CSRC: No importa 
+- TX9:
+    1 -> Transmisión de 9 bits (noveno bit es de paridad)
+    0 ->  Transmisión de 8 bits
+- TXEN: Transmitir un bit enable
+- SYNC: 
+- SENDB: 
+- BRGH:
+- TRMT: Estado del registro (1-> Vacío)
+- TX9D: Indicar qué bit se quiere transmitir como bit d información
+
+
+RCSTA:
+- SPEN: Encender el módulo de comunicación
+- RX9: Configurar recepción de 9 u 8 bits (paridad)
+- SREN: No importa
+- CREN: Encender el receptor
+- ADDEN: Auto detección de dirección (no importa)
+- FERR: Error de marcado 
+- OERR: Error de sobrescritura
+- RX9D: 
+
+
+BAUDCON
+* Los bits 7 y 0: Opción de autodetección de velocidad (detecta la vel del otro dispositivo que intenta comunicarse con el PIC)
+- ABDOVF: Indica si existe alguna operación de recepción
+- RCIDL: Invertir la línea de recepción y transmisión
+- RXDTP: Invertir dato de recepción
+- TXCKP: Invertir dato de transmisión
+- BRG16: Tiene que ver con la velocidad
+- Unimplemented: - - -
+- WUE (Wake-Up Enable Bit): Permite escoger qué hace el micro cuando está en bajo consumo
+- ABDEN: 
+
+
+
+
+
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
