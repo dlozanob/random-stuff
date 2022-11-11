@@ -181,9 +181,23 @@ BAUDCON
 - ABDEN: 
 
 
+Módulo de conversión Análogo a Digital:
 
+Utiliza 5 registros:
 
-
+- Result High Register (ADRESH): Parte alta de la conversión 
+- Result Low Register (ADRESL): Parte baja de la conversión
+- Control Register 0 (ADCON0)
+    GO/DONE: Sirve para inciar la conversión. Al final de esta, indica que terminó la conversión.
+    1 --> Está en coversión ; 0 --> Conversión finalizada
+- Control Register 1 (ADCON1)
+    VCFG0: Es la referencia baja de la conversión
+    VCFG1: Es la referencia alta de la conversión
+    PCFG3:PCFG0: Congfiguración de los pines como Análogo o Digital
+- Control Register 2 (ADCON2)
+    ADFM: Justificación a la derecha o a la izquierda
+    ACQT2:ACQT0: Periodo de adquisición de la señal medida por el sensor
+    ADCS2:ADCS0: Bits de selección del reloj de conversión
 
 
 
