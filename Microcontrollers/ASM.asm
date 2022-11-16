@@ -30,8 +30,9 @@ Tipos de instrucciones:
   MOVFF, CALL, GOTO, MOVSF, MOVSS ocupan 4 bytes. El resto de instrucciones ocupan 2 bytes.
 
 - Según el tiempo que tardan en ejecutarse:
-  - 1 Ciclo de bus: Operaciones aritméticas, lógicas, de movimiento
-  - 2 Ciclos de bus: Mover registro a registro, salto incondicionales, saltos condicionales (cuando se produce un salto en una instrucción de 2 bytes)
+  - 1 Ciclo de bus: Instrucciones de 2 bytes. Operaciones aritméticas, lógicas, de movimiento
+  - 2 Ciclos de bus: Instrucciones de 4 bytes. Mover registro a registro, salto incondicionales,
+      saltos condicionales (cuando se produce un salto en una instrucción de 2 bytes)
   - 3 Ciclos de bus: Saltos condicionales (cuando se produce un salto en una instrucción de 4 bytes)
 
 
