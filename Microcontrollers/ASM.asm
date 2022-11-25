@@ -9,6 +9,7 @@ Características del PIC18F4550:
 - 34 pines I/O y 13 pines análogos
 - Puertos RS232, SPI, IIC, Paralelo y USB 2.0 Device
 - 3 temporizadores de 16 bits y uno de 8 bits con dos canales de PWM
+- 21 fuentes de interrupción
 - 7 fuentes de reset
 - Memoria RAM para datos de 4 kb
 - Su voltaje de alimentación se encuentra en el rango: -0.3 - 7.5 V
@@ -119,8 +120,17 @@ Ajustar puertos como:
 Entradas -> bsf <PUERTO>
 Salidas -> clrf <PUERTO>
 
+
 EQU: Memoria de datos
 ORG: Memoria de instrucciones
+
+
+Interrupciones:
+
+Cada interrupción tiene 3 bits para controlar su operación:
+- IF (Interrupt Flag): Indicador de ocurrencia
+- IE (Interrupt Enable): Máscara
+- Priority bit: Seleccionar la prioridad de la interrupción
 
 Se utilizan 10 registros para controlar la operación de interrupciones:
 - RCON (Reset Control Register)
@@ -136,26 +146,42 @@ Se utilizan 10 registros para controlar la operación de interrupciones:
 - PIE1, PIE2
 - IPR1, IPR2
 
-Cada interrupción tiene 3 bits para controlar su operación:
-- IF (Interrupt Flag): Indicador de ocurrencia
-- IE (Interrupt Enable): Máscara
-- Priority bit: Seleccionar la prioridad de la interrupción
-
 Pasos para activar una interrupción:
 1.) Borrar la bandera (IF)
 2.) Habilitarla individualmente (IE)
 3.) Habilitar globalmente las interrupciones
 
-La interrupción externa se administra con el registro INTCON. Siempre es de alta prioridad
 
-Módulo Timer0 (Pg. 127): Funciona como un contador (ej.: contar botellas en una banda) o un temporizador (reloj)
+Interrupción externa No. 0:
+
+Solo funciona con el pin RB0 configurado como entrada
+Su bit de habilitación es INT0IE
+Su bit de indicación de ocurrencia es INT0IF
+
+Se administra con el registro INTCON. Siempre es de alta prioridad. A las interrupciones externas INT1 e INT2 si se les puede ajustar la prioridad
+
+
+Interrupción Timer0 (Pg. 127):
+
+- Temporizador/contador de 8 o 16 bits
+- Tiene un divisor de frecuencia (prescaler) de 1 hasta 256
+- Su bit de habilitación es TMR0IE
+- Su bit de indicación de ocurrencia es TMR0IF
+- Su bit de configuración de prioridad es TMR0IP
+
+Funciona como un contador (ej.: contar botellas en una banda) o un temporizador (reloj)
 Su registro de control es T0CON (Timer0 Control Register):
   Bits: TMR0ON (habilita Timer0), T08BIT (ajusta Timer0 como un contador de 1 byte o 2),
   T0CS: Lo ajusta en modo temporizador o contador, T0SE: Indicar cambio en flancos de bajada o de subida, PSA, T0PS2, T0PS1,
   T0PS0 (TOPSx: Ajustan la escala de tiempo)
 
-El módulo de interrupción de teclado usa el puerto B con sus pines 7-4. Ambos flancos disparan la interrupción.
 
+Interrupción de teclado: 
+
+Se genera la interrupción por cualquier cambio producido en los pines RB4 - RB7. Ambos flancos disparan la interrupción.
+Su bit de habilitación es RBIE
+Su bit de indicación de ocurrencia es RBIF
+Su bit de configuración de prioridad es RBIP
 Los registros TMR0L (Timer0 Low) y TMR0H (Timer0 High) son registros que llevan la cuenta del conteo de Timer0 (son valores de precarga).
 Timer0 parte baja (TMR0L) se usa como modo de conteo de 1 byte. Cuando tenemos el modo de conteo de 2 bytes, se usan ambos registros (ambos de 8 bits que suman 16 bits), se añade Timer0 parte alta para 
 completar los 16 bits.
@@ -330,9 +356,9 @@ ORG 8h ;Se ejecuta cuando sucede una interrupción
 
 
 // Para configurar correctamente el perro guardián
-CONFIG WDT=ON
+CONFIG WDT = ON
 bsf WDTCON,SWDTEN ;Enable WD
-CONFIG WDPTS=<N> ;N: 1 - 32. Set WD time.
+CONFIG WDPTS = <N> ;N: 1 - 32. Set WD time.
 
 // Instrucciones. Presenta la estructura:
 <Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
