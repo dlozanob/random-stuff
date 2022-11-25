@@ -36,6 +36,17 @@ Tipos de instrucciones:
   - 3 Ciclos de bus: Saltos condicionales (cuando se produce un salto en una instrucción de 4 bytes)
 
 
+Apuntadores:
+Apuntan a posiciones de la memoria RAM. Los registros e los apuntadores son FSR0, FSR1, FSR2.
+
+Cada apuntador tiene 5 modos de acceso para el uso del modo indirecto:
+- INDF: Se accede a la posición de memoria pero el apuntador no es modificado
+- POSTINC: Se accede a la posición de memoria y posteriormente se incrementa la posición del apuntador
+- POSTDEC: Se accede a la posición de memoria y posteriormente se decrementa la posición del apuntador
+- PREINC: Antes de acceder a la posición de memoria, se incrementa la posición del apuntador
+- PLUSW: La posición del contador se incrementa el valor que haya en el registro W
+
+
 El perro guardián es un tipo de protección ante códigos no deseados por el momento. Cuando el microcontrolador se encuentra en condiciones críticas, se reinicia.
 Es un temporizador que corre desde cero, cuando llega hasta cierto límite (desborde), se reinicia el micro (2 minutos por defecto). Funciona con un oscilador RC propio.
 
@@ -55,6 +66,7 @@ Medir tiempos en las instrucciones: Window -> Debugging -> Stop watch
 Tras la sentencia end, se vuelve a repetir el código desde la primera instrucción. Se reinicia el micro de manera abrupta
 
 Al debuggear podemos ir a la siguiente instrucción con F7
+
 
 Los status flags se encuentran en la parte superior del pantallazo de MPLabX
 
@@ -287,7 +299,7 @@ CONFIG WDPTS=<N> ;N: 1 - 32. Set WD time.
 // Instrucciones. Presenta la estructura:
 <Etiquetas> <Mnemónicos> <Operandos> <Comentarios>
 
-// Las etiquetas identifican posiciones de memoria de las instrucciones
+// Las etiquetas identifican posiciones de memoria de las instrucciones. Su sintaxis no puede contener espacios ni comenzar en números.
 // Los mnemónicos son las abreviaturas que indican cada una de las instrucciones
 
 // Ejemplo de la estructura de las instrucciones:
@@ -504,6 +516,34 @@ xorwf <Variable> ;Variable xor W
 andlw <Constante> ;Constante and W
 iorlw <Constante> ;Constante or W
 xorlw <Constante> ;Constante xor W
+
+// Para generar saltos computados se puede modificar el registro PCL que corresponde al registro del contador del programa (PC)
+
+// Los registros de los apuntadores de la memoria RAM son FSR0, FSR1, FSR2
+Ejemplo de apuntadores:
+Tabla equ 6h
+*************
+Menu  
+  lfsr 0, Tabla ; Guarda en FSR0 el valor correspondiente a la dirección 0x6 en la memoria RAM
+
+// Llenar una tabla en la memoria RAM con apuntadores
+Ejemplo:
+LlenarTabla
+  lfsr 0, Tabla ; Se asigna al apuntador FSR0 la posición de memoria
+  movlw 'H' ; Se carga una constante al registro W
+  movwf POSTINC0 ; Se carga la constante al apuntador y se incrementa su posición
+  movwf 'o'
+  movwf POSTINC0 ; Se carga la constante al apuntador y se incrementa su posición
+  .
+  .
+  return
+  
+Ejemplo:
+LeerTabla
+  lsfr 0, Tabla ; Se inicializa el apuntador con la primera posición de la tabla
+  movf PLUSW0,w ; Se le suma un cierto valor al apuntador, y el valor donde está apuntando se guarda en W
+  return
+
 
 // No hacer nada por un ciclo de bus
 nop
