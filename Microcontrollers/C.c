@@ -16,6 +16,9 @@ Se pueden escribir instrucciones en Assembly en C, siempre y cuando no afecten l
 // La librería a usar es
 #include <xc.h>
 
+// Librería del LCD
+#include "LibLCDXC8.h"
+
 // Otras librerías útiles
 #include <conio.h>
 #include <stdio.h>
