@@ -1,5 +1,27 @@
 Instrucciones en la pg. 312 del data sheet.
 
+Características del PIC18F4550:
+- 8 bits
+- Set de 77 instrucciones
+- Memoria Flash de 32 kb
+- 2 kb de memoria SRAM
+- 256 B de memoria EEPROM
+- 34 pines I/O y 13 pines análogos
+- Puertos RS232, SPI, IIC, Paralelo y USB 2.0 Device
+- 3 temporizadores de 16 bits y uno de 8 bits con dos canales de PWM
+- 7 fuentes de reset
+- Memoria RAM para datos de 4 kb
+- Su voltaje de alimentación se encuentra en el rango: -0.3 - 7.5 V
+- La corriente de entrada por el pin Vdd es de 250 mA
+
+Registros de la memoria caché:
+- Registro acumulador o de trabajo (W), 8 bits
+- Registro de condiciones del programa (STATUS), 8 bits)
+- Contador de programa (PC), 21 bits
+- Apuntador de pila (SP), 5 bits
+- Registros apuntadores (FSR0, FSR1, FSR2), 12 bits cada uno
+
+
 Un programa se organiza en 4 secciones:
 - Inclusión de librerías y definición de símbolos
 - Directivas de configuración: Ajustan parámetros generales del funcionamiento del microcontrolador
@@ -70,12 +92,14 @@ Al debuggear podemos ir a la siguiente instrucción con F7
 
 Los status flags se encuentran en la parte superior del pantallazo de MPLabX
 
-Registros de estado (status flags. pg. 73): Muestran el estado aritmético de la ALU. Dependen de la instrucción ejecutada
+
+Registro STATUS (status flags. pg. 73): Muestran el estado aritmético de la ALU. Dependen de la instrucción ejecutada
 - N (Negative bit): 1 -> El resultado es negativo
 - OV (Overflow bit): 1 -> Hay una sobrecarga en el resultado que sobrepasa los 7 bits
 - Z (Zero bit): 1 -> El resultado es cero
-- DC (Digit carry/borrow bit): 1 -> 
-- C (Carry/borrow bit): 1 ->
+- DC (Digit carry/borrow bit): 1 -> Indica si se generó un acarreo de los 4 bits bajos a los 4 bits altos
+- C (Carry/borrow bit): 1 -> Indica si se generó un acarreo total en los 8 bits
+
 
 Fuentes de reloj del micro:
 - Oscilador interno
@@ -235,22 +259,36 @@ include P18F4550.inc
 CONFIG <parámetro a configurar>=<Estado>
 
 // Configurar la frecuencia del oscilador
-CONFIG FOSC=INTOSC_EC ;Internal Oscillator (External Clock) (1 MHz)
-CONFIG FOSC=EC_EC ;External Oscillator
-CONFIG FOSC=XT_XT ;Cristales con frecuencia menor a 4 MHz
-CONFIG FOSC=HS ;Cristales con frecuencia 4 MHz - 40 MHz
+CONFIG FOSC = INTOSC_EC ;Internal Oscillator (External Clock) (1 MHz)
+CONFIG FOSC = EC_EC ;External Oscillator
+CONFIG FOSC = XT_XT ;Cristales con frecuencia menor a 4 MHz
+CONFIG FOSC = HS ;Cristales con frecuencia 4 MHz - 40 MHz
+
+// El pin RA6 tiene por defecto la función del módulo oscilador. Se puede desactivar con
+CONFIG FOSC = INTOSC_ECIO 
 
 // Configurar perro guardián. Por defecto está encendido
-CONFIG WDT=OFF
+CONFIG WDT = OFF
 
-// Configurar Master Clear (Reset externo)
-CONFIG MCLRE=OFF
+// Configurar Master Clear (Reset externo). El pin RE3 tiene por defecto la función del módulo MCLR
+Cuando este pin es liberado, solo se puede usar como entrada
+CONFIG MCLRE = OFF
 
-// Configuración en bajo voltaje
-CONFIG LVP=OFF
+// Configuración en bajo voltaje. El pin RB5 tiene por defecto la función del módulo LVP
+CONFIG LVP = OFF
 
-// RB0 - RB4 comienzan siendo análogos. Para ajustarlos de modo digital se usa
-CONFIG PBADEN=OFF
+// RB0 - RB4 comienzan siendo análogos porque tienen funciones del módulo ADC. Para ajustarlos a modo digital se usa
+CONFIG PBADEN = OFF
+
+// Los pines RC4 y RC5 tienen funciones del módulo USB. Se pueden desactivar haciendo '0' el tercer bit del registro UCON
+Al hacer esto, los pines quedan como entradas digitales
+
+// Hay 13 pines que tienen funciones del módulo ADC:
+- RA0 - RA4
+- RB0 - RB4
+- RE0 - RE2
+// Para liberar todos estos pines se escribe el valor de 15 en el registro ADCON1
+
 
 ****************************************************************TERCERA SECCIÓN - DEFINICIÓN DE VARIABLES*************************************************
 
