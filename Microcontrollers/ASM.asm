@@ -14,6 +14,7 @@ Características del PIC18F4550:
 - Memoria RAM para datos de 4 kb
 - Su voltaje de alimentación se encuentra en el rango: -0.3 - 7.5 V
 - La corriente de entrada por el pin Vdd es de 250 mA
+- 34 pines digitales
 
 Registros de la memoria caché:
 - Registro acumulador o de trabajo (W), 8 bits
@@ -261,6 +262,24 @@ Utiliza 5 registros:
     ADFM: Justificación a la derecha o a la izquierda
     ACQT2:ACQT0: Periodo de adquisición de la señal medida por el sensor
     ADCS2:ADCS0: Bits de selección del reloj de conversión
+
+
+Módulo SPI:
+
+El límite de esclavos son 28; ya que son 28 pines posibles a usar como salidas digitales en la configuración SPI
+
+
+Módulo IIC:
+
+Usa SDO, pero esto implica que perdemos el pin de recepción para el módulo RSD232
+El módulo que permite la comunicación es MASTER SYNCHRONOUS SERIAL PORT (MSSP)
+
+Usa dos registros: SPPSTAT, SPPCON1
+Solo maneja 3 velocidades: 100 kb/s (estándar), 400 kb/s (alta),  3.4 mb/s (muy alta)
+
+Pueden conectarse 127 esclavos distintos. Es posible conectar hasta 1023 esclavos.
+
+
 
 
 
