@@ -394,6 +394,11 @@ Menu
   nop ;Retardo de un ciclo de bus
   bsf LATD,0 ;Manipulación de un único bit
 
+// Ejemplo de la asignación de pines en un registro. El bit de mayor peso (RD7) es el de más a la izquierda
+  Menu
+    movlw b'10100011'
+    movwf TRISD
+
 
 // Comentarios
 ;<Comentario>
@@ -574,7 +579,7 @@ cpfslt <Variable> ;Variable < W ?
 // Establecer el bit de un registro
 bsf <registro>,<posición de bit del registro> ;Bit set file
 bcf <registro>,<posición de bit del registro> ;Bit clear file
-btg <registro>,<posición de bit de registrp> ;Bit toggle
+btg <registro>,<posición de bit de registro> ;Bit toggle
 
 // Complemento a 1
 comf <variable>
