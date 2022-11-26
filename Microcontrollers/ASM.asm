@@ -329,7 +329,8 @@ CONFIG PBADEN = OFF
 Al hacer esto, los pines quedan como entradas digitales
 
 // Hay 13 pines que tienen funciones del módulo ADC:
-- RA0 - RA4
+- RA0 - RA3
+- RA5
 - RB0 - RB4
 - RE0 - RE2
 // Para liberar todos estos pines se escribe el valor de 15 en el registro ADCON1
