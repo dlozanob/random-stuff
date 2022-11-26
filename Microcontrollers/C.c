@@ -107,6 +107,10 @@ TRIS<Grupo de puerto> = <valor>
 TRIS<Grupo de puerto><# de pin> = <valor>;
 TRISD0 = 0;
  
+// Asignar varios pines a un registro
+TRIS<Grupo de puerto> = 0b<Valor de los pines>
+TRISB = 0b10100011
+
 // Modificar puertos
  LATD0 = 0;
   
