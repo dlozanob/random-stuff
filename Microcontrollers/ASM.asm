@@ -175,6 +175,10 @@ Su registro de control es T0CON (Timer0 Control Register):
   Bits: TMR0ON (habilita Timer0), T08BIT (ajusta Timer0 como un contador de 1 byte o 2),
   T0CS: Lo ajusta en modo temporizador o contador, T0SE: Indicar cambio en flancos de bajada o de subida, PSA, T0PS2, T0PS1,
   T0PS0 (TOPSx: Ajustan la escala de tiempo)
+  
+Los registros TMR0L (Timer0 Low) y TMR0H (Timer0 High) son registros que llevan la cuenta del conteo de Timer0 (son valores de precarga).
+Timer0 parte baja (TMR0L) se usa como modo de conteo de 1 byte. Cuando tenemos el modo de conteo de 2 bytes, se usan ambos registros (ambos de 8 bits que suman 16 bits), se añade Timer0 parte alta para 
+completar los 16 bits.
 
 
 Interrupción de teclado: 
@@ -183,9 +187,6 @@ Se genera la interrupción por cualquier cambio producido en los pines RB4 - RB7
 Su bit de habilitación es RBIE
 Su bit de indicación de ocurrencia es RBIF
 Su bit de configuración de prioridad es RBIP
-Los registros TMR0L (Timer0 Low) y TMR0H (Timer0 High) son registros que llevan la cuenta del conteo de Timer0 (son valores de precarga).
-Timer0 parte baja (TMR0L) se usa como modo de conteo de 1 byte. Cuando tenemos el modo de conteo de 2 bytes, se usan ambos registros (ambos de 8 bits que suman 16 bits), se añade Timer0 parte alta para 
-completar los 16 bits.
 
 
 Fuentes de reset:
