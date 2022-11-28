@@ -132,6 +132,9 @@ INT0IE = 1; // Habilitar interrupción
 INT0IF = 0; // Borrar la bandera
 GIE = 1; // Habilitar globalmente las interrupciones
 
+// Para establecer los valores de precarga TMR0H y TMR0L
+TMRO = <Valor de precarga>;
+
 // Se debe declarar la función antes de Main (esqueleto)
 void interrupt ISR(void);
   
