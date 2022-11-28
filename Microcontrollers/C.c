@@ -145,7 +145,7 @@ void interrupt ISR(void) {
 }
 
 // Para baja prioridad
-void low_interrupt ISR(void);
+void __interrupt ISR(void);
   
   
   
