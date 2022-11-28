@@ -98,7 +98,7 @@ void main(void) {
     
 }  
   
-// Binario: '0b' ; Hexadecimal: '0h' ; ASCII: 'A'
+// Binario: '0b' ; Hexadecimal: '0x' ; ASCII: 'A'
 
 // Asignar puertos
 TRIS<Grupo de puerto> = <valor>
