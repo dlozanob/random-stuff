@@ -205,7 +205,9 @@ STKPTR (Stack Pointer), indica el nivel de anidamiento --> Capacidad de la pila.
 
 Modos de bajo consumo (Pg. 37):
 - Modo de suspensión: Corta la señal de clk (CPU y periféricos)
-- Modo de suspensión parcial (modo espera): Corta señal de clk (CPU) 
+- Modo de suspensión parcial (modo espera): Corta señal de clk (CPU)
+
+El registro OSCCON (Pg. 34) controla la operación de reloj del micro. Se encarga de poner en modo de bajo consumo al sistema.
 
 
 Módulo RS232: Utiliza 3 registros de control
