@@ -147,7 +147,9 @@ void interrupt ISR(void) {
 // Para baja prioridad
 void __interrupt ISR(low_priority);
   
-  
+// Modificar uno de los bits de un registro
+// Ejemplo:
+RCONbits.IPEN = 1;
   
   
   
