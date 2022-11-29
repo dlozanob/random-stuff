@@ -151,11 +151,13 @@ void __interrupt ISR(low_priority);
 // Ejemplo:
 RCONbits.IPEN = 1;
   
+// Entrar en modo de bajo consumo total
+sleep();
   
   
   
-  
-  
+  192.168.1
+    192.168.1.254
   
   
   
