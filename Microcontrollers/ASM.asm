@@ -18,7 +18,7 @@ Características del PIC18F4550:
 
 Registros de la memoria caché:
 - Registro acumulador o de trabajo (W), 8 bits
-- Registro de condiciones del programa (STATUS), 8 bits)
+- Registro de condiciones del programa (STATUS), 8 bits
 - Contador de programa (PC), 21 bits
 - Apuntador de pila (SP), 5 bits
 - Registros apuntadores (FSR0, FSR1, FSR2), 12 bits cada uno
