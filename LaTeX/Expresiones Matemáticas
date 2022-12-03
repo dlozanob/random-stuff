@@ -156,6 +156,8 @@ f(x)= \left\{ \begin{array}{lcc}
   \item
 \end{itemize}
 
+• Personalizar viñeta de item:
+\item[*]
 
 • Crear una matriz: (matrix --> sin envolver, pmatrix --> paréntesis, bmatrix --> corchetes, Bmatrix --> llaves, vmatrix --> determinante)
 
@@ -272,3 +274,13 @@ This is a reference to Section~\ref{section:my}.
 
 • Letra cursiva:
 \textit{} ; \emph{}
+
+• Añadir un espacio:
+\quad
+
+• Agregar una tilde:
+\acute{}
+
+• Agregar '~' encima de una letra:
+\tilde{}
+
