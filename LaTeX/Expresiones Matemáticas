@@ -129,6 +129,9 @@ Ejemplo:
     \label{fig:my_label}
 \end{figure}
 
+* Para ajustar la imagen al ancho de la página: width = \linewidth
+
+
 • Añadir una ecuación (esta será enumerada)(Solo debe ser una)
 
 \begin{equation}
