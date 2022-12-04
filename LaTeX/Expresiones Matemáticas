@@ -28,6 +28,7 @@
 • Theta: \theta
 • Diámetro: \varnothing
 • Salto de línea: \\
+• Límite: \lim_{x \to 1}
 • Infinito: \infty
 • Sumatorio: \sum_{k = <lím inf>}^{k = <lím sup>} f(x_{i})
 • Integral definida: \int_{<lím inf>}^{lím sup} f(x) dx
