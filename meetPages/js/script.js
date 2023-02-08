@@ -17,12 +17,10 @@ tmr = setInterval(bounce, intTime);
 function bounce() {
     let translation = factor*Math.exp(damp*(time + shift))*Math.sin(period*Math.PI*(time + shift));
     
-    console.log(`Result is: ${translation}`);
     tiles.style.left = `${-translation}px`;
     time += 1;
 
     if(time >= secondsToLast*1000/intTime) {
-        console.log("Finished!");
         tiles.style.left = "0";
         clearInterval(tmr);
     }
