@@ -1,181 +1,20 @@
-• Añadir ecuaciones de forma simple:
-
-\[
-.
-.
-.
-.
-\]
-
-
 • Para formato IEEE con doble columna:
 \documentclass[Journal]{IEEEtran}
 
 • Símbolo matemático en medio de un texto: Usar al inicio '$<expresión>$'
-• Vectores: \Vec{F}
-• Vec. Unitarios: \hat{k}
-• Subíndices: m_{1} 
-• Superíndices: m^{2}
-• Exponentes: m^2
-• Raíces:	\sqrt[índice]{x}
-• Fracciones: \frac{a}{b+c}
-• Salto de línea: \cr
-• Triángulo: \triangle
-• Logaritmos: \log
-• Pi: \pi
-• Punto mult: \cdot
-• Aproximación: \approx
-• Theta: \theta
-• Diámetro: \varnothing
 • Salto de línea: \\
-• Límite: \lim_{x \to 1}
-• Infinito: \infty
-• Sumatorio: \sum_{k = <lím inf>}^{k = <lím sup>} f(x_{i})
-• Integral definida: \int_{<lím inf>}^{lím sup} f(x) dx
-• Derivada parcial: \partial
-• Gradiente: \nabla
-• Subtítulo: \subsection
 • Texto en negrilla: \textbf
 • Espacio entre párrafos: \bigskip
 • Símbolo de barra sobre una letra: \overline{}
-• Suma exclusiva: \oplus{}
 
-• Referenciar una cita: \cite{Nombre de la cita}
-• Hacer una bibliografía:
-  Ejemplo:
-    \begin{thebibliography}{0}
-    \bibitem{Giancoli}{Giancoli D, 2009, “Física para ciencias e ingeniería con física moderna”, volumen 2, cuarta edición, p. 560.}
-    \bibitem{Simulador}{Herramienta utilizada para la simulación del laboratorio: \url{http://www.flashphysics.org/electricField.html}}
-    \end{thebibliography}
-    
- • Enumerar secciones:
-   \begin{enumerate}
-    \item \textbf{Subtítulo 1}\\
-      'texto'
-    \item \textbf{Subtítulo 2}\\
-      'texto'
-    \item \textbf{Subtítulo 3}\\
-      'texto'
-   \end{enumerate}
-
-• Añadir varias ecuaciones:
-
-\begin{gather*}
-    .
-    .
-    .
-\end{gather*}
-
-• Para poner unidades junto a su valor: \SI
-  Ejemplo:
-    \begin{align*}
-      m &= \SI{39.759}{mA/V} \\
-      &= \SI{3.9759e-2}{A/V} \\
-      &= \frac{1}{R}
-    \end{align*}
-
-• Caracteres especiales:
-  # ---> \#
-  $ ---> \$
-  % ---> \%
-  & ---> \&
-  / ---> \textbackslash{}
-  ^ ---> \textasciicircum{}
-  _ ---> \_
-  { ---> \{
-  } ---> \}
-  ~ ---> \textasciitilde{}
-    
-• Tablas:
-  
-Ejemplo:
-
-\begin{table}[H]
-  \centering
-    \begin{tabular}{|c|c|}
-        \hline
-            Resistencia ($\Omega$) & Caída de potencial (V) \\
-         \hline
-            100 & 0,74 \\
-            270 & 2,02 \\
-            330 & 2,44 \\
-         \hline
-    \end{tabular}
-  \caption{Caída de voltaje en cada resistencia en serie}
-  \label{tab:my_label}
-\end{table}
-    
-    
-• Tabla (Plantilla):
-
-\begin{center}
-  \begin{tabular}{|c|c|c|c|c|c|}
-
-    \hline
-    \multicolumn{6}{|c|}{<title>} \\ \hline
-    x & x & x & x & x & x \\ \hline  
-  
-  \end{tabular}
-\end{center}
-    
-    
-• Sub-secciones de sub-secciones: \subsubsection{descripción}
-  
-• Añadir imágenes:
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width = <sizeScale> \textwidth]{<image path>}
-    \caption{<description>}
-    \label{fig:my_label}
-\end{figure}
-
-* Para ajustar la imagen al ancho de la página: width = \linewidth
-
-
-• Añadir una ecuación (esta será enumerada)(Solo debe ser una)
-
-\begin{equation}
-    .
-    .
-    .
-\end{equation}
-
-
-• Añadir ecuación por partes:
-
-f(x)= \left\{ \begin{array}{lcc}
-     5 &   si  & x \leq 2 \\
-     \\ x^2-6x+10 &  si & 2 < x < 5 \\
-     \\ 4x-15 &  si  & x \geq 5
-     \end{array}
-\right.
 
 
 • Comenzar nueva página: \newpage
 
-• Crear una lista:
 
-\begin{itemize}
-  \item
-\end{itemize}
-
-• Personalizar viñeta de item:
-\item[*]
-
-• Crear una matriz: (matrix --> sin envolver, pmatrix --> paréntesis, bmatrix --> corchetes, Bmatrix --> llaves, vmatrix --> determinante)
-
-\begin{equation}
-  \begin{pmatrix}
-    2 & 5 & 0\\
-    7 & 3 & 8\\
-    3 & 0 & 1
-  \end{pmatrix}
-\end{equation}
 
 • Introducir espaciado horizontal: \hspace{100}
 
-• +-: \pm
 
 • Añadir To-do item:
 
@@ -265,11 +104,6 @@ This is a reference to Section~\ref{section:my}.
     \end{align*}
 \end{center}
 
-• Ecuaciones con múltiples líneas:
-
-\begin{multline*}
-
-\end{multline*}
 
 • Para resumenes (abstracts):
 
