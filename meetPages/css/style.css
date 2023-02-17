@@ -115,8 +115,9 @@ body {
 }
 
 #assignature-tile6 {
-	background: url('../images/micro.jpg') no-repeat;
-	background-position: center;
+	background: url('../images/electDigit.png') no-repeat;
+	background-size: 550px 250px;
+	background-position: -10px -75px;
 }
 
 #assignature-tile7 {
