@@ -1,3 +1,5 @@
+var vib = 0;
+
 class Time {
     constructor() {
         this._hours = 0;
@@ -75,8 +77,12 @@ function updateCounter() {
 
     ticCount += 19;
     if(ticCount >= 1000) {
+        vib += 1
         //audio.play();
-        navigator.vibrate(200);
+        if(vib%5 == 0) {
+            console.log(vib);
+            navigator.vibrate(200);
+        }
         ticCount = 0;
     }
 }
