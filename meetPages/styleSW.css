@@ -1,0 +1,68 @@
+#myTitle {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: blueviolet;
+    border: 2px solid;
+}
+
+#outerDisp {
+    border: solid rgb(0, 0, 0) 5px;
+    border-radius: 30px;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    top: 100px;
+    left: 5%;
+    background-color: rgb(64, 70, 67);
+}
+
+#dispTime {
+    text-align:center;
+    position: relative;
+    top: 15px;
+    color: rgb(255, 255, 255);
+    background-color:blue;
+    font-size: 100px;
+    border:solid black 5px;
+    border-radius: 25px;
+    font-family: consolas, monospace;
+    margin:20px;
+}
+
+#ms {
+    font-size: 25px;
+    position: relative;
+    top: -25px;
+    left: -15px;
+    text-align: right;
+}
+
+.bttnContainer {
+    position: relative;
+    top: 15px;
+    text-align: center;
+}
+
+#start {
+    position: relative;
+    left: -40px;
+}
+
+#reset {
+    position: relative;
+    left: 40px;
+}
+
+button {
+    font-size: 50px;
+    font-family:fantasy;
+    border: solid black 5px;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: rgb(0, 255, 115);
+}
+
+button:active {
+    background-color: rgb(233, 6, 6);
+}
