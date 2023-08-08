@@ -1,0 +1,233 @@
+body {
+	background-color: #421c2d;
+}
+
+.row {
+	position: relative;
+	/*transition: left 1.5s ease-in 0.3s;*/
+}
+
+#title {
+	margin: 20px;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 4em;
+	font-family: 'Bebas Neue', serif;
+	text-transform: uppercase;
+	color: #0066ff;
+	animation-name: glowing;
+	animation-duration: 2s; /*1s*/
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes glowing {
+	0% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #181818;}
+	12% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #272727;}
+	25% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #3b3b3b;}
+	37% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #5c5c5c;}
+	50% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #7c7c7c;}
+	62% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #9b9b9b;}
+	75% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #c5c5c5;}
+	87% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #e0e0e0;}
+	100% {text-shadow: 2px 2px 32px #0079b1, 2px 2px 32px #ffffff;}
+}
+
+
+#header-nav {
+	background-color: #000000;
+	height: 125px;
+	border-radius: 0px;
+}
+
+#schedule-icon {
+  position: relative;
+  top: -80px;
+  left: 80vw;
+  font-size: 50px;
+  color: white;
+  text-shadow: 0px 0px 64px #ffffff;
+  opacity: 0.8;
+}
+
+#schedule-icon:hover {
+	opacity: 1;
+}
+
+#deutsch-icon {
+	position:  relative;
+	top: -140px;
+	left: 5vw;
+	font-size: 50px;
+	color: red;
+	text-shadow: 0px 0px 64px rgb(255, 0, 0);
+}
+
+#deutsch-icon:hover {
+	text-shadow: 0px 0px 64px white, 0px 0px 64px rgb(255, 0, 0);
+}
+
+#main-content {
+	margin: 50px;
+}
+
+#assignature-tile1, #assignature-tile2, #assignature-tile3, #assignature-tile4, #assignature-tile5, #assignature-tile6, #assignature-tile7 {
+	height: 150px;
+	width: 100%;
+  	position: relative;
+	border: 2px solid #cc0000;
+	overflow: hidden;
+}
+
+#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover, #assignature-tile7:hover {
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#assignature-tile1 {
+	background: url('../images/mechanism.jpg') no-repeat;
+	background-position: -180px -40px;
+	background-size: 750px 350px;
+}
+
+#assignature-tile2 {
+	background: url('../images/mecFluid.jpg') no-repeat;
+	background-size:600px 450px;
+	background-position: 50% 50%;
+}
+
+#assignature-tile3 {
+	background: url('../images/finanzas.jpg') no-repeat;
+	background-size: 650px 150px;
+	background-position: 50% 0px;
+}
+
+#assignature-tile4 {
+	background: url('../images/sis2.jpg') no-repeat;
+	background-size: 100% 450px;
+	background-position: 50% -25px;
+}
+
+#assignature-tile5 {
+	background: url('../images/servos.jpg') no-repeat;
+	background-size: 650px 250px;
+	background-position: -50px -15px;
+}
+
+#assignature-tile6 {
+	background: url('../images/electDigit.png') no-repeat;
+	background-size: 550px 250px;
+	background-position: -10px -75px;
+}
+
+#assignature-tile7 {
+	background: url('../images/.jpg') no-repeat;
+	background-position: center;
+}
+
+
+#assignature-tile1 span, #assignature-tile2 span, #assignature-tile3 span, #assignature-tile4 span, #assignature-tile5 span, #assignature-tile6 span, #assignature-tile7 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: 0.6;
+}
+
+
+
+.button-container {
+	margin-bottom:  15px;
+	width: 100%;
+	background-color: #fff;
+	border: 2px solid #cc0000;
+	border-top: 0px;
+}
+
+.expandable-button {
+	width: 100%;
+	position: relative;
+	font-family: monospace;
+	font-style: oblique;
+	font-size: 1.4em;
+}
+
+
+#nav-list {
+  margin: 0px;
+  width:100%;
+}
+
+#nav-list a {
+  text-align: center;
+  color: #000;
+  font-size: 1.3em;
+  font-family: italic; 
+}
+#nav-list a:hover {
+  background: #8f8d8d;
+}
+
+.btn .arrow {
+	position: relative;
+	left: 5vw;
+	top: 3px;
+}
+
+.btn span {
+	position: relative;
+	top: 5px;
+}
+
+.dropdown-menu {
+	width: 100%;
+}
+
+#completed {
+	background-color: #000000;
+	position: absolute;
+	width: 92.8%;
+	height: 92.8%;
+	z-index: 3;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+
+/**** END OF MAIN PAGE ****/
+
+
+/**** SCHEDULE PAGE ****/
+
+
+#header-nav2 {
+	text-align: center;
+	background-color: #080708;
+	border-radius: 40px;
+	border: 3px solid #fff;
+}
+
+#title2 {
+	margin: 20px;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 4em;
+	font-family: 'Bebas Neue', serif;
+	text-transform: uppercase;
+	text-shadow: 5px 5px 5px #222;
+	color: #f52d05;
+}
+
+.jumbotron {
+	background-color: #301129;
+}
+
+.schedule {
+	border-radius: 15px;
+}

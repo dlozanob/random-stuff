@@ -4,7 +4,6 @@ body {
 
 .row {
 	position: relative;
-	/*transition: left 1.5s ease-in 0.3s;*/
 }
 
 #title {
@@ -17,9 +16,32 @@ body {
 	text-transform: uppercase;
 	color: #0066ff;
 	animation-name: glowing;
-	animation-duration: 2s; /*1s*/
+	animation-duration: 1s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
+}
+
+#bgVideo {
+	position: absolute;
+	left: -9em;
+	top: -1em;
+	width: 114em; 
+	height: 55em;
+	z-index: 0;
+  }
+
+#vidFilm {
+	background-color: #000000;
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	z-index: 1;
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.col-md-4 {
+	z-index: 5;
 }
 
 @keyframes glowing {
@@ -39,6 +61,7 @@ body {
 	background-color: #000000;
 	height: 125px;
 	border-radius: 0px;
+	border-style: none none solid none;
 }
 
 #schedule-icon {
@@ -76,36 +99,36 @@ body {
 	height: 150px;
 	width: 100%;
   	position: relative;
-	border: 2px solid #cc0000;
+	border: 2px solid #000000;
 	overflow: hidden;
 }
 
 #assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover, #assignature-tile7:hover {
-	box-shadow: 0 1px 5px 1px #cccccc;
+	box-shadow: 0 1px 5px 5px #cccccc;
 }
 
 #assignature-tile1 {
-	background: url('../images/mechanism.jpg') no-repeat;
-	background-position: -180px -40px;
-	background-size: 750px 350px;
+	background: url('../images/des1.png') no-repeat;
+	background-position: -180px -70px;
+	background-size: 650px 250px;
 }
 
 #assignature-tile2 {
-	background: url('../images/mecFluid.jpg') no-repeat;
-	background-size:600px 450px;
-	background-position: 50% 50%;
+	background: url('../images/control.png') no-repeat;
+	background-size:500px 150px;
+	background-position: -95px 0px;
 }
 
 #assignature-tile3 {
-	background: url('../images/finanzas.jpg') no-repeat;
-	background-size: 650px 150px;
-	background-position: 50% 0px;
+	background: url('../images/sensors.png') no-repeat;
+	background-size: 450px 225px;
+	background-position: -15px -35px;
 }
 
 #assignature-tile4 {
-	background: url('../images/sis2.jpg') no-repeat;
-	background-size: 100% 450px;
-	background-position: 50% -25px;
+	background: url('../images/tpi.png') no-repeat;
+	background-size: 400px 150px;
+	background-position: 0px -5px;
 }
 
 #assignature-tile5 {
@@ -145,7 +168,7 @@ body {
 	margin-bottom:  15px;
 	width: 100%;
 	background-color: #fff;
-	border: 2px solid #cc0000;
+	border: 2px solid #000000;
 	border-top: 0px;
 }
 
