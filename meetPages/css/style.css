@@ -1,5 +1,5 @@
 body {
-	background-color: #421c2d;
+	background-color: #ddd366;	
 }
 
 .row {
@@ -231,9 +231,23 @@ body {
 #header-nav2 {
 	text-align: center;
 	background-color: #080708;
-	border-radius: 40px;
+	border-radius: 0px;
 	border: 3px solid #fff;
+	border-style: none none solid none;
 }
+
+@keyframes glowing2 {
+	0% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #181818;}
+	12% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #272727;}
+	25% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #3b3b3b;}
+	37% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #5c5c5c;}
+	50% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #7c7c7c;}
+	62% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #9b9b9b;}
+	75% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #c5c5c5;}
+	87% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #e0e0e0;}
+	100% {text-shadow: 2px 2px 32px #ffffff, 2px 2px 32px #ffffff;}
+}
+
 
 #title2 {
 	margin: 20px;
@@ -244,11 +258,16 @@ body {
 	font-family: 'Bebas Neue', serif;
 	text-transform: uppercase;
 	text-shadow: 5px 5px 5px #222;
-	color: #f52d05;
+	color: #ffffff;
+	animation-name: glowing2;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 .jumbotron {
-	background-color: #301129;
+	background-color: #e6ebb0
+	;
 }
 
 .schedule {
