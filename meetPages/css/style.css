@@ -109,33 +109,33 @@ body {
 }
 
 #assignature-tile1 {
-	background: url('../images/des1.png') no-repeat;
-	background-position: -180px -70px;
-	background-size: 650px 250px;
+	background: url('../images/DM.png') no-repeat;
+	background-position: -80px -50px;
+	background-size: 450px 300px;
 }
 
 #assignature-tile2 {
-	background: url('../images/control.png') no-repeat;
-	background-size:500px 150px;
-	background-position: -95px 0px;
+	background: url('../images/TC.png') no-repeat;
+	background-size: 405px 225px;
+	background-position: -35px 0px;
 }
 
 #assignature-tile3 {
-	background: url('../images/sensors.png') no-repeat;
-	background-size: 450px 225px;
-	background-position: -15px -35px;
+	background: url('../images/IM.png') no-repeat;
+	background-size: 400px 200px;
+	background-position: -30px -15px;
 }
 
 #assignature-tile4 {
-	background: url('../images/tpi.png') no-repeat;
-	background-size: 400px 150px;
-	background-position: 0px -5px;
+	background: url('../images/PAI.png') no-repeat;
+	background-size: 400px 250px;
+	background-position: -30px -15px;
 }
 
 #assignature-tile5 {
-	background: url('../images/servos.jpg') no-repeat;
-	background-size: 650px 250px;
-	background-position: -50px -15px;
+	background: url('../images/R.png') no-repeat;
+	background-size: 400px 250px;
+	background-position: -5px -40px;
 }
 
 #assignature-tile6 {
