@@ -108,28 +108,32 @@ body {
 	box-shadow: 0 1px 5px 5px #cccccc;
 }
 
+#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover, #assignature-tile7:hover {
+	box-shadow: 0 1px 5px 5px #cccccc;
+}
+
 #assignature-tile1 {
 	background: url('../images/DM.png') no-repeat;
-	background-position: -80px -50px;
+	background-position: -60px -50px;
 	background-size: 450px 300px;
 }
 
 #assignature-tile2 {
 	background: url('../images/TC.png') no-repeat;
 	background-size: 405px 225px;
-	background-position: -35px 0px;
+	background-position: -15px 0px;
 }
 
 #assignature-tile3 {
 	background: url('../images/IM.png') no-repeat;
 	background-size: 400px 200px;
-	background-position: -30px -15px;
+	background-position: 0px -15px;
 }
 
 #assignature-tile4 {
 	background: url('../images/PAI.png') no-repeat;
 	background-size: 400px 250px;
-	background-position: -30px -15px;
+	background-position: -15px -15px;
 }
 
 #assignature-tile5 {
