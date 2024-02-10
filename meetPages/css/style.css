@@ -131,7 +131,7 @@ body {
 }
 
 #assignature-tile4 {
-	background: url('../images/PAI.png') no-repeat;
+	background: url('../images/TT.png') no-repeat;
 	background-size: 400px 250px;
 	background-position: -15px -15px;
 }
@@ -139,13 +139,13 @@ body {
 #assignature-tile5 {
 	background: url('../images/R.png') no-repeat;
 	background-size: 400px 250px;
-	background-position: -5px -40px;
+	background-position: -30px 0px;
 }
 
 #assignature-tile6 {
-	background: url('../images/electDigit.png') no-repeat;
+	background: url('../images/TIA.png') no-repeat;
 	background-size: 550px 250px;
-	background-position: -10px -75px;
+	background-position: -10px -65px;
 }
 
 #assignature-tile7 {
