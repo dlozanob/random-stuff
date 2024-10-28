@@ -1,5 +1,7 @@
+/**** MAIN PAGE ****/
+
 body {
-	background-color: #ddd366;	
+	background-color: #7f0000;
 }
 
 .row {
@@ -59,7 +61,7 @@ body {
 
 
 #header-nav {
-	background-color: #000000;
+	background-color: rgba(0, 0, 0, 0.6);
 	height: 125px;
 	border-radius: 0px;
 	border-style: none none solid none;
@@ -93,88 +95,108 @@ body {
 }
 
 #main-content {
-	margin: 50px;
+	position: relative;
+	top: -15px;
+	margin: 5px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 17px;
+	height: 68vh;
 }
 
-#assignature-tile1, #assignature-tile2, #assignature-tile3, #assignature-tile4, #assignature-tile5, #assignature-tile6, #assignature-tile7 {
-	height: 150px;
+.course-container {
+	height: 83vh;
 	width: 100%;
-  	position: relative;
+	position: relative;
 	border: 2px solid #000000;
-	overflow: hidden;
-}
-
-#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover, #assignature-tile7:hover {
-	box-shadow: 0 1px 5px 5px #cccccc;
-}
-
-#assignature-tile1:hover, #assignature-tile2:hover, #assignature-tile3:hover, #assignature-tile4:hover, #assignature-tile5:hover, #assignature-tile6:hover, #assignature-tile7:hover {
-	box-shadow: 0 1px 5px 5px #cccccc;
-}
-
-#assignature-tile1 {
-	background: url('../images/DM.png') no-repeat;
-	background-position: -60px -50px;
-	background-size: 450px 300px;
-}
-
-#assignature-tile2 {
-	background: url('../images/TC.png') no-repeat;
-	background-size: 405px 225px;
-	background-position: -15px 0px;
-}
-
-#assignature-tile3 {
-	background: url('../images/IM.png') no-repeat;
-	background-size: 400px 200px;
-	background-position: 0px -15px;
-}
-
-#assignature-tile4 {
-	background: url('../images/TT.png') no-repeat;
-	background-size: 400px 250px;
-	background-position: -15px -15px;
-}
-
-#assignature-tile5 {
-	background: url('../images/R.png') no-repeat;
-	background-size: 400px 250px;
-	background-position: -30px 0px;
-}
-
-#assignature-tile6 {
-	background: url('../images/TIA.png') no-repeat;
-	background-size: 550px 250px;
-	background-position: -10px -65px;
-}
-
-#assignature-tile7 {
-	background: url('../images/.jpg') no-repeat;
-	background-position: center;
-}
-
-
-#assignature-tile1 span, #assignature-tile2 span, #assignature-tile3 span, #assignature-tile4 span, #assignature-tile5 span, #assignature-tile6 span, #assignature-tile7 span {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 	text-align: center;
-	font-size: 1.6em;
-	text-transform: uppercase;
-	background-color: #000;
-	color: #fff;
-	opacity: 0.6;
 }
 
+.course-link {
+	overflow: hidden;
+	display: block;
+	height: 100%;
+}
 
+.course-link div:first-child {
+	position: relative;
+	padding: 15px;
+	text-transform: uppercase;
+	z-index: 2;
+	background-color: #000;
+	opacity: 0.7;
+	color: white;
+	font-size: 1.6em;
+	box-shadow: 0px 2px 7px 5px #000;
+}
+
+.course-container > a:hover {
+	text-decoration-line: none;
+}
+
+.course-container:hover {
+	animation-name: course-glowing;
+	animation-duration: 0.3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes course-glowing {
+	0% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #181818;}
+	12% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #272727;}
+	25% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #3b3b3b;}
+	37% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #5c5c5c;}
+	50% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #7c7c7c;}
+	62% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #9b9b9b;}
+	75% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #c5c5c5;}
+	87% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #e0e0e0;}
+	100% {box-shadow: 2px 2px 32px #fff, 2px 2px 32px #ffffff;}
+}
+
+.bckgrnd-img {
+	position: relative;
+	z-index: 0;
+}
+
+#course-tile1 {
+	grid-column: 1;
+	grid-row: 1;
+	background: url('../images/DS.jpg') no-repeat;
+	background-position: -18px -73px;
+	background-size: 344px 631px;
+}
+
+#course-tile2 {
+	grid-column: 2;
+	grid-row: 1;
+	background: url('../images/APM.jpg') no-repeat;
+	background-position: -67px -91px;
+	background-size: 452px 616px;
+}
+
+#course-tile3 {
+	grid-column: 3;
+	grid-row: 1;	
+	background: url('../images/PAI.jpg') no-repeat;
+	background-position: -86px 0px;
+	background-size: 654px 542px;
+}
+
+#course-tile4 {
+	grid-column: 4;
+	grid-row: 1;	
+	background: url('../images/FR.jpg') no-repeat;
+	background-position: -121px 0px;
+	background-size: 580px 540px;
+}
 
 .button-container {
-	margin-bottom:  15px;
-	width: 100%;
+	bottom: 44px;
+	left: -2px;
+	width: 100.7%;
+	margin-bottom: 15px;
 	background-color: #fff;
 	border: 2px solid #000000;
-	border-top: 0px;
 }
 
 .expandable-button {
@@ -278,3 +300,5 @@ body {
 .schedule {
 	border-radius: 15px;
 }
+
+/**** END OF SCHEDULE PAGE ****/

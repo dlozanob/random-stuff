@@ -13,7 +13,7 @@
 
   	</head>
 	
-	<body>
+	<body style="overflow: hidden;">
 		
 		<div id="vidFilm"></div>
 		<video autoplay muted loop id="bgVideo">	
@@ -23,10 +23,10 @@
 		
 		<header>
 			<nav id = header-nav class = "navbar navbar-default" style = "z-index: 2">
-				<div class = "container-fluid">
+				<div class = "container-fluid" style="position: relative; top: 13px">
 
 					<div class = "navbar-header" id = "title">
-						10. Semester
+						Letztes Semester
 					</div>
 				
 					<div class = "container">		
@@ -45,14 +45,16 @@
 
 		<div id = "main-content" class = "row">	
 
-			<div class = "col-md-4 col-sm-6 col-xs-12">				
-				<span id="completed"></span>
-				<a href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" target = "_blank"><div id = "assignature-tile1"><span>Maschinenzeichnung</span></div></a>			  
-				<div class = "btn-group button-container" role = "group"> 				     
+			<div class = "course-container" id="course-tile1">
+				<a href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" class="course-link" target = "_blank">
+					<div><span>Introducción a la cultura contemporánea de alemania</span></div>
+					<div class="bckgrnd-img"></div>
+				</a>
+				<div class = "btn-group button-container dropup" role = "group">
 					<button id="btnGroupDrop1" type="button"
 				    class = "btn btn-secondary dropdown-toggle expandable-button"
 				    data-toggle = "dropdown" aria-haspopup = "true" aria-expanded="false">
-				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-down"></span>
+				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-up"></span>
 				    </button>
 			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">				      	
 				      	<ul id = "nav-list" class = "nav navbar-nav navbar-right">				      		
@@ -64,94 +66,71 @@
 				</div>			
 			</div>
 
-			<div class = "col-md-4 col-sm-6 col-xs-12">				
-				<span id="completed"></span>
-				<a href = "https://drive.google.com/drive/folders/1T8GNyAqXw2kuYWm_FCijp8YPFp-7QE8n" target = "_blank"><div id = "assignature-tile2"><span>Kontrolltechniken</span></div></a>
-				<div class = "btn-group button-container" role = "group">	   
-				   <button id="btnGroupDrop1" type="button"
+			<div class = "course-container" id="course-tile2">
+				<a href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" class="course-link" target = "_blank">
+					<div><span>Automatización de Procesos de Manufactura</span></div>
+					<div class="bckgrnd-img"></div>
+				</a>
+				<div class = "btn-group button-container dropup" role = "group">
+					<button id="btnGroupDrop1" type="button"
 				    class = "btn btn-secondary dropdown-toggle expandable-button"
 				    data-toggle = "dropdown" aria-haspopup = "true" aria-expanded="false">
-				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-down"></span>
-				    </button>				    
+				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-up"></span>
+				    </button>
 			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">				      	
 				      	<ul id = "nav-list" class = "nav navbar-nav navbar-right">				      		
-							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/1T8GNyAqXw2kuYWm_FCijp8YPFp-7QE8n" target = "_blank">Drive</a></li>
+							<li><a class="dropdown-item" href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" target = "_blank">Classroom</a></li>
+							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/0AKhuVRn_mjfdUk9PVA" target = "_blank">Drive</a></li>
+							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/1sN3hZKW4b5ZDHKUnNWf-39fcBbsfY9FS" target = "_blank">Drive Entregas</a></li>
 						</ul>
 					</div>
 				</div>			
-			</div>
+			</div>			
 
-			<div class = "col-md-4 col-sm-6 col-xs-12">
-				<span id="completed"></span>
-				<a href = "https://classroom.google.com/c/NjI4NjIxMzA0ODQy" target = "_blank"><div id = "assignature-tile3"><span>Fertigungstechnik</span></div></a>			  
-				<div class = "btn-group button-container" role = "group"> 				   
-				   <button id="btnGroupDrop1" type="button"
+			<div class = "course-container" id="course-tile3">
+				<a href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" class="course-link" target = "_blank">
+					<div><span>Proyecto Aplicado de Ingeniería</span></div>	  
+					<div class="bckgrnd-img"></div>
+				</a>
+				<div class = "btn-group button-container dropup" role = "group">
+					<button id="btnGroupDrop1" type="button"
 				    class = "btn btn-secondary dropdown-toggle expandable-button"
 				    data-toggle = "dropdown" aria-haspopup = "true" aria-expanded="false">
-				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-down"></span>
-				    </button>				    
+				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-up"></span>
+				    </button>
 			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">				      	
 				      	<ul id = "nav-list" class = "nav navbar-nav navbar-right">				      		
-							<li><a class="dropdown-item" href = "https://classroom.google.com/c/NjI4NjIxMzA0ODQy" target = "_blank">Classroom</a></li>
-							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/1bzHa6CmcGljcWp9AlQp3gTu376V9O6pc" target = "_blank">Drive</a></li>
+							<li><a class="dropdown-item" href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" target = "_blank">Classroom</a></li>
+							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/0AKhuVRn_mjfdUk9PVA" target = "_blank">Drive</a></li>
+							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/1sN3hZKW4b5ZDHKUnNWf-39fcBbsfY9FS" target = "_blank">Drive Entregas</a></li>
 						</ul>
 					</div>
 				</div>			
-			</div>
+			</div>	
 
-			<div class = "col-md-4 col-sm-6 col-xs-12">
-				<span id="completed"></span>
-				<a href = "https://sites.google.com/unal.edu.co/termodinamicatecnica" target = "_blank"><div id = "assignature-tile4"><span>Technische Thermodynamik</span></div></a>			  
-				<div class = "btn-group button-container" role = "group"> 				   
-				   <button id="btnGroupDrop1" type="button"
+			<div class = "course-container" id="course-tile4">
+				<a href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" class="course-link" target = "_blank">
+					<div><span>Français Intensif II</span></div>	  
+					<div class="bckgrnd-img"></div>
+				</a>
+				<div class = "btn-group button-container dropup" role = "group">
+					<button id="btnGroupDrop1" type="button"
 				    class = "btn btn-secondary dropdown-toggle expandable-button"
 				    data-toggle = "dropdown" aria-haspopup = "true" aria-expanded="false">
-				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-down"></span>
-				    </button>				    
+				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-up"></span>
+				    </button>
 			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">				      	
 				      	<ul id = "nav-list" class = "nav navbar-nav navbar-right">				      		
-							<li><a class="dropdown-item" href = "https://sites.google.com/unal.edu.co/termodinamicatecnica" target = "_blank">Página del Curso</a></li>				
+							<li><a class="dropdown-item" href = "https://classroom.google.com/c/NjI4NTUzMzk5Njg2" target = "_blank">Classroom</a></li>
+							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/0AKhuVRn_mjfdUk9PVA" target = "_blank">Drive</a></li>
+							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/1sN3hZKW4b5ZDHKUnNWf-39fcBbsfY9FS" target = "_blank">Drive Entregas</a></li>
 						</ul>
 					</div>
 				</div>			
-			</div>
+			</div>				
 
-			<div class = "col-md-4 col-sm-6 col-xs-12">
-				<span id="completed"></span>
-				<a href = "https://micampus.unal.edu.co/course/view.php?id=40895" target = "_blank"><div id = "assignature-tile5"><span>Robotik</span></div></a>			  
-				<div class = "btn-group button-container" role = "group"> 				   
-				   <button id="btnGroupDrop1" type="button"
-				    class = "btn btn-secondary dropdown-toggle expandable-button"
-				    data-toggle = "dropdown" aria-haspopup = "true" aria-expanded="false">
-				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-down"></span>
-				    </button>				    
-				    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">				      	
-					      	<ul id = "nav-list" class = "nav navbar-nav navbar-right">				      		
-							<li><a class="dropdown-item" href = "https://micampus.unal.edu.co/course/view.php?id=40895" target = "_blank">Moodle</a></li>
-							<li><a class="dropdown-item" href = "https://github.com/dlozanob/Robotica.git" target = "_blank">Repo</a></li>
-						</ul>
-					</div>
-				</div>			
-			</div>
 
-			<div class = "col-md-4 col-sm-6 col-xs-12">
-				<span id="completed"></span>
-				<a href = "https://classroom.google.com/c/NjI4NTk0MTkxODY2" target = "_blank"><div id = "assignature-tile6"><span>Techniken der Künstlichen Intelligenz</span></div></a>			  
-				<div class = "btn-group button-container" role = "group"> 				   
-				   <button id="btnGroupDrop1" type="button"
-				    class = "btn btn-secondary dropdown-toggle expandable-button"
-				    data-toggle = "dropdown" aria-haspopup = "true" aria-expanded="false">
-				    <span class = "glyphicon glyphicon-link">Andere Links<span class = "arrow glyphicon glyphicon-chevron-down"></span>
-				    </button>				    
-			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">				      	
-				      	<ul id = "nav-list" class = "nav navbar-nav navbar-right">				      		
-							<li><a class="dropdown-item" href = "https://classroom.google.com/c/NjI4NTk0MTkxODY2" target = "_blank">Classroom</a></li>
-							<li><a class="dropdown-item" href = "https://github.com/victordavila2311/TIA-2024-1S" target = "_blank">Proyecto Repo</a></li>
-							<li><a class="dropdown-item" href = "https://drive.google.com/drive/folders/1DA-mu_ibvcEBhVPfpiE2KhzE58-J7WW5" target = "_blank">Proyecto Drive</a></li>
-						</ul>
-					</div>
-				</div>			
-			</div>
+
 
 		</div>
 
