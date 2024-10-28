@@ -27,8 +27,8 @@ body {
 	position: absolute;
 	left: -9em;
 	top: -1em;
-	width: 114em; 
-	height: 55em;
+	width: 114vw;
+	height: 114vh;
 	z-index: -1;
   }
 
@@ -105,7 +105,7 @@ body {
 }
 
 .course-container {
-	height: 83vh;
+	height: 78vh;
 	width: 100%;
 	position: relative;
 	border: 2px solid #000000;
@@ -163,15 +163,15 @@ body {
 	grid-row: 1;
 	background: url('../images/DS.jpg') no-repeat;
 	background-position: -18px -73px;
-	background-size: 344px 631px;
+	background-size: 110.25641025641026% 117.26575654067875%;
 }
 
 #course-tile2 {
 	grid-column: 2;
 	grid-row: 1;
 	background: url('../images/APM.jpg') no-repeat;
-	background-position: -67px -91px;
-	background-size: 452px 616px;
+	background-position: -57px -72px;
+	background-size: 144.87179487179486% 114.47813950722363%;
 }
 
 #course-tile3 {
@@ -179,7 +179,7 @@ body {
 	grid-row: 1;	
 	background: url('../images/PAI.jpg') no-repeat;
 	background-position: -86px 0px;
-	background-size: 654px 542px;
+	background-size: 209.6153846153846% 100.7258954755117%;
 }
 
 #course-tile4 {
@@ -187,7 +187,7 @@ body {
 	grid-row: 1;	
 	background: url('../images/FR.jpg') no-repeat;
 	background-position: -121px 0px;
-	background-size: 580px 540px;
+	background-size: 185.89743589743588% 100.35421320438435%;
 }
 
 .button-container {
