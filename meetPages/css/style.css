@@ -250,6 +250,10 @@ body {
 }
 
 @media(max-width:767px) {
+	body {
+		overflow-y: scroll;
+	}
+	
 	#title {
 		margin-top: 10%;
 		margin-left: 2%;
@@ -278,7 +282,7 @@ body {
 	}
 	
 	.course-container {
-		height: 22vh;
+		height: 39vh;
 	}
 
 	#course-tile2 {
