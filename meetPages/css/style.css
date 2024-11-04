@@ -2,6 +2,7 @@
 
 body {
 	background-color: #7f0000;
+	overflow: hidden;
 }
 
 .row {
@@ -251,9 +252,16 @@ body {
 
 @media(max-width:767px) {
 	body {
-		overflow-y: scroll;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 	
+	#bgVideo {
+		position: fixed;
+		width: 450vw;
+		height: 117vh;
+	  }
+
 	#title {
 		margin-top: 10%;
 		margin-left: 2%;
