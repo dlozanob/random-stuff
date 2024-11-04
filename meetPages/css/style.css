@@ -105,6 +105,7 @@ body {
 }
 
 .course-container {
+	margin: auto;
 	height: 78vh;
 	width: 100%;
 	position: relative;
@@ -246,6 +247,55 @@ body {
 	z-index: 3;
 	opacity: 0.6;
 	pointer-events: none;
+}
+
+@media(max-width:767px) {
+	#title {
+		margin-top: 10%;
+		margin-left: 2%;
+		font-size: 2.5em;
+	}
+
+	.glyphicon-globe:before, .glyphicon-calendar:before {
+		font-size: 30px;
+		position: relative;
+		top: 0px;
+	}
+
+	#main-content {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 1fr);
+		gap: 17px;
+		height: 68vh;
+	}
+
+	#course-tile1 {
+		grid-column: 1;
+		grid-row: 1;
+		background: url('../images/DS.jpg') no-repeat;
+		background-position: -18px -73px;
+		background-size: 110.25641025641026% 117.26575654067875%;
+	}
+	
+	.course-container {
+		height: 22vh;
+	}
+
+	#course-tile2 {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	
+	#course-tile3 {
+		grid-column: 1;
+		grid-row: 3;
+	}
+	
+	#course-tile4 {
+		grid-column: 1;
+		grid-row: 4;
+	}
+
 }
 
 
