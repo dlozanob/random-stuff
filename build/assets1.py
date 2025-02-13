@@ -29,4 +29,6 @@ button_right_def_path = "{0}/assets/RightArrow/button_1.png".format(_location)
 button_right_hover_path = "{0}/assets/RightArrow/button_2.png".format(_location)
 button_right_pressed_path = "{0}/assets/RightArrow/button_3.png".format(_location)
 
+img_cameraOff_path = "{0}/assets/Camera/cameraOff.png".format(_location)
+
 #######################################################################################################################

@@ -7,6 +7,8 @@
 
 import sys
 import time
+from math import *
+import numpy as np
 import tkinter as tk
 from tkinter import messagebox
 import tkinter.ttk as ttk
@@ -49,6 +51,10 @@ class Toplevel3:
 
         #top.geometry("1064x736+1771+146")
         top.state('zoomed')
+        top.update_idletasks() # Update Window Info
+        top_width = top.winfo_width()
+        top_height = top.winfo_height()
+
         top.minsize(120, 1)
         #top.maxsize(1370, 749)
         top.resizable(1,  1)
@@ -61,10 +67,13 @@ class Toplevel3:
 
         self.left_cam_state = 1
         self.right_cam_state = 1
+        self.grid = 1
         self.button_cam_def_img = ImageTk.PhotoImage(Image.open(button_cam_def_path))
         self.button_camOff_def_img = ImageTk.PhotoImage(Image.open(button_camOff_def_path))
         self.button_left_def_img = ImageTk.PhotoImage(Image.open(button_left_def_path))
         self.button_right_def_img = ImageTk.PhotoImage(Image.open(button_right_def_path))
+        self.img_cameraOff_img = ImageTk.PhotoImage(Image.open(img_cameraOff_path))
+        self.button_grid_def_img = ImageTk.PhotoImage(Image.open(button_grid_def_path))
 
         #### FUNCIONES BOTONES ####
         def salir(event):
@@ -77,6 +86,16 @@ class Toplevel3:
                 
                 if 0 <= valor <= 40:
                     print(f"Valor ingresado: {valor}")  # Imprimir si es válido
+                    actuator_mode = self.Scale2.get()
+                    if(actuator_mode == 0):
+                        # ACTUADOR 1
+                        pass
+                    elif(actuator_mode == 1):
+                        # AMBOS ACTUADORES
+                        pass
+                    else:
+                        # ACTUADOR 2
+                        pass  
                 else:
                     messagebox.showwarning("Advertencia", "El número debe estar entre 1 y 40.")  # Mostrar advertencia
 
@@ -88,7 +107,7 @@ class Toplevel3:
             if (self.left_cam_state):
                 ##APAGAR CÁMARA IZQUIERDA##
                 self.left_cam_state = 0
-                btn.configure(image=self.button_camOff_def_img)
+                btn.configure(image=self.button_camOff_def_img)                
             else:
                 ##PRENDER CÁMARA IZQUIERDA##
                 self.left_cam_state = 1
@@ -99,26 +118,55 @@ class Toplevel3:
         def toggle_right_cam(event, btn, cam):
             if (self.right_cam_state):
                 ##APAGAR CÁMARA DERECHA##
-                btn.configure(image=self.button_camOff_def_img)
                 self.right_cam_state = 0
+                btn.configure(image=self.button_camOff_def_img)
+                
             else:
                 ##PRENDER CÁMARA DERECHA##
+                self.right_cam_state = 1
+                #self.update_frame()
                 btn.configure(image=self.button_cam_def_img)
-                self.right_cam_state = 1            
             print("Right cam toggled")
 
         def move_left(event, scale):
+            actuator_mode = scale.get()
+            if(actuator_mode == 0):
+                # ACTUADOR 1
+                pass
+            elif(actuator_mode == 1):
+                # AMBOS ACTUADORES
+                pass
+            else:
+                # ACTUADOR 2
+                pass
             print("Moving to left")
 
         def move_right(event, scale):
+            actuator_mode = scale.get()
+            if(actuator_mode == 0):
+                # ACTUADOR 1
+                pass
+            elif(actuator_mode == 1):
+                # AMBOS ACTUADORES
+                pass
+            else:
+                # ACTUADOR 2
+                pass            
             print("Moving to right")
+
+        def toggle_grid(event):
+            if(self.grid):
+                self.grid = 0
+            else:
+                self.grid = 1
+
         ########## FIN ############
 
         self.menubar = tk.Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
         top.configure(menu = self.menubar)
 
         self.Labelframe1 = tk.LabelFrame(self.top)
-        self.Labelframe1.place(relx=0.761, rely=0.557, relheight=0.178
+        self.Labelframe1.place(relx=0.761, rely=0.546, relheight=0.26
                 , relwidth=0.207)
         self.Labelframe1.configure(relief='sunken')
         self.Labelframe1.configure(font="-family {Segoe UI} -size 9")
@@ -131,12 +179,12 @@ class Toplevel3:
 
         _style_code()
         self.TSeparator1 = ttk.Separator(self.Labelframe1)
-        self.TSeparator1.place(relx=0.509, rely=0.183, relheight=0.702
+        self.TSeparator1.place(relx=0.529, rely=0.178, relheight=0.518
                 , bordermode='ignore')
         self.TSeparator1.configure(orient="vertical")
 
         self.Label5 = tk.Label(self.Labelframe1)
-        self.Label5.place(relx=0.182, rely=0.153, height=21, width=33
+        self.Label5.place(relx=0.210, rely=0.065, height=31, width=34
                 , bordermode='ignore')
         self.Label5.configure(activebackground="#d9d9d9")
         self.Label5.configure(activeforeground="black")
@@ -150,7 +198,7 @@ class Toplevel3:
         self.Label5.configure(text='''L''')
 
         self.Label6 = tk.Label(self.Labelframe1)
-        self.Label6.place(relx=0.677, rely=0.153, height=21, width=33
+        self.Label6.place(relx=0.684, rely=0.065, height=30, width=33
                 , bordermode='ignore')
         self.Label6.configure(activebackground="#d9d9d9")
         self.Label6.configure(activeforeground="black")
@@ -164,7 +212,7 @@ class Toplevel3:
         self.Label6.configure(text='''R''')
 
         self.Button4 = tk.Button(self.Labelframe1)
-        self.Button4.place(relx=0.136, rely=0.382, height=56, width=57
+        self.Button4.place(relx=0.182, rely=0.222, height=57, width=57
                 , bordermode='ignore')  
         self.Button4.configure(activebackground="#d9d9d9")
         self.Button4.configure(activeforeground="black")
@@ -176,10 +224,11 @@ class Toplevel3:
         self.Button4.configure(highlightcolor="#000000")
         self.Button4.configure(text='''Button''')        
         self.Button4.configure(image=self.button_cam_def_img)
-        self.Button4.bind("<ButtonPress>", lambda event: toggle_left_cam(event, self.Button4, self.camera))
+        self.Button4.configure(cursor="hand2")
+        self.Button4.bind("<ButtonPress>", lambda event: toggle_left_cam(event, self.Button4, self.camera1))
 
         self.Button5 = tk.Button(self.Labelframe1)
-        self.Button5.place(relx=0.636, rely=0.382, height=56, width=57
+        self.Button5.place(relx=0.636, rely=0.222, height=57, width=57
                 , bordermode='ignore')
         self.Button5.configure(activebackground="#d9d9d9")
         self.Button5.configure(activeforeground="black")
@@ -192,10 +241,33 @@ class Toplevel3:
         self.Button5.configure(highlightcolor="#000000")
         self.Button5.configure(text='''Button''')
         self.Button5.configure(image=self.button_cam_def_img)
-        self.Button5.bind("<ButtonPress>", lambda event: toggle_right_cam(event, self.Button5, self.camera))
+        self.Button5.configure(cursor="hand2")
+        self.Button5.bind("<ButtonPress>", lambda event: toggle_right_cam(event, self.Button5, self.camera2))
+
+        self.Labelframe3 = tk.LabelFrame(self.Labelframe1)
+        self.Labelframe3.place(relx=0.091, rely=0.534, relheight=0.414
+                , relwidth=0.864, bordermode='ignore')
+        self.Labelframe3.configure(relief='groove')
+        self.Labelframe3.configure(foreground="#000000")
+        self.Labelframe3.configure(text='''Zoom''')
+        self.Labelframe3.configure(background="#d9d9d9")
+        self.Labelframe3.configure(highlightbackground="#d9d9d9")
+        self.Labelframe3.configure(highlightcolor="#000000")
+
+        self.Scale1 =  tk.Scale(self.Labelframe3, from_=1.0, to=5.0, resolution=1.0)
+        self.Scale1.place(relx=0.053, rely=0.042, relheight=0.733
+                , relwidth=0.874)
+        self.Scale1.configure(activebackground="#d9d9d9")
+        self.Scale1.configure(background="#d9d9d9")
+        self.Scale1.configure(foreground="#000000")
+        self.Scale1.configure(highlightbackground="#d9d9d9")
+        self.Scale1.configure(highlightcolor="#000000")
+        self.Scale1.configure(length="166")
+        self.Scale1.configure(orient="horizontal")
+        self.Scale1.configure(troughcolor="#c4c4c4")
 
         self.Frame1 = tk.Frame(self.top)
-        self.Frame1.place(relx=0.761, rely=0.774, relheight=0.114
+        self.Frame1.place(relx=0.761, rely=0.830, relheight=0.114
                 , relwidth=0.209)
         self.Frame1.configure(relief='sunken')
         self.Frame1.configure(borderwidth="2")
@@ -213,7 +285,8 @@ class Toplevel3:
         self.Button11.configure(foreground="#000000")
         self.Button11.configure(highlightbackground="#d9d9d9")
         self.Button11.configure(highlightcolor="#000000")
-        self.Button11.configure(text='''Salir''')    
+        self.Button11.configure(text='''Salir''')
+        self.Button11.configure(cursor="hand2")
         self.Button11.bind("<ButtonRelease>", salir)
 
         self.Button3 = tk.Button(self.Frame1)
@@ -226,7 +299,21 @@ class Toplevel3:
         self.Button3.configure(foreground="#000000")
         self.Button3.configure(highlightbackground="#d9d9d9")
         self.Button3.configure(highlightcolor="#000000")
+        self.Button3.configure(cursor="hand2")
         self.Button3.configure(text='''Instrucciones''')
+
+        self.Button6 = tk.Button(self.top)
+        self.Button6.place(relx=0.028, rely=0.027, height=56, width=57)
+        self.Button6.configure(activebackground="#d9d9d9")
+        self.Button6.configure(activeforeground="black")
+        self.Button6.configure(background="#d9d9d9")
+        self.Button6.configure(disabledforeground="#a3a3a3")
+        self.Button6.configure(foreground="#000000")
+        self.Button6.configure(highlightbackground="#d9d9d9")
+        self.Button6.configure(highlightcolor="#000000")
+        self.Button6.configure(image=self.button_grid_def_img)
+        self.Button6.configure(cursor="hand2")
+        self.Button6.bind("<ButtonPress>", toggle_grid)
 
         self.Label1 = tk.Label(self.top)
         self.Label1.place(relx=0.273, rely=0.014, height=67, width=358)
@@ -319,6 +406,7 @@ class Toplevel3:
         self.Button8.configure(highlightcolor="#000000")
         self.Button8.configure(text='''Button''')
         self.Button8.configure(image=self.button_left_def_img)
+        self.Button8.configure(cursor="hand2")
         self.Button8.bind("<ButtonPress>", lambda event: move_left(event, self.Scale2))
 
         self.Button9 = tk.Button(self.Labelframe7)
@@ -333,10 +421,11 @@ class Toplevel3:
         self.Button9.configure(highlightcolor="#000000")
         self.Button9.configure(text='''Button''')
         self.Button9.configure(image=self.button_right_def_img)
+        self.Button9.configure(cursor="hand2")
         self.Button9.bind("<ButtonPress>", lambda event: move_right(event, self.Scale2))
 
         self.Scale2 =  tk.Scale(self.Labelframe5, from_=0.0, to=2.0, resolution=1.0)
-        self.Scale2.place(relx=0.091, rely=0.2, relheight=0.1, relwidth=0.85)
+        self.Scale2.place(relx=0.091, rely=0.14, relheight=0.1, relwidth=0.85)
         self.Scale2.configure(activebackground="#d9d9d9")
         self.Scale2.configure(background="#d9d9d9")
         self.Scale2.configure(font="-family {Segoe UI} -size 9")
@@ -383,6 +472,7 @@ class Toplevel3:
         self.Button10.configure(highlightbackground="#d9d9d9")
         self.Button10.configure(highlightcolor="#000000")
         self.Button10.configure(text='''Confirmar''')
+        self.Button10.configure(cursor="hand2")
         self.Button10.bind("<ButtonPress>", lambda event: send_displacement(event, self.Entry2))
 
         self.Frame2 = tk.Frame(self.top)
@@ -395,13 +485,25 @@ class Toplevel3:
         self.Frame2.configure(highlightbackground="#d9d9d9")
         self.Frame2.configure(highlightcolor="#000000")
 
-        self.camera = tk.Label(self.top)
-        self.camera.place(relx=0.028, rely=0.122, relheight=0.836
-                , relwidth=0.718)
-        self.camera.configure(relief="groove")
-        self.camera.configure(background="#d9d9d9")
-        self.camera.configure(highlightbackground="#d9d9d9")
-        self.camera.configure(highlightcolor="#000000")
+        self.camera_posx = ceil(top_width*0.028) # Given in pixels
+        self.camera_posy = ceil(top_height*0.122) # Given in pixels
+        self.camera_width = ceil(top_width*(0.718/2)) # Given in pixels
+        self.camera_height = ceil(top_height*(0.836)) # Given in pixels
+
+        self.camera1 = tk.Label(self.top)
+        self.camera1.place(x=self.camera_posx, y=self.camera_posy, width=self.camera_width, height=self.camera_height)
+        self.camera1.configure(relief="groove")
+        self.camera1.configure(background="#d9d9d9")
+        self.camera1.configure(highlightbackground="#d9d9d9")
+        self.camera1.configure(highlightcolor="#000000")
+
+        self.camera2 = tk.Label(self.top)
+        self.camera2.place(relx=0.028+0.718/2, rely=0.122, width=self.camera_width, height=self.camera_height)
+        self.camera2.configure(relief="groove")
+        self.camera2.configure(background="#d9d9d9")
+        self.camera2.configure(highlightbackground="#d9d9d9")
+        self.camera2.configure(highlightcolor="#000000")
+        self.camera2.configure(image=self.img_cameraOff_img)
 
         self.cap = cv2.VideoCapture(0)
 
@@ -410,6 +512,78 @@ class Toplevel3:
             return
 
         self.update_frame()
+
+    def update_frame(self):
+        """Captura un frame de la cámara y lo muestra en el Label."""
+        ret, frame = self.cap.read()
+        if ret:
+            # Convertir de BGR (OpenCV) a RGB (Tkinter)
+            #frame = cv2.resize(frame, (self.camera_width, self.camera_height)) # Resizing Camera Image
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            img = Image.fromarray(frame)
+            img = np.array(img) # Processing ONLY with cv2 (PIL Image to NumPy Array)
+
+            zoom_factor = self.Scale1.get()
+
+            ###### Processing Image ######          
+            img = self.zoom_image(img, zoom_factor)
+            if(self.grid): img = self.add_cross(img, 2)
+            img = Image.fromarray(img) # NumPy Array to PIL Image
+            ##############################
+
+            imgtk = ImageTk.PhotoImage(image=img)
+
+            # Mostrar en el Label
+            self.camera1.imgtk = imgtk  # Evita que la imagen sea eliminada por el recolector de basura
+            self.camera1.configure(image=imgtk)
+
+        # Llamar a esta función cada 10 ms
+        if self.left_cam_state:
+            self.top.after(10, self.update_frame)
+        else:
+            #self.camera.configure(image="")
+            self.camera1.configure(image=self.img_cameraOff_img)
+            print("Camera Off")
+
+    ##########IMAGE PROCESSING#################
+    def zoom_image(self, img, zoom_factor):
+        h, w, _ = img.shape
+        center_x, center_y = w//2, h//2
+
+        new_w, new_h = int(w*zoom_factor), int(h*zoom_factor)
+        resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_LINEAR)
+        
+        # start_x = max(0, (new_w-w)//2)
+        # start_y = max(0, (new_h-h)//2)
+
+        start_x = max(0, (new_w-self.camera_width)//2)
+        start_y = max(0, (new_h-self.camera_height)//2)
+
+        if zoom_factor > 1:
+            #zoomed_image = resized[start_y:, start_x:start_x + w]
+            zoomed_image = resized[start_y : start_y + self.camera_height, start_x : start_x + self.camera_width]
+        else:
+            zoomed_image = np.zeros_like(img)
+            zoomed_image[
+                (h - new_h)//2 : (h-new_h)//2 + new_h,
+                (w - new_w)//2 : (w - new_w)//2 + new_w
+            ] = resized
+
+        return zoomed_image
+
+    def add_cross(self, img, thick):
+        h, w, _ = img.shape
+        modified_img = np.zeros_like(img)
+        modified_img[:] = (0, 255, 0)
+
+        modified_img[0 : h//2 - thick//2, 0 : w//2 - thick//2] = img[0 : h//2 - thick//2, 0 : w//2 - thick//2]
+        modified_img[h//2 + thick//2 :, 0 : w//2 - thick//2] = img[h//2 + thick//2 :, 0 : w//2 - thick//2]
+        modified_img[0 : h//2 - thick//2, w//2 + thick//2 :] = img[0 : h//2 - thick//2, w//2 + thick//2 :]
+        modified_img[h//2 + thick//2 :, w//2 + thick//2 :] = img[h//2 + thick//2 :, w//2 + thick//2 :]
+
+        return modified_img
+    
+    ###########################################
 
         ######CAM RPI 5######
         # INSTALAR: sudo apt install libopencv-dev python3-opencv
@@ -438,29 +612,6 @@ class Toplevel3:
     #     # Llamar a esta función cada 100 ms para actualizar la imagen
     #     self.root.after(100, self.update_frame)
         ########FIN##########
-
-    def update_frame(self):
-        """Captura un frame de la cámara y lo muestra en el Label."""
-        ret, frame = self.cap.read()
-        if ret:
-            # Convertir de BGR (OpenCV) a RGB (Tkinter)
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            img = Image.fromarray(frame)
-            imgtk = ImageTk.PhotoImage(image=img)
-
-            # Mostrar en el Label
-            self.camera.imgtk = imgtk  # Evita que la imagen sea eliminada por el recolector de basura
-            self.camera.configure(image=imgtk)
-
-        # Llamar a esta función cada 10 ms
-        if self.left_cam_state:
-            self.top.after(10, self.update_frame)
-        else:
-            self.camera.configure(image="")
-            print("Camera Off")
-
-        
-
 
 def start_up():
     test1_support.main()
