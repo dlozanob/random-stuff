@@ -50,7 +50,8 @@ class Toplevel3:
            top is the toplevel containing window.'''
 
         #top.geometry("1064x736+1771+146")
-        top.state('zoomed')
+        #top.state('zoomed')
+        top.wm_attributes("-zoomed", True)
         top.update_idletasks() # Update Window Info
         top_width = top.winfo_width()
         top_height = top.winfo_height()
@@ -111,7 +112,7 @@ class Toplevel3:
             else:
                 ##PRENDER CÁMARA IZQUIERDA##
                 self.left_cam_state = 1
-                self.update_frame()
+                self.update_frame1()
                 btn.configure(image=self.button_cam_def_img)
             print("Left cam toggled")
 
@@ -124,7 +125,7 @@ class Toplevel3:
             else:
                 ##PRENDER CÁMARA DERECHA##
                 self.right_cam_state = 1
-                #self.update_frame()
+                self.update_frame2()
                 btn.configure(image=self.button_cam_def_img)
             print("Right cam toggled")
 
@@ -503,47 +504,122 @@ class Toplevel3:
         self.camera2.configure(background="#d9d9d9")
         self.camera2.configure(highlightbackground="#d9d9d9")
         self.camera2.configure(highlightcolor="#000000")
-        self.camera2.configure(image=self.img_cameraOff_img)
+        #self.camera2.configure(image=self.img_cameraOff_img)
+        
+        self.image_path1 = "/dev/shm/camera1.jpg"
+        self.update_frame1()
 
-        self.cap = cv2.VideoCapture(0)
+        self.image_path2 = "/dev/shm/camera2.jpg"
+        #self.update_frame2()
 
-        if not self.cap.isOpened():
-            print("Error: No se pudo abrir la cámara.")
-            return
+        ######CAM RPI 5######
+        # INSTALAR: sudo apt install libopencv-dev python3-opencv
+        # libcamera-jpeg -o test.jpg
+        # SI NO FUNCIONA: sudo raspi-config
+    #     self.image_path = "/dev/shm/camera.jpg"  # Usamos /dev/shm para evitar escribir en la SD
+    #     self.update_frame()
 
-        self.update_frame()
+    def capture_image1(self):
+        """Captura una imagen usando libcamera-jpeg y la guarda en un archivo temporal."""
+        os.system(f"libcamera-jpeg --camera 0 -o {self.image_path1} --width 640 --height 480 --nopreview -t 1")
 
-    def update_frame(self):
+    def update_frame1(self):
         """Captura un frame de la cámara y lo muestra en el Label."""
-        ret, frame = self.cap.read()
-        if ret:
-            # Convertir de BGR (OpenCV) a RGB (Tkinter)
-            #frame = cv2.resize(frame, (self.camera_width, self.camera_height)) # Resizing Camera Image
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            img = Image.fromarray(frame)
-            img = np.array(img) # Processing ONLY with cv2 (PIL Image to NumPy Array)
+        self.capture_image1()  # Capturar nueva imagen
 
+        if os.path.exists(self.image_path1):  # Verificar que la imagen existe
+            img = Image.open(self.image_path1)
+            img = img.resize((640, 480), Image.Resampling.LANCZOS)  # Redimensionar para la GUI
+            img = np.array(img)
+            
             zoom_factor = self.Scale1.get()
-
-            ###### Processing Image ######          
+            
+            # ###### Processing Image ######          
             img = self.zoom_image(img, zoom_factor)
             if(self.grid): img = self.add_cross(img, 2)
             img = Image.fromarray(img) # NumPy Array to PIL Image
-            ##############################
-
+            # ##############################
+            
             imgtk = ImageTk.PhotoImage(image=img)
 
             # Mostrar en el Label
             self.camera1.imgtk = imgtk  # Evita que la imagen sea eliminada por el recolector de basura
             self.camera1.configure(image=imgtk)
 
-        # Llamar a esta función cada 10 ms
+        # Llamar a esta función cada 100 ms para actualizar la imagen
         if self.left_cam_state:
-            self.top.after(10, self.update_frame)
+                self.top.after(10, self.update_frame1)
         else:
-            #self.camera.configure(image="")
-            self.camera1.configure(image=self.img_cameraOff_img)
-            print("Camera Off")
+                self.camera1.configure(image=self.img_cameraOff_img)
+                print("Camera Off")
+        
+                
+    def capture_image2(self):
+        """Captura una imagen usando libcamera-jpeg y la guarda en un archivo temporal."""
+        os.system(f"libcamera-jpeg --camera 1 -o {self.image_path2} --width 640 --height 480 --nopreview -t 1")
+
+    def update_frame2(self):
+        """Captura un frame de la cámara y lo muestra en el Label."""
+        self.capture_image2()  # Capturar nueva imagen
+
+        if os.path.exists(self.image_path2):  # Verificar que la imagen existe
+            img = Image.open(self.image_path2)
+            img = img.resize((640, 480), Image.Resampling.LANCZOS)  # Redimensionar para la GUI
+            img = np.array(img)
+            
+            zoom_factor = self.Scale1.get()
+            
+            # ###### Processing Image ######          
+            img = self.zoom_image(img, zoom_factor)
+            if(self.grid): img = self.add_cross(img, 2)
+            img = Image.fromarray(img) # NumPy Array to PIL Image
+            # ##############################
+            
+            imgtk = ImageTk.PhotoImage(image=img)
+
+            # Mostrar en el Label
+            self.camera2.imgtk = imgtk  # Evita que la imagen sea eliminada por el recolector de basura
+            self.camera2.configure(image=imgtk)
+
+        # Llamar a esta función cada 100 ms para actualizar la imagen
+        if self.right_cam_state:
+                self.top.after(100, self.update_frame2)
+        else:
+                self.camera2.configure(image=self.img_cameraOff_img)
+                print("Camera Off")
+        ########FIN##########
+
+    # def update_frame(self):
+        # """Captura un frame de la cámara y lo muestra en el Label."""
+        # ret, frame = self.cap.read()
+        # if ret:
+            # # Convertir de BGR (OpenCV) a RGB (Tkinter)
+            # #frame = cv2.resize(frame, (self.camera_width, self.camera_height)) # Resizing Camera Image
+            # frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            # img = Image.fromarray(frame)
+            # img = np.array(img) # Processing ONLY with cv2 (PIL Image to NumPy Array)
+
+            # zoom_factor = self.Scale1.get()
+
+            # ###### Processing Image ######          
+            # img = self.zoom_image(img, zoom_factor)
+            # if(self.grid): img = self.add_cross(img, 2)
+            # img = Image.fromarray(img) # NumPy Array to PIL Image
+            # ##############################
+
+            # imgtk = ImageTk.PhotoImage(image=img)
+
+            # # Mostrar en el Label
+            # self.camera1.imgtk = imgtk  # Evita que la imagen sea eliminada por el recolector de basura
+            # self.camera1.configure(image=imgtk)
+
+        # # Llamar a esta función cada 10 ms
+        # if self.left_cam_state:
+            # self.top.after(10, self.update_frame)
+        # else:
+            # #self.camera.configure(image="")
+            # self.camera1.configure(image=self.img_cameraOff_img)
+            # print("Camera Off")
 
     ##########IMAGE PROCESSING#################
     def zoom_image(self, img, zoom_factor):
@@ -585,33 +661,6 @@ class Toplevel3:
     
     ###########################################
 
-        ######CAM RPI 5######
-        # INSTALAR: sudo apt install libopencv-dev python3-opencv
-        # libcamera-jpeg -o test.jpg
-        # SI NO FUNCIONA: sudo raspi-config
-    #     self.image_path = "/dev/shm/camera.jpg"  # Usamos /dev/shm para evitar escribir en la SD
-    #     self.update_frame()
-
-    # def capture_image(self):
-    #     """Captura una imagen usando libcamera-jpeg y la guarda en un archivo temporal."""
-    #     os.system(f"libcamera-jpeg -o {self.image_path} --width 640 --height 480 --nopreview -t 1")
-
-    # def update_frame(self):
-    #     """Captura un frame de la cámara y lo muestra en el Label."""
-    #     self.capture_image()  # Capturar nueva imagen
-
-    #     if os.path.exists(self.image_path):  # Verificar que la imagen existe
-    #         img = Image.open(self.image_path)
-    #         img = img.resize((640, 480), Image.Resampling.LANCZOS)  # Redimensionar para la GUI
-    #         imgtk = ImageTk.PhotoImage(image=img)
-
-    #         # Mostrar en el Label
-    #         self.label.imgtk = imgtk  # Evita que la imagen sea eliminada por el recolector de basura
-    #         self.label.configure(image=imgtk)
-
-    #     # Llamar a esta función cada 100 ms para actualizar la imagen
-    #     self.root.after(100, self.update_frame)
-        ########FIN##########
 
 def start_up():
     test1_support.main()

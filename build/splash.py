@@ -21,8 +21,8 @@ splash = Tk()
 splash.title("Splash Screen")
 #splash.geometry("505x258")
 
-window_width = 510
-window_height = 260
+window_width = 700
+window_height = 385
 # Get screen width and height
 screen_width = splash.winfo_screenwidth()
 screen_height = splash.winfo_screenheight()
@@ -40,8 +40,8 @@ splash.configure(bg = "#FFFFFF")
 canvas = Canvas(
     splash,
     bg = "#FFFFFF",
-    height = 258,
-    width = 505,
+    height = 400,
+    width = 800,
     bd = 0,
     highlightthickness = 0,
     relief = "ridge"
@@ -51,19 +51,19 @@ canvas.place(x = 0, y = 0)
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
-    253.0,
-    129.0,
+    350,
+    192,
     image=image_image_1
 )
 
 # Function to open main application
 def open_main():
     splash.destroy()  # Close splash screen
-    main_path = '{0}/test.py'.format(_location)
+    main_path = '{0}/GUI.py'.format(_location)
     os.system('python "{0}"'.format(main_path))  # Run main.py (Change to "python3" for macOS/Linux)
 
 # Keep splash screen for 3 seconds
-splash.after(2000, open_main)
+splash.after(3000, open_main)
 
 splash.resizable(False, False)
 splash.mainloop()
