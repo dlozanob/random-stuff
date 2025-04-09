@@ -124,6 +124,11 @@ scaling, and application health monitoring.
 
 ![alt text](image-41.png)
 
+Amazon EFS is a fully managed service providing NFS shared file system storage for Linux workloads.
+Amazon EFS makes it quick and efficient to create and configure file systems. You needn't worry about managing
+file servers or storage, updating hardware, configuring software, or performing backups. In seconds, create a fully
+managed file system using the AWS Management Console, the AWS Command Line Interface (CLI), or an AWS SDK.
+
 ![alt text](image-42.png)
 
 ![alt text](image-43.png)
