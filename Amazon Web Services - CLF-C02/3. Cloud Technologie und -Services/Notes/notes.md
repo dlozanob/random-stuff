@@ -200,6 +200,9 @@ A VPC can span all Availability Zones within an AWS Region.
 >[!Note]
 > *VPC peering* is useful for establishing a connection between 2 VPCs in different AWS regions
 
+>[!Note]
+> _AWS Transit Gateway_ acts as a highly scalable cloud router. It conects your Amazon Virtual Private Clouds (VPCs) and on-premises networks through a central hub.
+
 ![alt text](image-76.png)
 
 ![alt text](image-77.png)
