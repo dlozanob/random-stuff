@@ -258,6 +258,11 @@ Popular CDN providers include Akamai Technologies, Cloudflare, Amazon CloudFront
 
 ![alt text](image-95.png)
 
+Use _AWS CloudFormation_ templates: AWS CloudFormation is a service that helps you
+model and set up your Amazon Web Services resources, making it easier to manage and
+automate your infrastructure. With CloudFormation, you can define your infrastructure as
+code using templates written in JSON or YAML.
+
 ![alt text](image-96.png)
 
 ![alt text](image-97.png)
