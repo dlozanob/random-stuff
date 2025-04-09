@@ -298,6 +298,7 @@ S3 buckets for storage.
 >[!Note]
 >
 > Serverless applications:
+> - AWS Lambda
 > - AWS Fargate
 > - AWS Step Functions
 > - Amazon DynamoDB
