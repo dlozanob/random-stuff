@@ -10,23 +10,30 @@
 
 ![alt text](image-3.png)
 
+_EC2 type of instances:_
+
 1. On-Demand Instances
    - Description: Pay for compute capacity by the hour or second with no long-term commitment. Mostly by second.
-   - Use Case: Ideal for applications with unpredictable workloads or short-term projects. Short-term, irregular workloads that cannot be interrupted
+   - Use Case: Unpredictable/irregular workloads, short-term projects, non-interruptable workloads.
 
 2. Reserved Instances
     - Description: Provide a significant discount (up to 72%) compared to On-Demand pricing in exchange for a one- or three-year commitment.
-    - Use Case: Best for applications with steady-state or predictable usage.
+    - Use Case: Long-running workloads and predictable usage.
 
 3. Spot Instances
     - Description: Allow you to bid on spare Amazon EC2 capacity at a lower price than On-Demand instances.
-    - Use Case: Suitable for flexible workloads, batch jobs, and applications that are fault-tolerant.
+    - Use Case: Cost-sensitive compute workloads. Suitable for flexible workloads, can tolerate interruptions, big data processing, batch jobs, and applications that are fault-tolerant.
 
-4. Savings Plans
+4. Dedicated Instances:
+
+   - Description: Dedicated Instances are EC2 instances that run on hardware dedicated to a single customer, providing isolation from other customers.
+   - Use Case: They are used when you need physical isolation for compliance or regulatory requirements.
+
+5. Savings Plans
     - Description: Flexible pricing model offering lower prices compared to On-Demand in exchange for a commitment to a consistent amount of usage (measured in $/hour) for a one- or three-year term.
     - Use Case: Ideal for users who want to reduce costs with a flexible commitment.
 
-5. Dedicated Hosts
+6. Dedicated Hosts
     - Description: Physical servers with EC2 instance capacity fully dedicated to your use.
     - Use Case: Useful for meeting compliance requirements and reducing costs by using existing server-bound software licenses.
 
