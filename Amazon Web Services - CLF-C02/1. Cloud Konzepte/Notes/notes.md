@@ -39,7 +39,7 @@ Design Principles:
 Design principles:
 - Automatically recover from failure
 - Test recovery procedures
-- Scale horizontally to increase aggregat workload availability
+- Scale horizontally to increase aggregate workload availability
 - Stop guessing capacity
 - Manage change in automation
 
