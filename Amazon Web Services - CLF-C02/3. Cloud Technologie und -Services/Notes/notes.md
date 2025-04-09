@@ -308,6 +308,12 @@ JavaScript, and C++.
 >
 > *AWS Service Catalog* can limit employees' access to a portfolio of predefined AWS resources
 
+>[!Note]
+>
+> _AWS IAM Access Analyzer_ helps to identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity.
+> This lets you identify unintended access to your resources and data, which is a security task.
+
+
 ## Zusammenfassung
 
 ![alt text](image-111.png)
