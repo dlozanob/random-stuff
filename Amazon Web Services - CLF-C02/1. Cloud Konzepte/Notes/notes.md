@@ -33,6 +33,16 @@ Design Principles:
 - Anticipate failure
 - Learn from all operational failures
 
+
+*Reliability:*
+
+Design principles:
+- Automatically recover from failure
+- Test recovery procedures
+- Scale horizontally to increase aggregat workload availability
+- Stop guessing capacity
+- Manage change in automation
+
 ![alt text](image-12.png)
 
 *AWS CAF :* AWS Cloud Adoption Framework.
