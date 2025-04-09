@@ -12,7 +12,7 @@
 
 1. On-Demand Instances
    - Description: Pay for compute capacity by the hour or second with no long-term commitment. Mostly by second.
-   - Use Case: Ideal for applications with unpredictable workloads or short-term projects.
+   - Use Case: Ideal for applications with unpredictable workloads or short-term projects. Short-term, irregular workloads that cannot be interrupted
 
 2. Reserved Instances
     - Description: Provide a significant discount (up to 72%) compared to On-Demand pricing in exchange for a one- or three-year commitment.
