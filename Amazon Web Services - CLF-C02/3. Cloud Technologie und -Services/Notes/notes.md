@@ -322,6 +322,12 @@ JavaScript, and C++.
 > This lets you identify unintended access to your resources and data, which is a security task.
 
 
+_Quick Starts_ are built by AWS solutions architects and partners to help you deploy popular
+technologies on AWS, based on AWS best practices for security and high availability.
+
+These accelerators reduce hundreds of manual procedures into just a few steps, so you can build your
+production environment quickly and start using it immediately.
+
 ## Zusammenfassung
 
 ![alt text](image-111.png)
