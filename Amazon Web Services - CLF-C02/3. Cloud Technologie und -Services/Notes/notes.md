@@ -329,6 +329,9 @@ JavaScript, and C++.
 
 ![alt text](image-109.png)
 
+_AWS Elastic Transcoder_ converts video and audio files that are stored in Amazon S3 into a format that is playable on smartphones, tablets, web browsers,
+and connected televisions.
+
 ![alt text](image-110.png)
 
 >[!Note]
