@@ -177,3 +177,7 @@ abusive behavior:
 - Intrusion attempts
 - Hosting prohibited content
 - Distributing malware
+
+![image](https://github.com/user-attachments/assets/1ec3c1bb-6bb8-4bc7-9d0b-22378efa2629)
+
+
