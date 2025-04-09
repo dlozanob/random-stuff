@@ -85,6 +85,13 @@ Convertible Reserved Instances are useful if you anticipate changes in your work
 
 ![alt text](image-19.png)
 
+_AWS Organizations_ provides you with the capability to centrally manage and govern your cloud environment.
+You can manage and organize your accounts under a single bill, set central policies and configuration
+requirements for your entire organization, create custom permissions or capabilities within the organization,
+and delegate responsibilities to other accounts so they can manage on behalf of the organization.
+In addition, _AWS Organizations_ is integrated with other AWS services so you can define central configurations,
+security mechanisms, audit requirements, and resource sharing across accounts in your organization.
+
 >[!Note]
 > You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed
 > level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource
