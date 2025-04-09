@@ -330,7 +330,12 @@ JavaScript, and C++.
 >
 > _AWS IAM Access Analyzer_ helps to identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity.
 > This lets you identify unintended access to your resources and data, which is a security task.
-
+>
+> IAM Access Analyzer generates a finding for each instance of a resource-based policy that grants access to a
+> resource within your zone of trust to a principal that is not within your zone of trust.
+> IAM Access Analyzer reports a security warning when your policy grants access to pass any role to any
+> service, which is overly permissive. The security warning includes a recommendation that you scope down
+> the permissions to pass specific role(s) instead.
 
 _Quick Starts_ are built by AWS solutions architects and partners to help you deploy popular
 technologies on AWS, based on AWS best practices for security and high availability.
