@@ -159,6 +159,8 @@ managed file system using the AWS Management Console, the AWS Command Line Inter
 
 ![alt text](image-55.png)
 
+_AWS Storage Gateway_ connects on-premises data storage to the AWS Cloud.
+
 ![alt text](image-56.png)
 
 ![alt text](image-58.png)
