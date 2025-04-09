@@ -92,6 +92,17 @@ Convertible Reserved Instances are useful if you anticipate changes in your work
 
 ![alt text](image-19.png)
 
+_Consolidated billing_ has the following benefits:
+
+- One bill: You get one bill for multiple accounts.
+- Easy tracking: You can track the charges across multiple accounts and download the combined
+cost and usage data.
+- Combined usage: You can combine the usage across all accounts in the organization to share the
+volume pricing discounts, Reserved Instance discounts, and Savings Plans. This can result in a lower
+charge for your project, department, or company than with individual standalone accounts.
+- No extra fee: Consolidated billing is offered at no additional cost
+
+
 _AWS Organizations_ provides you with the capability to centrally manage and govern your cloud environment.
 You can manage and organize your accounts under a single bill, set central policies and configuration
 requirements for your entire organization, create custom permissions or capabilities within the organization,
