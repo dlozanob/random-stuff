@@ -313,6 +313,11 @@ S3 buckets for storage.
 
 ![alt text](image-107.png)
 
+_AWS CodeDeploy_ is a fully managed deployment service that automates software deployments to
+various compute services, such as Amazon Elastic Compute Cloud (EC2), Amazon Elastic Container
+Service (ECS), AWS Lambda, and your on-premises servers. Use CodeDepioy to automate software
+deployments, eliminating the need for error-prone manual operations.
+
 *AWS software development kits (SDKs)* allow users to connect with and deploy AWS services
 programmatically. AWS provides SDKs for several popular programming languages, including Java, Python,
 JavaScript, and C++.
