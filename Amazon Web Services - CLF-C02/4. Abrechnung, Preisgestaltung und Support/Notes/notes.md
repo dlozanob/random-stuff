@@ -168,7 +168,7 @@ Es bietet auch an, die Möglichkeit Support-tickets zu eröffnen.
 
 ![alt text](image-43.png)
 
->[!Notes]
+>[!Note]
 >
 > Additionally, AWS Enterprise Support brings support of 3rd-party software integration to AWS
 
